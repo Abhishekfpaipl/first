@@ -538,50 +538,10 @@
               </p>
             </a>
           </div>
-         
-
- 
         </div>
       </div>
     </div>
   </div>
-
-  <div class="pillsssss">
-            <!-- Pills navs -->
-            <ul class="nav">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#ex1-pills-1" >
-                  Active
-                  </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#ex1-pills-2">
-                  home
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#ex1-pills-3">
-                  page
-                </a>
-              </li>
-            </ul>
-            <!-- Pills navs -->
-
-            <!-- Pills content -->
-            <div class="tab-content" id="ex1-content">
-              <div class="tab-pane fade show active" id="ex1-pills-1" role="tabpanel" aria-labelledby="ex1-tab-1">
-                <p> active </p>
-              </div>
-              <div class="tab-pane fade" id="ex1-pills-2" role="tabpanel" aria-labelledby="ex1-tab-2">
-               <p>home</p>
-              </div>
-              <div class="tab-pane fade" id="ex1-pills-3" role="tabpanel" aria-labelledby="ex1-tab-3">
-                <p>page</p>
-              </div>
-            </div>
-            <!-- Pills content -->
-          </div>
-
 </template>
 
 <script>

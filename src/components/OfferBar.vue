@@ -1,7 +1,7 @@
 <template>
   <div
     class="d-flex justify-content-between mt-0 align-items-center"
-    style="border: 1; border: 1px solid; border-style: dashed"
+    style=" border: 1px solid; border-style: dashed"
   >
       <p class="ms-2 mb-0 fw-bold" style="color: green; font-size: 14px">
         OFFER:Pick Any 3 Bras for 1099
