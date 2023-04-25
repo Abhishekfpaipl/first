@@ -1,5 +1,5 @@
 <template lang="">
-  <div class="position-fixed" style="bottom: 0">
+  <div class="position-fixed w-100" style="bottom: 0">
     <div class="container nav-bottom" style="height: 20%">
       <!-- <div class="row">
         <div class="col-3 d-flex flex-column align-items-center">
@@ -73,6 +73,5 @@ export default {};
   gap: 2rem;
   justify-content: center;
   background: white;
-  width: 100vw;
 }
 </style>

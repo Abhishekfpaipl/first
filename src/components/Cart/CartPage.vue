@@ -48,7 +48,7 @@ export default {
     },
     decrement () {
       if(this.quantity === 1) {
-        alert('Negative quantity not allowed')
+        alert('')
       } else {
         this.quantity--
       }
