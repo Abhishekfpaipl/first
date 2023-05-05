@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="filters m-4 justify-content-evenly d-flex">
+    <!-- <div class="filters m-4 justify-content-evenly d-flex">
       <div>
         <input type="text" placeholder=" Search" value="" />
       </div>
@@ -8,7 +8,7 @@
         <button class="btn btn-light me-2">Reset</button>
         <button class="btn btn-light">Filters</button>
       </div>
-    </div>
+    </div> -->
 
      <!-- <div class="container d-flex flex-nowrap" style="padding-bottom: 20%; overflow: auto;">
         <div class="d-flex flex-nowrap overflow-auto">
@@ -290,8 +290,8 @@
     </div> -->
 
     <div class="container">
-        <div class="row gx-2 mb-2">
-            <div class="col-6">
+        <div class="row row-cols-2 row-cols-md-3 row-cols-xl-4 g-3">
+            <div class="col">
                 <div class=" border bg-light d-flex flex-column align-items-center">
                     <router-link to="/ProductPage"  class="text-dark" style="text-decoration: none;">
                         <div>
@@ -315,7 +315,7 @@
                         <p class="text-center mt-2">MOQ - 10 pcs</p>
                 </div>
             </div>
-            <div class="col-6">
+            <div class="col">
                 <div class="border bg-light d-flex flex-column align-items-center">
                     <router-link to="/ProductPage"  class="text-dark" style="text-decoration: none;">
                         <div>
@@ -340,8 +340,8 @@
                 </div>
             </div>
         </div>
-        <div class="row gx-2">
-            <div class="col-6">
+        <div class="row row-cols-2 row-cols-md-3 row-cols-xl-4 g-3 mt-2">
+            <div class="col">
                 <div class=" border bg-light d-flex flex-column align-items-center">
                     <router-link to="/ProductPage"  class="text-dark" style="text-decoration: none;">
                         <div>
@@ -365,7 +365,7 @@
                         <p class="text-center mt-2">MOQ - 10 pcs</p>
                 </div>
             </div>
-            <div class="col-6">
+            <div class="col">
                 <div class="border bg-light d-flex flex-column align-items-center">
                     <router-link to="/ProductPage"  class="text-dark" style="text-decoration: none;">
                         <div>

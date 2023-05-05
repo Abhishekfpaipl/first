@@ -1,21 +1,7 @@
 <template lang="">
-  <div class="position-fixed w-100" style="bottom: 0">
-    <div class="container nav-bottom" style="height: 20%">
-      <!-- <div class="row">
-        <div class="col-3 d-flex flex-column align-items-center">
-          <i class="bi bi-house fs-3"></i>Home
-        </div>
-        <div class="col-3 d-flex flex-column align-items-center">
-          <i class="bi bi-bookmarks fs-3"></i>Category
-        </div>
-         <div class="col-3 d-flex flex-column align-items-center"><i class="bi bi-bag-fill  fs-3"></i>Cart</div> 
-        <div class="col-3 d-flex flex-column align-items-center">
-          <i class="bi bi-person-fill fs-3"></i>Account
-        </div>
-        <div class="col-3 d-flex flex-column align-items-center">
-          <i class="bi bi-journal-bookmark-fill fs-3"></i>Orders
-        </div>
-      </div> -->
+  <div class=" position-fixed w-100" style="bottom: 0; z-index:1;">
+    <div class=" nav-bottom" style="height: 20%">
+      
       <div class="items">
         <routerLink to="/"  class="text-dark" style="text-decoration: none;">
           <div class="inner-items">
@@ -25,7 +11,7 @@
         </routerLink>
       </div>
       <div class="items">
-        <router-link to="/CollectionPage" class="text-dark" style="text-decoration: none;">
+        <router-link to="/CardCatelog" class="text-dark" style="text-decoration: none;">
         <div class="inner-items">
           <i class="bi bi-tags-fill fs-3"></i>
           <p>Category</p>
@@ -35,7 +21,7 @@
       <div class="items">
         <router-link to="/CartPage" class="text-dark" style="text-decoration:none;">
           <div class="inner-items">
-            <i class="bi bi-bag-fill fs-3"></i>
+            <i class="bi bi-cart fs-3"></i>
             <p>Cart</p>
           </div>
         </router-link>
@@ -67,11 +53,12 @@ export default {};
   display: flex;
   text-align: center;
 }
+
 .nav-bottom {
   height: 20%;
   display: flex;
-  gap: 2rem;
+  gap: 1.5rem;
   justify-content: center;
-  background: white;
+  background: gray;
 }
 </style>

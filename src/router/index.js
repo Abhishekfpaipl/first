@@ -5,13 +5,21 @@ import ProductRating from "../components/ProductRating.vue";
 import OfferBar from "../components/OfferBar.vue";
 import FeaturedCollections from "../components/FeaturedCollections.vue";
 import LastView from "@/components/LastView.vue";
-import ProductPagess from "@/components/ProductPagess.vue";
 import CollectionPage from "../components/Collection/CollectionPage.vue";
 import CollectionGrid from "../components/Collection/CollectionGrid.vue";
 import SignupForm from "@/components/Form/SignupForm.vue";
 import CartPage from "@/components/Cart/CartPage.vue";
 import OrderPage from "../components/Orders/OrderPage.vue";
 import TopCart from "@/components/Cart/TopCart.vue";
+import TestRoute from "../views/TestRoute.vue";
+import T1Select from "@/components/Cart/T1Select.vue";
+import CardCatelog from "../components/Catelog/CardCatelog.vue";
+import CardColors from "@/components/Catelog/CardColors.vue";
+import SavedProduct from "@/components/SavedProducts/SavedProduct.vue";
+import ProductTest from "../views/ProductTest.vue";
+import FavProduct from "@/components/FavProduct.vue";
+import CategoryNew from "@/components/CategoryNew/CategoryNew.vue";
+import ScrollTest from '../components/ScrollTest.vue'
 const routes = [
   {
     path: "/",
@@ -32,11 +40,6 @@ const routes = [
     path: "/ProductPage",
     name: "ProductPage",
     component: ProductPage,
-  },
-  {
-    path: "/ProductPagess",
-    name: "ProductPagess",
-    component: ProductPagess,
   },
   {
     path: "/ProductRating",
@@ -87,6 +90,51 @@ const routes = [
     path: "/TopCart",
     name: "TopCart",
     component: TopCart,
+  },
+  {
+    path: "/TestRoute",
+    name: "TestRoute",
+    component: TestRoute,
+  },
+  {
+    path: "/T1Select",
+    name: "T1Select",
+    component: T1Select,
+  },
+  {
+    path: "/CardCatelog",
+    name: "CardCatelog",
+    component: CardCatelog,
+  },
+  {
+    path: "/CardColors",
+    name: "CardColors",
+    component: CardColors,
+  },
+  {
+    path: "/SavedProduct",
+    name: "SavedProduct",
+    component: SavedProduct,
+  },
+  {
+    path: "/ProductTest",
+    name: "ProductTest",
+    component: ProductTest,
+  },
+  {
+    path: "/FavProduct",
+    name: "FavProduct",
+    component: FavProduct,
+  },
+  {
+    path: "/CategoryNew",
+    name: "CategoryNew",
+    component: CategoryNew,
+  },
+  {
+    path: "/ScrollTest",
+    name: "ScrollTest",
+    component: ScrollTest,
   },
 ];
 

@@ -1,19 +1,51 @@
 <template>
-    <div>
-        <h1 class="text-center mt-4">No Orders Yet.</h1>
-        <div class="container">
-            <div class="row">
-                <div class="col-6">
-                    15
-                </div>
-                <div class="col-6">button</div>
+    <div class="container">
+        <!-- <h1 class="text-center mt-4">No Orders Yet.</h1> -->
+        <div class=" mt-4 ">
+            <div class="dropdown">
+                <button class="btn border border-1 dropdown-toggle text-start" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                    Dropdown button
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <li><a class="dropdown-item text-warning" href="#">Action</a></li>
+                    <li><a class="dropdown-item text-danger" href="#">Another action</a></li>
+                    <li><a class="dropdown-item text-success" href="#">Something else here</a></li>
+                </ul>
             </div>
         </div>
+
+        <div class="filters  mt-4 mb-4 justify-content-evenly d-flex align-items-center">
+            <div>
+                <input type="text" placeholder=" Search" value="" class="form-control-md"/>
+            </div>
+            <div>
+                <button class="btn btn-primary btn-sm me-2">Reset</button>
+                <!-- <button class="btn btn-primary">Filters</button> -->
+                <div class="btn-group">
+                    <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Filters
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item text-warning" href="#">Action</a></li>
+                        <li><a class="dropdown-item text-danger" href="#">Another action</a></li>
+                        <li><a class="dropdown-item text-success" href="#">Something else here</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <OrderData></OrderData>
+
     </div>
 </template>
 <script>
+import OrderData from '../Cart/OrderData.vue';
 export default {
-    name:"OrderPage"
+    name:"OrderPage",
+    components:{
+        OrderData
+    }
+   
 }
 </script>
 <style lang="">

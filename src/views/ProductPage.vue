@@ -1,353 +1,128 @@
 <template>
   <div class="container">
     <div class="row">
-      <div class="col-12">
-        <nav aria-label="breadcrumb">
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item"><a href="#">Library</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Data</li>
-          </ol>
-        </nav>
-      </div>
       <div class="col-lg-5 d-flex prod-img">
         <div class="d-flex flex-column prod-thumb">
-          <img class="mb-2" :src="image" style="width: 60px" v-for="(image, index) in images" :key="index"
+          <img class="" :src="image" style="width: 60px" v-for="(image, index) in images" :key="index"
             v-on:click="selectImage(image)" />
         </div>
         <div class="ms-2 main-img">
-          <img :src="selectedImage" class="flex-fill" style="width: 100%;" />
+          <img :src="product.img" class="flex-fill" style="width: 100%;" />
         </div>
       </div>
-      <div class="col-lg-7">
-        <h2 class="fw-bold text-start fs-5 mt-2">
-          Medium Impact Padded Racerback Sports Bra in Yellow
+      <div class="container col-lg-7">
+        <h2 class=" text-start mb-2 fs-5 py-1">
+          {{ product.info }}
         </h2>
-        <hr />
+        <h2 class=" text-start mb-2 fs-5 py-1">
+          {{ product.name }}
+        </h2>
+
         <div class="">
-          <div class="row w-100 d-flex">
-            <div class="col text-start d-flex justify-content-between">
-              <div><span class="me-2 text-dark fw-bold fs-4">₹ 458</span><del class="text-secondary fs-5">₹ 1199</del>
-                <!-- <span class="badge bg-danger ms-2">61%</span> -->
-                <kbd>61%</kbd>
-              </div>
-
-              <ProductRating />
-            </div>
-           </div>
-          <div class="container mt-4 border border-1 mb-4">
-            <div class="row">
-              <div class="col-6">
-                <p class="text-center">5 - 199 pieces</p>
-                <p class="text-center fw-bold" style="color:orangered;">$9.30</p>
-              </div>
-              <div class="col-6">
-                <p class="text-center">200 - 999 pieces</p>
-                <p class="text-center fw-bold" style="color:orangered;">$8.50</p>
-              </div>
-            </div><hr/>
-            <div class="row">
-              <div class="col-6">
-                <p class="text-center">1000 - 4999 pieces</p>
-                <p class="text-center fw-bold" style="color:orangered;">$7.90</p>
-              </div>
-              <div class="col-6">
-                <p class="text-center">>= 5000 pieces</p>
-                <p class="text-center fw-bold" style="color:orangered;">$6.90</p>
-              </div>
+          <div class=" w-100 d-flex  me-0">
+            <div class="col-12 text-start d-flex align-items-center justify-content-between">
+              <span class="me-2 text-dark fw-bold fs-2">₹ {{ product.price }}</span>
+              <!-- <del class="text-secondary fs-5">₹ 1899</del> -->
+              <!-- <span class="badge bg-danger ms-2">61%</span> -->
+              <!-- <kbd>56%</kbd> -->
+              <p class="fw-bold m-0">Wholesale Price @ {{ product.moq }}pcs MOQ</p>
             </div>
           </div>
+          <p class="fw-light mb-0">(inclusive of all taxes)</p>
 
-          <!-- <div class="table-responsive mt-4">
-            <table class="table table-bordered">
-              <thead>
-                <tr>
-                  <th scope="col">Total Amt.</th>
-                  <th scope="col">₹68,400</th>
-                  <th scope="col">₹68,400</th>
-                  <th scope="col">-----</th>
-                  <th scope="col">-----</th>
-                  <th scope="col">-----</th>
-                  <th scope="col">-----</th>
-                  <th scope="col">-----</th>
-                </tr>
-                <tr>
-                  <th scope="col">Total Qty</th>
-                  <th scope="col">-</th>
-                  <th scope="col"> <p class="text-center">139</p> </th>
-                  <th scope="col">-</th>
-                  <th scope="col">-</th>
-                  <th scope="col">-</th>
-                  <th scope="col">-</th>
-                  <th scope="col">11</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">Size</th>
-                  <td>
-                    <p class="text-center mb-0">XS</p>
-                    <p class="mt-1 text-center " style="font-size: 12px">₹456</p>
-                  </td>
-                  <td>
-                    <p class="text-center mb-0">S</p>
-                    <p class="mt-1 text-center" style="font-size: 12px">₹456</p>
-                  </td>
-                  <td>
-                    <p class="text-center mb-0">M</p>
-                    <p class="mt-1 text-center" style="font-size: 12px">₹456</p>
-                  </td>
-                  <td>
-                    <p class="text-center mb-0">L</p>
-                    <p class="mt-1 text-center" style="font-size: 12px">₹456</p>
-                  </td>
-                  <td>
-                    <p class="text-center mb-0">XL</p>
-                    <p class="mt-1 text-center" style="font-size: 12px">₹456</p>
-                  </td>
-                  <td>
-                    <p class="text-center mb-0">XXL</p>
-                    <p class="mt-1 text-center" style="font-size: 12px">₹456</p>
-                  </td>
-                  <td>
-                    <p class="text-center mb-0">Free</p>
-                    <p class="mt-1 text-center" style="font-size: 12px">₹456</p>
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">Colors</th>
-                  <td>
-                    <button class="btn rounded-circle me-2"
-                      style="background-color: yellow; height:25px; width: 25px;"></button>
-                  </td>
-                  <td>
-                    <button class="btn rounded-circle me-2"
-                      style="background-color: black; height:25px; width: 25px;"></button>
-                  </td>
-                  <td>
-                    <button class="btn rounded-circle me-2"
-                      style="background-color: hotpink; height:25px; width: 25px;"></button>
-                  </td>
-                  <td>
-                    <button class="btn rounded-circle me-2"
-                      style="background-color: cyan; height:25px; width: 25px;"></button>
-                  </td>
-                  <td>
-                    <button class="btn rounded-circle me-2"
-                      style="background-color: orangered; height:25px; width: 25px;"></button>
-                  </td>
-                  <td>
-                    <button class="btn rounded-circle me-2"
-                      style="background-color: brown; height:25px; width: 25px;"></button>
-                  </td>
-                  <td>
-                    <button class="btn rounded-circle me-2"
-                      style="background-color: blue; height:25px; width: 25px;"></button>
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">Qty</th>
-                  <td>
-                    <input type="text" id="quantity" name="quantity" class="form-control input-number w-25" value="1"
-                      min="1" max="100" style="width: 100% !important" />
-                  </td>
-                  <td>
-                    <input type="text" id="quantity" name="quantity" class="form-control input-number w-25" value="1"
-                      min="1" max="100" style="width: 100% !important" />
-                  </td>
-                  <td>
-                    <input type="text" id="quantity" name="quantity" class="form-control input-number w-25" value="1"
-                      min="1" max="100" style="width: 100% !important" />
-                  </td>
-                  <td>
-                    <input type="text" id="quantity" name="quantity" class="form-control input-number w-25" value="1"
-                      min="1" max="100" style="width: 100% !important" />
-                  </td>
-                  <td>
-                    <input type="text" id="quantity" name="quantity" class="form-control input-number w-25" value="1"
-                      min="1" max="100" style="width: 100% !important" />
-                  </td>
-                  <td>
-                    <input type="text" id="quantity" name="quantity" class="form-control input-number w-25" value="1"
-                      min="1" max="100" style="width: 100% !important" />
-                  </td>
-                  <td>
-                    <input type="text" id="quantity" name="quantity" class="form-control input-number w-25" value="1"
-                      min="1" max="100" style="width: 100% !important" />
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div> -->
-
-          <!-- Vertical Table -->
-          <div class="d-flex align-items-start">
-            <table class="table table-responsive">
-              <thead>
-                <tr>
-                  <td class="text-center small fw-bold">Amt</td>
-                  <td class="text-center small fw-bold">Pcs</td>
-                  <td class="text-center small fw-bold">Sizes</td>
-                </tr>
-              </thead>
-              <tbody>
-                <tr v-for="(piece, index) in pieces" :key="index" @click="showColorOptions(piece)" :class="piece.id == selectedPiece.id ? 'table-primary' : ''">
-                  <td class="text-center">{{ piece.sub_total ? piece.sub_total : '-' }}</td>
-                  <td class="text-center">{{ piece.quantity ? piece.quantity : '-' }}</td>
-                  <td class="text-center">{{ piece.size }}</td>
-                </tr>
-              </tbody>
-            </table>
-            <table class="table table-responsive">
-              <thead>
-                <tr>
-                  <td class="text-center small fw-bold">Color</td>
-                  <td class="text-center small fw-bold">Rate</td>
-                  <td class="text-center small fw-bold">Qty</td>
-                </tr>
-              </thead>
-              <tbody>
-                <tr class="table-primary align-items-center" v-for="(color, index) in selectedPiece.colors" :key="index">
-                  <td style="width: 30px">
-                    <div class="rounded" :style="'height: 25px; background-color:' + color.bg"></div>
-                  </td>
-                  <td class="text-center px-0"><i class="bi bi-currency-rupee"></i>{{ color.price }}</td>
-                  <td class="text-center">
-                    <input style="height: 25px" class="form-control form-control-sm" type="number" v-model="quantity[selectedPiece.id + 'x' + color.id]" v-on:input="markColorSelected(color)" >
-                  </td>
-                </tr>
-                <tr>
-                  <td class="p-0 rounded-0" colspan="3">
-                    <button class="btn btn-sm bg-primary text-white w-100" @click="update_number()">Update</button>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+          <div class="mb-3 mt-3">
+            <h5 class="mb-4">Available Sizes</h5>
+            <button v-for="(size, index) in product.sizes" :key="index" class="btn btn-outline-dark btn-sm rounded me-4">
+              {{ size.name }}</button>
           </div>
 
-          
-          <!-- <input type="number" name="number1" v-on:input= "update_number1">
-            <p>{{ number1 }}</p>
-            <input type="number" name="number2" v-on:input= "update_number2">
-            <p>{{ number2 }}</p>
+          <div class="mb-3">
+            <h5 class="mb-4">Available Colors</h5>
+            <button v-for="(color, index) in product.colors" :key="index" class="btn rounded-circle me-4"
+              :style="'height: 25px; width: 25px; background-color:' + color.name"></button>
+          </div>
 
-            <hr>
-            <p>{{ result() }}</p> -->
-
-
-<!-- counter code starts -->
-          <!-- <p>You have clicked {{ counter }} times.</p>
-          <button @click="incrementCount">Click Me</button>
-          <button @click="() => counter = 0">Reset Count</button>
-          <button @click="incrementCount1">Click Me</button>
-          <p>You have clicked {{ count }} times.</p>
-          <button @click="() => count = 0">Reset Count</button> -->
-<!-- counter code ends -->
-
-          <div class="border border-1 d-flex mb-4">
-            <div class="col-6">
-              <h6 class="text-center fw-bold">Total Qantity</h6>
-              <p class="text-center fs-4 fw-bold">150</p>
+          <div class="d-flex flex-column text-start mb-3">
+            <p class="text-center d-flex fw-bold">
+              Select Qty
+            </p>
+            <div class="quantity-toggle d-flex align-items-center justify-content-start">
+              <button @click="decrement" class="btn btn-light btn-sm border border-1">
+                <i class="bi bi-dash"></i>
+              </button>
+              <!-- <div class="fw-bold px-2">{{ quantity }}</div> -->
+              <input type="number" class="fw-bold form-control-sm px-2" v-model="quantity" style="width: 20%;" />
+              <button @click="increment" class="btn btn-light btn-sm border border-1">
+                <i class="bi bi-plus"></i>
+              </button>
             </div>
-            <div class="col-6">
-              <h6 class="text-center fw-bold">Total Price</h6>
-              <p class="text-center fs-4 fw-bold">₹68,400</p>
-            </div>
+            <p class="fw-bold mt-3"> Total Amount :- ₹ {{ quantity * product.price }}</p>
           </div>
-          <div class="border border-1">
-            <p class="text-center">Minimum Order Quantity (MOQ)</p>
-            <p class="text-center">10 pcs (You can Pick Any Color, Any Size) </p>
+          <div class="mb-3">
+            <h5 class="mb-4">MOQ - {{ product.moq }} pcs</h5>
+            <p class="m-0 fw-light">(You will get all trending Colors & Sizes)</p>
           </div>
-          
+
+          <p class="mb-3"><a href="#" class="text-start text-dark fs-4">Services & Policies</a></p>
+          <div class="">
+            <button class="btn text-dark bg-white border border-1 mt-2 mb-2 w-100 text-start">Payment Mode:- Cash Payment
+              Only</button>
+            <button class="btn text-dark bg-white border border-1 mt-2 mb-2 w-100 text-start">Delivery Mode:- Pickup
+              Services Only</button>
+            <button class="btn text-dark bg-white border border-1 mt-2 mb-2 w-100 text-start">Exchange Policy:-
+              Unavailable Services</button>
+            <button class="btn text-dark bg-white border border-1 mt-2 mb-2 w-100 text-start">Return Policy:- Unavailable
+              Services</button>
+          </div>
 
           <div class="border border-1 mt-4" style="border-style:dashed !important;border: 1px solid;">
             <p class="text-center ms-2 fs-6">Couldn't find your size?</p>
             <a href="" class="text-end fw-bold" style="color: black">
-            <p class="text-center fs-6 ms-2">Request your size here</p>
-          </a>
-          </div>
-          <div class="d-flex"></div>
-          <div class="d-flex mt-4 justify-content-center">
-            <i class="bi bi-truck me-2 fs-6"></i>
-            <p class="text-center fw-bold">Estimate Delivery</p>
-          </div>
-          <div class="d-flex justify-content-center">
-            <p class="text-start me-2">Shipping |</p>
-            <p class="text-start me-2">Discreet packaging |</p>
-            <p class="text-start">Return Policy</p>
-          </div>
-          <div class="d-flex justify-content-center">
-            <input type="text" class="form-control input-number w-25" placeholder="Enter Your Pincode" required
-              style="width: 50% !important" />
-            <button class="btn btn-primary">Check</button>
-          </div>
-
-          <p class="text-center mt-4 fw-bold">Product Feature</p>
-          <div class="text-center">
-            <a href="" class="me-2" style="text-decoration: none; font-size: 10px; color: hotpink">FULL COVERAGE BRAS
-              |</a>
-            <a href="" class="me-2" style="text-decoration: none; font-size: 10px; color: hotpink">NON WIRE BRAS |</a>
-            <a href="" class="me-2" style="text-decoration: none; font-size: 10px; color: hotpink">PADDED BRAS |</a>
-            <a href="" class="me-2" style="text-decoration: none; font-size: 10px; color: hotpink">POLYAMIDE BRAS |</a>
-            <a href="" class="me-2" style="text-decoration: none; font-size: 10px; color: hotpink">RACERBACK BRAS |</a>
-            <a href="" class="me-2" style="text-decoration: none; font-size: 10px; color: hotpink">SOLID BRAS |</a>
-            <a href="" class="me-2" style="text-decoration: none; font-size: 10px; color: hotpink">SPANDEX |</a>
-            <a href="" style="text-decoration: none; font-size: 10px; color: hotpink">SPANDEX BRASSPORTS BRAS |</a>
-            <a href="" style="text-decoration: none; font-size: 10px; color: hotpink">SPORTS BRAS</a>
-          </div>
-
-          <div class="d-flex flex-column border border-2 mt-4 align-items-center">
-            <span class="d-flex"><img src="https://image.clovia.com/media/images/iconSmall/SR-2-.png" alt="" /></span>
-            <p class="text-start ms-3" style="font-size: 12px">
-              Full coverage cups for no top & side spillage.
-            </p>
-            <a href="" class="text-uppercase text-start ms-4 fw-normal" style="color: black; font-size: 12px">view similar
-              products</a>
-          </div>
-          <ProductDesc></ProductDesc>
-          <div class="d-flex justify-content-around mt-4 mb-4" style="gap:20px">
-            <button type="button" class="btn btn-success" disabled>
-              <i class="bi bi-cash-stack"></i> 
-              <p class="mb-0 mt-0" style="font-size: 12px;">Cod Available</p> 
-            </button>
-            <button type="button" class="btn btn-success" disabled>
-              <i class="bi bi-arrow-repeat"></i> 
-              <p class="mb-0 mt-0" style="font-size: 12px;">15 days returns</p> 
-            </button>
-            <button type="button" class="btn btn-success" disabled>
-              <i class="bi bi-truck"></i>
-              <p class="mb-0 mt-0" style="font-size: 12px;">Free shipping</p>  
-            </button>
-          </div>
-          <div class="border border-1">
-            <p class="text-start m-4">
-              Unsure of your bra size? Find your perfect fit and we handpick the
-              most suitable bra styles crafted to flatter your curves in just 30
-              seconds!
-            </p>
-            <a href="" style="text-decoration: none">
-              <p class="text-start ms-4 fw-bold" style="color: hotpink; font-size: 14px">
-                Take the CloviaCurve <sup>TM</sup> Fit Test>>
-              </p>
+              <p class="text-center fs-6 ms-2">Request your size here</p>
             </a>
           </div>
         </div>
       </div>
-      <div class="col-12">
-        <FeaturedCollections />
-        <LastView />
+    </div>
+  </div>
+
+  <div class="w-100 d-flex align-items-center position-fixed bg-white" style="height: 11%; z-index: 2; bottom: 0;">
+    <div class="d-flex justify-content-around" style="width: 30%;">
+      <div class="items">
+        <routerLink to="/" class="text-dark text-decoration-none">
+          <div class="inner-items">
+            <i class="bi bi-house-fill fs-3"></i>
+          </div>
+        </routerLink>
+      </div>
+      <div class="items">
+        <router-link to="" class="text-dark text-decoration-none">
+          <div class="inner-items">
+            <button class="btn bg-outline-dark p-0" @click="favs(product.id)">
+              <i class="bi bi-heart fs-3"></i>
+            </button>
+          </div>
+        </router-link>
       </div>
     </div>
+    <div class="me-3" style="width: 70%;">
+      <div class="items">
+        <button @click="addToCart" class="btn w-100 d-flex justify-content-center align-items-center text-center"
+          style="background-color: #eca1a6;">
+          <i class="bi bi-bag-fill fs-3"></i>
+          <p class="text-center m-0 ms-2">Add to cart</p>
+        </button>
+      </div>
+    </div>
+
   </div>
 </template>
 
 <script>
-import ProductRating from "../components/ProductRating.vue";
-import ProductDesc from "@/components/ProductDesc.vue";
-import FeaturedCollections from "@/components/FeaturedCollections.vue";
-import LastView from "../components/LastView.vue";
+import router from '../router';
 export default {
   name: "ProductPage",
+  // props: ['piece'],
   data() {
     return {
       images: [
@@ -355,86 +130,72 @@ export default {
         "https://image.clovia.com/media/clovia-images/images/400x600/clovia-picture-brs046p03-313252.jpg",
         "https://image.clovia.com/media/clovia-images/images/400x600/clovia-picture-brs046p03-159363.jpg",
         "https://image.clovia.com/media/clovia-images/images/400x600/clovia-picture-brs046p03-910477.jpg",
+        "https://image.clovia.com/media/clovia-images/images/400x600/clovia-picture-brs046p03-606879.jpg",
+        "https://image.clovia.com/media/clovia-images/images/400x600/clovia-picture-padded-non-wired-full-cup-longline-bralette-in-black-250267.jpg",
       ],
-      quantity: {},
       selectedImage: {},
-      selectedPiece: {},
-      selectedColor: {},
-      counter: 0,
-      count:0,
-      number1: 0,
-        number2: 0,
-    } 
-  },
-  computed:{
-    colors(){
-      return this.$store.getters.getColors;
-    },
-    pieces(){
-      return this.$store.getters.getpieces;
+      quantity: 0,
     }
   },
   mounted() {
     this.selectedImage = this.images[0];
-    this.selectedPiece = this.pieces[0];
-    this.selectedColor = this.selectedPiece.colors[0];
+  },
+  computed: {
+    product() {
+      let product = this.$store.getters.getActiveProduct;
+      if (!Object.keys(product).length) {
+        router.push('/CardCatelog')
+      }
+      return product;
+    },
+    products() {
+      return this.$store.state.getProducts;
+    }
   },
   methods: {
-    showColorOptions(piece){
-      this.selectedPiece = piece
-    },
-    markColorSelected(color){
-      this.selectedColor = color;
-    },
     selectImage(image) {
       this.selectedImage = image;
     },
-    incrementCount(){
-      this.counter++;
+    increment() {
+      this.quantity = parseInt(this.quantity) + parseInt(this.product.moq);
     },
-   incrementCount1(){
-    this.count--;
-   },
-   update_number: function () {
-      this.$store.dispatch('updateQuantity', {
-        piece: this.selectedPiece.id,
-        color: this.selectedColor.id,
-        quantity: this.quantity,
+    decrement() {
+      if (this.quantity > this.product.moq) {
+        this.quantity = this.quantity - this.product.moq;
+      }
+    },
+    addToCart() {
+      this.$store.dispatch('addToCart', {
+        product: this.product,
+        quantity: this.quantity
+      });
+    },
+    favs(id) {
+      this.$store.commit("addToFav", id)
+      this.$router.push({
+        path: '/SavedProduct'
       })
-   },
-   update_number1: function (event) {
-          this.number1 = event.target.value;
-        },
-        update_number2: function (event) {
-          this.number2 = event.target.value;
-        },
-        result: function () {
-          return parseInt(this.number1) * 456;
-},
-  },
-  components: {
-    ProductRating,
-    ProductDesc,
-    FeaturedCollections,
-    LastView
+    }
   }
 };
 </script>
 
 
 <style scoped>
-
 @media (max-width:999px) {
-  .prod-img{
+  .prod-img {
     display: flex;
     flex-direction: column-reverse;
   }
-  .prod-thumb{
+
+  .prod-thumb {
     flex-direction: row !important;
     gap: 1rem;
-    margin: 1rem 2rem 0 2rem;
+    margin: 1rem 2rem 1rem 2rem;
+    overflow: scroll;
   }
-  .main-img{
+
+  .main-img {
     width: 100%;
     padding-right: 12px !important;
     margin-right: 0.5rem !important;
