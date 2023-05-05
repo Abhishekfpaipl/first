@@ -4,12 +4,16 @@
                         src="https://images.meesho.com/images/marketing/1591969621244_64.webp" alt=""
                         style="height: 24px; width: 24px;">
                     <p class="m-0">{{product.name}}</p>
+                    <p>kjkdlashdklhasidkb</p>
+                    <p>kjkdlashdklhasidkb</p>
+                    <p>kjkdlashdklhasidkb</p>
+                    <p>kjkdlashdklhasidkb</p>
                 </a>
     </div>
 </template>
 <script>
 export default {
-   name:'AaaTest',
+    name: 'AaaTest',
     props: ['product']
 }
 </script>
