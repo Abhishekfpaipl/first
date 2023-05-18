@@ -1,7 +1,7 @@
 <template>
     <div class="" style="padding-bottom:100px">       
         <div v-for="(Prodamt, index) in Prodamts" :key="index" class="container p-0 border border-1 mt-4 mb-4" >
-            <div class="row mt-2 mb-2">
+            <div class="row  mb-2">
                 <div class="col-4">
                     <!-- <div class="card">
                         <img :src="`${publicPath}${Prodamt.imgdp}`" />
@@ -23,7 +23,7 @@
                     </div>
 
                 </div>
-                <div class="col-6">
+                <div class="col-6 mt-1">
                     <p class="text-start" style="font-size: 12px">
                         01-08-23636| Crochet Skirt Two-Piece Outfits pack of 2
                     </p>

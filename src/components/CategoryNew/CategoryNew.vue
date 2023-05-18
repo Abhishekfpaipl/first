@@ -434,18 +434,17 @@
     </div> -->
 
 
-    <div class="w-100 position-relative">
-        <button class="btn " @click="ss">btn</button>
-        <div class="w-25 position-fixed" style="height:75%; overflow-y:scroll">
+    <div class="w-100 d-flex position-relative" style="height:80%; ">
+        <!-- <button class="btn " @click="ss">btn</button> -->
+        <div class="w-25 position-fixed " style="height:100vh; overflow-y:scroll; padding-bottom:150px;">
             <div id="list-example" class="list-group text-center">
 
-                <AaaTest v-for="(product, index) in products" :key="index" :product="product"></AaaTest>
+                <AaaTest v-for="(category, index) in categories" :key="index" :category="category" ></AaaTest>
             </div>
         </div>
-        <div class="w-75 position-absolute" style="right:0px">
-            <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-smooth-scroll="true" class="scrollspy-example"
-                tabindex="0">
-                <HhhTest v-for="(product, index) in products" :key="index" :product="product"></HhhTest>
+        <div class="w-75 position-absolute" style="right:0px;padding-bottom:150px; ">
+            <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-smooth-scroll="true" class="scrollspy-example" tabindex="0">
+                <HhhTest  v-for="(category, index) in categories" :key="index" :category="category"></HhhTest>
             </div>
         </div>
 
@@ -458,91 +457,45 @@ import HhhTest from '../HhhTest.vue'
 import AaaTest from '../AaaTest.vue'
 export default {
     name: 'CategoryNew',
+    data() {
+        return {
+            publicPath: process.env.BASE_URL
+        }
+    },
     components: {
         HhhTest,
         AaaTest
     },
-    data() {
-        return {
-            products: [
-                {
-                    id: 1,
-                    name: 'Aplha',
-                    value: 'meter'
-                },
-                {
-                    id: 2,
-                    name: 'Aplha',
-                    value: 'meter'
-                },
-                {
-                    id: 3,
-                    name: 'Aplha',
-                    value: 'meter'
-                },
-                {
-                    id: 4,
-                    name: 'Aplha',
-                    value: 'meter'
-                },
-                {
-                    id: 5,
-                    name: 'Aplha',
-                    value: 'meter'
-                },
-                {
-                    id: 6,
-                    name: 'Aplha',
-                    value: 'meter'
-                },
-                {
-                    id: 7,
-                    name: 'Aplha',
-                    value: 'meter'
-                },
-                {
-                    id: 8,
-                    name: 'Aplha',
-                    value: 'meter'
-                },
-                {
-                    id: 9,
-                    name: 'Aplha',
-                    value: 'meter'
-                },
-                {
-                    id: 10,
-                    name: 'Aplha',
-                    value: 'meter'
-                },
-            ]
+    computed:{
+        categories(){
+            return this.$store.getters.getCategories;
         }
     },
-
+    
     mounted() {
         const dataSpyList = document.querySelectorAll('[data-bs-spy="scroll"]')
         dataSpyList.forEach(dataSpyEl => {
-            // dataSpyEl.forEach(sample => {
-            console.log(dataSpyEl);
-        // })
-        var children = dataSpyEl.children;
-        for(var i=0; i<children.length; i++){
-            var child = children[i];
-            // child.style.color = "red";
-            console.log(child.id);
-            if (child.id === 7) {
-                this.ss()
+                // dataSpyEl.forEach(sample => {
+                console.log(dataSpyEl);
+            // })
+            var children = dataSpyEl.children;
+            for(var i=0; i<children.length; i++){
+                var child = children[i];
+                // child.style.color = "red";
+                console.log(child.id);
+                if (child.id === 7) {
+                    this.ss()
+                }
             }
-        }
         })
     },
-    methods: {
-        ss(){
-            console.log('hh');
-            let m = document.getElementById('product6').scrollIntoView();
-            console.log(m);
-        }
+methods: {
+    ss(){
+        console.log('hh');
+        let m = document.getElementById('product6').scrollIntoView();
+        console.log(m);
     }
+}
 
 }
 </script>

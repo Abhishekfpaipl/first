@@ -2,7 +2,7 @@
   <h3 class="text-start m-4">Similar Products</h3>
   <div class="d-flex m-4 overflow-auto  ">
     <div class="card me-2 borber-0" style="min-width:50%">
-      <RouterLink to="/ProductPage">
+      <RouterLink to="/ProductPage/1">
       <img
         src="https://image.clovia.com/media/clovia-images/images/400x600/clovia-picture-padded-non-wired-full-cup-longline-bralette-in-black-878341.jpg"
         class="card-img-top"

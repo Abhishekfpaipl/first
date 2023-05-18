@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="d-flex gap-4">
       <div class="tab-navigation">
         <div :id="'tab' + index" v-for="(tab, index) in tabs" :key="index" 
              :class="{'active': activeTab === index}" 

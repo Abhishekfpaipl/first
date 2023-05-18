@@ -1,8 +1,8 @@
 
 <template>
-  <div class="main-container">
-    <top-nav></top-nav>
-    <router-view />
+  <top-nav class="position-fixed bg-white" style="top:0px; z-index:10"></top-nav>
+  <div class="main-container" style="margin-top:80px">
+    <router-view/>
     <bottom-nav></bottom-nav>
   </div>
 </template>

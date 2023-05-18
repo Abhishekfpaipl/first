@@ -1,0 +1,20 @@
+<template>
+    <div>
+        <div class="nav nav-tabs py-2 d-flex justify-content-between px-2" style="font-size: 12px; font-weight: 500;" id="nav-tab" role="tablist">
+            <router-link class="text-decoration-none text-dark nav-link" to="/OrdinaryOrderNew" :class="active === 'New' ? 'active' : ''">New</router-link>
+            <router-link class="text-decoration-none text-dark nav-link" to="/OrdinaryOrderStatus" :class="active === 'Status' ? 'active' : ''">Status</router-link>
+            <router-link class="text-decoration-none text-dark nav-link" to="/OrdinaryOrderAction" :class="active === 'Action' ? 'active' : ''">Action</router-link>
+            <router-link class="text-decoration-none text-dark nav-link" to="/OrdinaryOrderComing" :class="active === 'Coming' ? 'active' : ''">Coming</router-link>
+            <router-link class="text-decoration-none text-dark nav-link" to="/OrdinaryOrderReceived" :class="active === 'Received' ? 'active' : ''">Received</router-link>
+        </div>
+    </div>
+</template>
+<script>
+export default {
+    name:'OrdinaryLink',
+    props:['active']
+}
+</script>
+<style lang="">
+    
+</style>

@@ -1,8 +1,8 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import ProductPage from "../views/ProductPage.vue";
-import ProductRating from "../components/ProductRating.vue";
-import OfferBar from "../components/OfferBar.vue";
+// import ProductRating from "../components/ProductRating.vue";
+// import OfferBar from "../components/OfferBar.vue";
 import FeaturedCollections from "../components/FeaturedCollections.vue";
 import LastView from "@/components/LastView.vue";
 import CollectionPage from "../components/Collection/CollectionPage.vue";
@@ -19,11 +19,25 @@ import SavedProduct from "@/components/SavedProducts/SavedProduct.vue";
 import ProductTest from "../views/ProductTest.vue";
 import FavProduct from "@/components/FavProduct.vue";
 import CategoryNew from "@/components/CategoryNew/CategoryNew.vue";
-import ScrollTest from '../components/ScrollTest.vue'
+import ScrollTest from '../components/ScrollTest.vue';
+import ChatG from '../components/ChatG.vue';
+import ContactUs from "../views/ContactUs.vue";
+import ChangeIcon from "../views/ChangeIcon.vue";
+import TableTest from '../components/TableTest.vue'
+import PremiumOrderNew from '../components/Orders/PremiumOrder/PremiumOrderNew.vue';
+import PremiumOrderStatus from '../components/Orders/PremiumOrder/PremiumOrderStatus.vue';
+import PremiumOrderAction from '../components/Orders/PremiumOrder/PremiumOrderAction.vue';
+import PremiumOrderComing from '../components/Orders/PremiumOrder/PremiumOrderComing.vue';
+import PremiumOrderReceived from '../components/Orders/PremiumOrder/PremiumOrderReceived.vue';
+import OrdinaryOrderNew from '../components/Orders/OrdinaryOrder/OrdinaryOrderNew.vue';
+import OrdinaryOrderStatus from '../components/Orders/OrdinaryOrder/OrdinaryOrderStatus.vue';
+import OrdinaryOrderAction from '../components/Orders/OrdinaryOrder/OrdinaryOrderAction.vue';
+import OrdinaryOrderComing from '../components/Orders/OrdinaryOrder/OrdinaryOrderComing.vue';
+import OrdinaryOrderReceived from '../components/Orders/OrdinaryOrder/OrdinaryOrderReceived.vue';
 const routes = [
   {
     path: "/",
-    name: "home",
+    name: "HomeView",
     component: HomeView,
   },
   {
@@ -37,20 +51,30 @@ const routes = [
     component: () => import("../views/AboutView.vue"),
   },
   {
-    path: "/ProductPage",
+    path: "/ProductPage/:productId",
     name: "ProductPage",
     component: ProductPage,
   },
   {
-    path: "/ProductRating",
-    name: "ProductRating",
-    component: ProductRating,
+    path: "/CardCatelog",
+    name: "CardCatelog",
+    component: CardCatelog,
   },
   {
-    path: "/OfferBar",
-    name: "OfferBar",
-    component: OfferBar,
+    path: "/TableTest",
+    name: "TableTest",
+    component: TableTest,
   },
+  // {
+  //   path: "/ProductRating",
+  //   name: "ProductRating",
+  //   component: ProductRating,
+  // },
+  // {
+  //   path: "/OfferBar",
+  //   name: "OfferBar",
+  //   component: OfferBar,
+  // },
   {
     path: "/FeaturedCollections",
     name: "FeaturedCollections",
@@ -102,11 +126,6 @@ const routes = [
     component: T1Select,
   },
   {
-    path: "/CardCatelog",
-    name: "CardCatelog",
-    component: CardCatelog,
-  },
-  {
     path: "/CardColors",
     name: "CardColors",
     component: CardColors,
@@ -136,6 +155,74 @@ const routes = [
     name: "ScrollTest",
     component: ScrollTest,
   },
+  {
+    path: "/ChatG",
+    name: "ChatG",
+    component: ChatG,
+  },
+  {
+    path: "/ContactUs",
+    name: "ContactUs",
+    component: ContactUs,
+  },
+  {
+    path: "/ChangeIcon",
+    name: "ChangeIcon",
+    component: ChangeIcon,
+  },
+  {
+    path: "/PremiumOrderNew",
+    name: "PremiumOrderNew",
+    component: PremiumOrderNew,
+  },
+  {
+    path: "/PremiumOrderStatus",
+    name: "PremiumOrderStatus",
+    component: PremiumOrderStatus,
+  },
+  {
+    path: "/PremiumOrderAction",
+    name: "PremiumOrderAction",
+    component: PremiumOrderAction,
+  },
+  {
+    path: "/PremiumOrderComing",
+    name: "PremiumOrderComing",
+    component: PremiumOrderComing,
+  },
+  {
+    path: "/PremiumOrderReceived",
+    name: "PremiumOrderReceived",
+    component: PremiumOrderReceived,
+  },
+  
+  {
+    path: "/OrdinaryOrderNew",
+    name: "OrdinaryOrderNew",
+    component: OrdinaryOrderNew,
+  },
+  {
+    path: "/OrdinaryOrderStatus",
+    name: "OrdinaryOrderStatus",
+    component: OrdinaryOrderStatus,
+  },
+  {
+    path: "/OrdinaryOrderAction",
+    name: "OrdinaryOrderAction",
+    component: OrdinaryOrderAction,
+  },
+  {
+    path: "/OrdinaryOrderComing",
+    name: "OrdinaryOrderComing",
+    component: OrdinaryOrderComing,
+  },
+  {
+    path: "/OrdinaryOrderReceived",
+    name: "OrdinaryOrderReceived",
+    component: OrdinaryOrderReceived,
+  },
+  
+
 ];
 
 const router = createRouter({
