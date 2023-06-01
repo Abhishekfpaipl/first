@@ -3,22 +3,9 @@
         <div v-for="(Prodamt, index) in Prodamts" :key="index" class="container p-0 border border-1 mt-4 mb-4">
             <div class="row  mb-2">
                 <div class="col-4">
-                    <!-- <div class="card">
-                        <img :src="`${publicPath}${Prodamt.imgdp}`" />
-                        <div class="card-img-overlay p-0">
-                            <h5 class="card-title">
-                                <i class="bi bi-check2-square card-title"></i>
-                            </h5>
-                        </div>
-                    </div> -->
                     <div class="row">
                         <div class="col-md-3">
                             <img :src="`${publicPath}${Prodamt.imgdp}`" alt="#" class="img-fluid">
-                            <!-- <div class="custom-control custom-radio image-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="ck1a" style="position: absolute;">
-                                <label class="custom-control-label" for="ck2a">
-                                </label>
-                            </div> -->
                         </div>
                     </div>
 
@@ -41,8 +28,6 @@
                     </div>
                 </div>
                 <div class="col-2 text-end">
-
-
                     <div class="dropdown">
                         <button class="bg-white border-0 dropdown-toggle text-start" type="button" id="dropdownMenuButton1"
                             data-bs-toggle="dropdown" aria-expanded="false">
@@ -54,31 +39,11 @@
                             <li><a class="dropdown-item text-success" href="#">Something else here</a></li>
                         </ul>
                     </div>
-
-
                 </div>
             </div>
             <div class="bottom ">
                 <div class="accordion accordion-flush" :id="'accordionFlushExample' + index">
                 </div>
-                <!-- <div class="accordion-item">
-                    <h2 class="accordion-header" id="flush-headingOne">
-                        <button class="accordion-button collapsed border border-1"
-                            style="color: black; background-color: white; box-shadow: none" type="button"
-                            data-bs-toggle="collapse" :data-bs-target="'#flush-collapseOne' + index" aria-expanded="false"
-                            aria-controls="flush-collapseOne">
-                            Change
-                        </button>
-                    </h2>
-                    <div :id="'flush-collapseOne' + index" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
-                        :data-bs-parent="'#accordionFlushExample' + index">
-                        <div class="accordion-body" style="padding:1rem 0.25rem !important">             
-                        <TestRoute></TestRoute> 
-                        <OrdinaryTable></OrdinaryTable>
-                        </div>
-                    </div>
-                </div> -->
-
                 <div class="accordion accordion-flush" id="accordionFlushExample">
                     <div class="accordion-item">
                         <h2 class="accordion-header">
@@ -136,7 +101,34 @@
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <th scope="row" style="font-size:14px">Mix of 5 Colors</th>
+                                                <th scope="row" style="font-size:14px">
+                                                    <div class="rounded-circle m-2 px-1 align-items-center justify-content-center d-flex"
+                                                        style="width: 30px; height: 30px;background-color:black"></div>
+                                                </th>
+                                                <td class="text-center">
+                                                    <p class="mt-3">10</p>
+                                                </td>
+                                                <td class="text-center">
+                                                    <p class="mt-3">20</p>
+                                                </td>
+                                                <td class="text-center">
+                                                    <p class="mt-3">30</p>
+                                                </td>
+                                                <td class="text-center">
+                                                    <p class="mt-3">40</p>
+                                                </td>
+                                                <td class="text-center">
+                                                    <p class="mt-3">50</p>
+                                                </td>
+                                                <td class="text-center">
+                                                    <p class="mt-3">60</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row" style="font-size:14px">
+                                                    <div class="rounded-circle m-2 px-1 align-items-center justify-content-center d-flex"
+                                                        style="width: 30px; height: 30px;background-color:red"></div>
+                                                </th>
                                                 <td class="text-center">
                                                     <p class="mt-3">10</p>
                                                 </td>
@@ -169,10 +161,14 @@
                                     </table>
 
                                 </div>
+
                                 <div class="container d-flex justify-content-between">
                                     <p class="">Grand Total</p>
                                     <p class="">₹9576</p>
                                 </div>
+
+
+                                <!-- <PremiumTable></PremiumTable> -->
                             </div>
                         </div>
                     </div>
@@ -184,9 +180,9 @@
     </div>
 </template>
 <script>
-// import OrdinaryTable from '../ProductTable/OrdinaryTable.vue';
+// import PremiumTable from '@/components/ProductTable/PremiumTable.vue';
 
-// import TestRoute from '@/views/TestRoute.vue';
+// import OrdinaryTable from '../ProductTable/OrdinaryTable.vue';
 export default {
     name: "TopCart",
 
@@ -196,7 +192,7 @@ export default {
         },
     },
     components: {
-        // OrdinaryTable
+        // PremiumTable
     },
     data() {
         return {
@@ -212,9 +208,7 @@ export default {
 
 .accordion-button:focus {
     z-index: 0 !important;
-    box-shadow: none !important;
 }
-
 
 .accordion-button:hover {
     z-index: 0 !important;

@@ -43,7 +43,7 @@
       </router-link>
       </div>
       <div class="items">
-        <router-link to="/OrderPage" :class="{'text-danger' : currentRoute ==='OrderPage' }" style="text-decoration:none;color:black;">
+        <router-link to="/OrdinaryOrderPending" :class="{'text-danger' : currentRoute ==='OrdinaryOrderPending' }" style="text-decoration:none;color:black;">
           <div class="inner-items py-1 d-flex flex-column">
             <!-- <i :class="['bi bi-archive fs-5', { 'active': isActive }]" @click="toggleIconColor"></i>
             <span style="font-size:12px" :style="textStyle">Orders</span> -->

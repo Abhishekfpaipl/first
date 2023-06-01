@@ -18,7 +18,6 @@
         <h1 class=" text-start mb-2 fs-5 py-1">
           {{ product.info }}
         </h1>
-
         <div class="">
           <div class=" w-100 d-flex  me-0">
             <div class="col-12 text-start d-flex align-items-center justify-content-between">
@@ -39,13 +38,20 @@
 
           <div class="mb-3 mt-3">
             <h5 class="mb-4">Available Sizes</h5>
-            <button v-for="(size, index) in product.sizes" :key="index" class="btn btn-outline-dark btn-sm rounded me-4">
-              {{ size.name }}</button>
+            <div class="d-flex">
+              <div v-for="(size, index) in product.sizes" :key="index" class="">
+                <input type="radio" class="btn-check" name="option" :id="'option' + size.id" autocomplete="off">
+                <label class="btn btn-outline-success m-2 rounded-0" :for="'option' + size.id">{{ size.name }}</label>
+              </div>
+            </div>
           </div>
 
-          <TableTest pieces="product"></TableTest>
+          <!-- <TableTest pieces="product"></TableTest> -->
+          <PremiumTable></PremiumTable>
 
-          <div class="mb-3">
+          <OrdinaryTable></OrdinaryTable>
+
+          <!-- <div class="mb-3">
             <h5 class="mb-4">Available Colors</h5>
             <button v-for="(color, index) in product.colors" :key="index" class="btn rounded-circle me-4"
               :style="'height: 25px; width: 25px; background-color:' + color.name"></button>
@@ -59,7 +65,6 @@
               <button @click="decrement" class="btn btn-light btn-sm border border-1">
                 <i class="bi bi-dash"></i>
               </button>
-              <!-- <div class="fw-bold px-2">{{ quantity }}</div> -->
               <input type="number" class="fw-bold form-control-sm px-2 text-center" v-model="quantity"
                 style="width: 20%;" />
               <button @click="increment" class="btn btn-light btn-sm border border-1">
@@ -67,8 +72,10 @@
               </button>
             </div>
             <p class="fw-bold mt-3"> Total Amount :- ₹ {{ quantity * product.price }}</p>
-          </div>
-          <div class="mb-3">
+          </div> -->
+
+
+          <div class="mb-3 mt-3">
             <h5 class="">MOQ - {{ product.moq }} pcs</h5>
             <p class="m-0 fw-light">(You will get all trending Colors & Sizes)</p>
           </div>
@@ -110,7 +117,9 @@
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                  <img src="https://cdn.shopify.com/s/files/1/0240/6641/files/Main_Sizing_Chart-_Women_s_d624cf9c-29ed-4068-b9a0-85a45332df2d_1024x1024.png?v=1672094464" alt="" style="width: 100%;">
+                  <img
+                    src="https://cdn.shopify.com/s/files/1/0240/6641/files/Main_Sizing_Chart-_Women_s_d624cf9c-29ed-4068-b9a0-85a45332df2d_1024x1024.png?v=1672094464"
+                    alt="" style="width: 100%;">
                   <!-- quas earum, libero dicta ex inventore mollitia? Beatae itaque quae dicta quod alias! Ut maiores nostrum
                   Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste asperiores dolor fuga ea accusantium,
                   mollitia soluta doloremque nulla provident atque veniam recusandae vero. Voluptate alias dolorem
@@ -161,8 +170,11 @@
 </template>
 
 <script>
+import OrdinaryTable from '@/components/ProductTable/OrdinaryTable.vue';
+import PremiumTable from '@/components/ProductTable/PremiumTable.vue';
+
 // import router from '../router';
-import TableTest from '@/components/TableTest.vue';
+// import TableTest from '@/components/TableTest.vue';
 export default {
   name: "ProductPage",
   // props: ['piece'],
@@ -173,8 +185,9 @@ export default {
     }
 
   },
-  components:{
-    TableTest
+  components: {
+    PremiumTable,
+    OrdinaryTable
   },
   mounted() {
     this.selectedImage = this.product.images[0];
@@ -245,4 +258,5 @@ export default {
     padding-right: 12px !important;
     margin-right: 0.5rem !important;
   }
-}</style>
+}
+</style>

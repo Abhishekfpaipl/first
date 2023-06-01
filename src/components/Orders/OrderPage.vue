@@ -37,19 +37,21 @@
         <router-link to="/PremiumOrderNew">
             <button class="btn btn-success">Premium Order</button>
         </router-link>
-        <router-link to="/OrdinaryOrderNew">
+        <router-link to="/OrdinaryOrderPending">
             <button class="btn btn-success">Ordinary Order</button>
         </router-link>
+
+       
     </div>
 </template>
 <script>
 // import OrderData from '../Cart/OrderData.vue';
 export default {
-    name:"OrderPage",
-    components:{
+    name: "OrderPage",
+    components: {
         // OrderData
     }
-   
+
 }
 </script>
 <style lang="">

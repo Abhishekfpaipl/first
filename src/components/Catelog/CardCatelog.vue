@@ -1,44 +1,54 @@
 <template>
-<div class="container" style="padding-bottom:80px">
-    <div class="row row-cols-2 row-cols-md-3 row-cols-xl-4 g-3">
-        <div class="col " v-for="(product, index) in products" :key="index">
-            <div class="card show-on-hover">
-                <router-link :to="'/ProductPage/' + product.id">
-                    <!-- <div @click="showProduct(product)" class="position-relative"> -->
+   <CatelogFilter></CatelogFilter>
+
+    <div class="container" style="padding-top:30px;padding-bottom:80px">
+        <div class="row row-cols-2 row-cols-md-3 row-cols-xl-4 g-3">
+            <div class="col " v-for="(product, index) in products" :key="index">
+                <div class="card show-on-hover">
+                    <router-link :to="'/ProductPage/' + product.id">
+                        <!-- <div @click="showProduct(product)" class="position-relative"> -->
                         <!-- <img src="../../../public/img/icons/cardimg.png" class="card-img-top" alt="" style="min-height:250px;"> -->
-                        <img :src="product.images[0]" class="card-img-top" alt=""
-                        style="min-height:100px;">
+                        <img :src="product.images[0]" class="card-img-top" alt="" style="min-height:100px;">
 
                         <!-- <img :src="`${publicPath}${product.image}`" class="card-img-top" alt=""
                         style="min-height:100px;height: 280px;object-fit: fill;"> -->
-                    <!-- </div> -->
-                </router-link>
-                <div @click="showProduct(product)" class=" position-absolute w-100 soh-div">
-                    <div class="d-flex justify-content-between align-items-start"
-                        style="max-height:200px; overflow-y:scroll;">
-                        <CardColors :colors="product.colors"></CardColors>
-                        <CardSize :sizes="product.sizes"></CardSize>
+                        <!-- </div> -->
+                    </router-link>
+                    <div @click="showProduct(product)" class=" position-absolute w-100 soh-div">
+                        <div class="d-flex justify-content-between align-items-start"
+                            style="max-height:200px; overflow-y:scroll;">
+                            <CardColors :colors="product.colors"></CardColors>
+                            <CardSize :sizes="product.sizes"></CardSize>
+                        </div>
                     </div>
-                </div>
-                <div @click="showProduct(product)" class="card-body px-1">
-                    <p class="text-center fs-5 mb-1 fw-bold"> {{ product.name }}</p>
-                    <p class="text-center m-0">{{ product.info }}</p>
-                </div>
-                <div class="card-footer p-0">
-                    <div class="btn-group w-100 rounded-bottom overflow-hidden" style="opacity: .85;">
-                        <button class="btn bg-outline-dark rounded-0">
-                            <i class="bi bi-heart"></i>
-                        </button>
-                        <button class="btn bg-outline-dark rounded-0">
-                            <i class="bi bi-cart-plus-fill"></i>
-                        </button>
+                    <div @click="showProduct(product)" class="card-body" style="padding:3px">
+                      
+                            <div class="d-flex justify-content-between">
+                                <p class="test text-start ms-1 m-0" style="font-size:10px"> {{ product.name }}</p>
+                                <p class="text-start m-0"  style="font-size:10px">{{ product.info }}</p>
+                            </div>
+                            <div class="d-flex justify-content-between mt-1 ms-1">
+                                <p class="m-0" style="font-size:16px;">₹{{ product.price }}</p>
+                                <p class="m-0" style="font-size:16px;">{{ product.moq }}pcs</p>
+                            
+                            </div>
+                        
+                    </div>
+                    <div class="card-footer p-0">
+                        <div class="btn-group w-100 rounded-bottom overflow-hidden" style="opacity: .85;">
+                            <button class="btn bg-outline-dark rounded-0">
+                                <i class="bi bi-heart"></i>
+                            </button>
+                            <button class="btn bg-outline-dark rounded-0">
+                                <i class="bi bi-cart-plus-fill"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-  <!--   <div class="d-flex position-relative" style="height: 80%; overflow-y: scroll;">
+    <!--   <div class="d-flex position-relative" style="height: 80%; overflow-y: scroll;">
         <div class="position-sticky" style="top: 0;">
             <div id="list-example" class="list-group" style="overflow-y: scroll; height: 100%;">
                 <a class="list-group-item list-group-item-action text-center" href="#list-item-1">
@@ -51,7 +61,7 @@
               
             </div>
         </div> -->
-        <!-- <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-offset="50" class="scrollspy-example" tabindex="0">
+    <!-- <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-offset="50" class="scrollspy-example" tabindex="0">
             <h4 id="list-item-1" class="text-center">Popular</h4>
             <h4 id="list-item-2" class="text-center mt-4">New</h4>
            <CollectionGrid></CollectionGrid> 
@@ -91,12 +101,12 @@
                 voluptate fuga eaque iste consectetur dignissimos consequatur recusandae corporis numquam?</p>
         </div> 
     </div>-->
-
 </template>
 <script>
 import CardColors from '../Catelog/CardColors.vue';
 import CardSize from '../Catelog/CardSize.vue';
 import router from '../../router';
+import CatelogFilter from './CatelogFilter.vue';
 // import CollectionGrid from '../Collection/CollectionGrid.vue';
 
 export default {
@@ -163,7 +173,7 @@ export default {
                     router.push('/ProductPage/' + product.id)
                 }
             )
-        }   
+        }
     },
     data() {
         return {
@@ -171,9 +181,12 @@ export default {
         }
     },
     components: {
-        CardColors,
-        CardSize,
-        // CollectionGrid
+    CardColors,
+    CardSize,
+    CatelogFilter
+},
+    mounted(){
+        // console.log(this.$router.params.categoryId)
     }
 }
 </script>
@@ -186,6 +199,19 @@ export default {
 .show-on-hover:hover .soh-div {
     /* display: block; */
     opacity: 1;
+}
+.test {
+float: left;
+font-family: Arial;
+/* background: #FAFA41; */
+margin: 5px 0;
+padding: 1%;
+width: 60%;
+overflow: hidden;
+text-overflow: ellipsis;
+white-space: nowrap;
+height: 17px;
+color: #505050;
 }
 </style>
 
