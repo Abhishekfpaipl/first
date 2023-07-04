@@ -1,12 +1,12 @@
 <template>
   <div class="mb-4">
-  <router-link to="/" style="color:hotpink;text-decoration: none;">
+  <!-- <router-link to="/" style="color:hotpink;text-decoration: none;">
     <h1 class="px-2 text-center">DeshiGirl</h1>  
-  </router-link>
+  </router-link> -->
   </div>
   <div>
     <div class="d-flex justify-content-center">
-      <progress :value="progress" max="100" class="" style="width: 80%;" >25</progress>
+      <progress :value="progress" max="100" class="bg-success" style="width: 80%;" >25</progress>
     </div>
     <slot></slot>
   </div>
