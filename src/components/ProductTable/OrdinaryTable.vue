@@ -2,30 +2,25 @@
     <div>
         <p class="m-0 fw-bold text-decoration-underline" style="font-size:16px;">Enter Desired quantity Of Available
             Varients</p>
-        <div class="table-responsive mt-4">
+        <div class="table-responsive mt-4"  id="scroll">
             <table class="table border border-1">
                 <thead>
                     <tr>
-                        <th scope="col">Enter Qty</th>
+                        <th scope="col"> Qty</th>
                         <th scope="col" v-for="(size, index) in product.sizes" :key="index">
                             <div class="fw-bold d-flex flex-column align-items-center" style="">
                                 <p class="m-0">{{ size.name }}</p>
-                                <p class="m-0">₹{{ size.price }}</p>
+                                <!-- <p class="m-0">₹{{ size.price }}</p> -->
                             </div>
                         </th>
                     </tr>
                 </thead>
                 <tbody>
-                    <!-- <tr v-for="(color, colorindex) in product.colors" :key="colorindex"> -->
-                    <!-- <td class="">
-                            <div class="rounded-circle m-2 px-1 align-items-center justify-content-center d-flex"
-                                style="width:30px; height: 30px;" :style="'background-color:' + color.name">
-                            </div>
-                        </td> -->
-                    <tr v-for="(ordcolor, colorindex) in product.ordcolors" :key="colorindex">
-                        <td class="">
-                            <th>Mix of {{product.colors.length }}</th>
-                            <!-- <div class="rounded-circle m-2 px-1 align-items-center justify-content-center d-flex"
+                    <tr v-show="colorindex === 0" v-for="(color, colorindex) in product.colors" :key="colorindex">
+                        <td>
+                        <th class="ms-3">All</th>
+                        <!-- <th>Mix of {{ product.colors.length }}</th> -->
+                        <!-- <div class="rounded-circle m-2 px-1 align-items-center justify-content-center d-flex"
                                 style="width: 30px; height: 30px;" :style="'background-color:' + color.name"></div> -->
                         </td>
 
@@ -44,10 +39,10 @@
                     </tr>
                 </tbody>
             </table>
-            <div class="d-flex justify-content-between">
-                <h2>Grand Total</h2>
-                <h2>₹{{ calculateGrandTotal }}</h2>
-            </div>
+        </div>
+        <div class="d-flex justify-content-between">
+            <h2>Grand Total</h2>
+            <h2>₹{{ calculateGrandTotal }}</h2>
         </div>
     </div>
 </template>
@@ -59,21 +54,10 @@ export default {
     name: 'OrdinaryTable',
     data() {
         return {
-            // quantity0: 0,
-            // quantity1: 0,
-            // quantity2: 0,
-            // quantity3: 0,
             quantities: [],
-            // colors: [
-            //     { name: 'black' },
-            //     // { name: 'red' },
-            // ],
         }
     },
     computed: {
-        // products() {
-        //     return this.$store.getters.getProducts
-        // },
         product() {
             let productId = this.$route.params.productId;
             return this.$store.getters.getProduct(productId);
@@ -105,8 +89,6 @@ export default {
             return grandTotal;
         },
     },
-
-    methods: {},
     created() {
         for (let colorIndex = 0; colorIndex < this.product.colors.length; colorIndex++) {
             this.quantities[colorIndex] = [];
@@ -118,5 +100,16 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped></style> 
+<style scoped>
+#scroll::-webkit-scrollbar {
+    background-color: none;
+    display: none;
+} table th:first-child,
+.table td:first-child {
+    position: sticky;
+    left: 0;
+    background-color: #e8e8e8;
+    color: #373737;
+}
+</style> 
 

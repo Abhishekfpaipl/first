@@ -1,5 +1,5 @@
 <template lang="">
-    <div :id="'category-tab-' + category.id">
+    <div :id="category.slug">
         <div class="container d-flex justify-content-between">
             <h5  class="ps-2 text-success fw-bold">
                 {{category.name}}
@@ -10,7 +10,7 @@
         </div>
         <div class="container">
             <div v-for="(item, index) in category.child" :key="index" >
-                <p>{{index}}</p>
+                <!-- <p>{{index}}</p> -->
                 <div class="row">
                     <div class="col-6 text-center" v-for="(a, key) in item" :key="key">
                         <router-link :to="a.route" class="text-decoration-none text-dark">

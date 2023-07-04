@@ -2,7 +2,7 @@
     <div>
         <div id="default-settings">
 
-            <label class="pref-button"><input type="checkbox" v-model="defaultChecked"><span>Default</span></label>
+            <!-- <label class="pref-button"><input type="checkbox" v-model="defaultChecked"><span>Default</span></label> -->
 
             <label class="pref-button"><input type="checkbox" v-model="selectAll"><span>Select All</span></label>
 
@@ -24,37 +24,18 @@ export default {
         defaultSelects: [],
         selectsArray: [ 
 
-            {id: 'automotive', name: 'Automotive', class: 'industry', default: false},
+            {id: 'automotive', name: 'Automotive', class: 'industry', },
 
-            {id: 'beauty', name: 'Beauty', class: 'industry', default: true},
+            {id: 'beauty', name: 'Beauty', class: 'industry', },
 
-            {id: 'branding', name: 'Branding', class: 'industry', default: true},
+            {id: 'branding', name: 'Branding', class: 'industry', },
 
-            {id: 'btob', name: 'B to B', class: 'industry', default: false}
+            {id: 'btob', name: 'B to B', class: 'industry', }
         ],
         selected: [],
         }
     },
     computed: {
-    //   defaultChecked: {
-    //     get () {
-    //       let defaults = this.selectsArray.filter(item => item.default).map(item => item.id)
-    //       const hasAllItems = (baseArr, haystack) => haystack.every(item => baseArr.includes(item))
-    //       const hasSameItems = (baseArr, haystack) => hasAllItems(baseArr, haystack) && hasAllItems(haystack, baseArr)
-    //       return hasSameItems(this.selected, defaults)
-    //     },
-    //     set (value) {
-    //       this.selected = []
-
-    //       if (value) {
-    //         this.selectsArray.forEach((select) => {
-    //           if (select.default) {
-    //             this.selected.push(select.id)
-    //           }
-    //         });
-    //       }
-    //     }
-    //   }, // END defaultChecked
       selectAll: {
         get () {
           return this.selected.length === this.selectsArray.length

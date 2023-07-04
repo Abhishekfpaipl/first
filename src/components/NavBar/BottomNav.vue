@@ -1,5 +1,8 @@
 <template lang="">
-  <div class=" position-fixed w-100 bg-white" style="bottom: 0; z-index:1;">
+  <div style="">
+  <!-- <nav class="navbar fixed-bottom navbar-light" style="z-index:1;" :class="{ 'navbar-hidden': navbarHidden }"> -->
+  <nav class="navbar fixed-bottom " style="z-index:1;box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;">
+  <div class=" position-fixed w-100" style="bottom: 0; ">
     <div class=" nav-bottom justify-content-evenly" style="height: 63px; padding: 0 18px;">
      <div class="items">
         <routerLink to="/"  :class="{'text-danger' : currentRoute ==='HomeView' }" style="text-decoration:none;color:black;">
@@ -13,7 +16,7 @@
         </routerLink>
       </div>
       <div class="items">
-        <router-link to="/CategoryNew" :class="{'text-danger' : currentRoute ==='CategoryNew' }" style="text-decoration:none;color:black;">
+        <router-link to="/categories" :class="{'text-danger' : currentRoute ==='categories' }" style="text-decoration:none;color:black;">
         <div class="inner-items py-1 d-flex flex-column">
           <!-- <i :class="['bi bi-grid-1x2 fs-5', { 'active': isActive }]" @click="toggleIconColor"></i>
             <span style="font-size:12px" :style="textStyle">Category</span> -->
@@ -32,18 +35,27 @@
         </router-link>
       </div> -->
       <div class="items">
-        <router-link to="/SignupForm" :class="{'text-danger' : currentRoute ==='SignupForm' }" style="text-decoration:none;color:black;">
+        <router-link to="/favourite-products" :class="{'text-danger' : currentRoute ==='FavouriteProducts' }" style="text-decoration:none;color:black;">
         <div class="inner-items py-1 d-flex flex-column">
           <!-- <i :class="['bi bi-emoji-smile fs-5', { 'active': isActive }]" @click="toggleIconColor"></i>
           <span style="font-size:12px" :style="textStyle">Me</span> -->
-          
-          <i class="bi bi-emoji-smile fs-5"></i>
-          <p class="m-0" style="font-size:12px">Me</p>
+
+          <i class="bi bi-heart fs-5"></i>
+          <p class="m-0" style="font-size:12px">Favourite</p>
         </div>
       </router-link>
       </div>
       <div class="items">
-        <router-link to="/OrdinaryOrderPending" :class="{'text-danger' : currentRoute ==='OrdinaryOrderPending' }" style="text-decoration:none;color:black;">
+        
+        <router-link to="/checkout/cart" :class="{'text-danger' : currentRoute === 'CheckoutCart'}" style="text-decoration:none;color:black">
+        <div class="inner-items py-1 d-flex flex-column">
+           <i class="bi bi-bag fs-5"></i>
+           <p class=" m-0" style="font-size:12px">Cart</p>
+          </div>
+        </router-link>
+      </div>
+      <div class="items">
+        <router-link to="/orders/running" :class="{'text-danger' : currentRoute ==='orders-running' }" style="text-decoration:none;color:black;">
           <div class="inner-items py-1 d-flex flex-column">
             <!-- <i :class="['bi bi-archive fs-5', { 'active': isActive }]" @click="toggleIconColor"></i>
             <span style="font-size:12px" :style="textStyle">Orders</span> -->
@@ -53,50 +65,61 @@
           </div>
         </router-link>
       </div>
-      <div class="items">
-        <div class="inner-items py-1 d-flex flex-column">
-            <router-link to="/ContactUs" :class="{'text-danger' : currentRoute ==='ContactUs' }" style="text-decoration:none;color:black;">
-            <!-- <i :class="['bi bi-chat-dots fs-5', { 'active': isActive }]" @click="toggleIconColor"></i>
-            <span style="font-size:12px" :style="textStyle">Support</span> -->
-            
-            <i class="bi bi-chat-dots fs-5"></i>
-            <p class="m-0" style="font-size:12px">Support</p>
-          </router-link>
-          </div>
-      </div>
     </div>
   </div>
+</nav>
+</div>
 </template>
 <script>
-  export default {
-    // data() {
-    //   return {
-    //     isActive: false,
-    //     textStyle: {}
-    //   };
-    // },
-    // methods: {
-    //   toggleIconColor() {
-    //     this.isActive = !this.isActive;
-    //     this.updateTextStyle();
-    //   },
-    //   updateTextStyle() {
-    //     if (this.isActive) {
-    //       this.textStyle = {
-    //         fontWeight: 'bold'
-    //       };
-    //     } else {
-    //       this.textStyle = {};
-    //     }
-    //   }
-    // },
-    computed:{
-      currentRoute(){
-        return this.$route.name;
-      }
+export default {
+  // data() {
+  //   return {
+  //     isActive: false,
+  //     textStyle: {}
+  //   };
+  // },
+  // methods: {
+  //   toggleIconColor() {
+  //     this.isActive = !this.isActive;
+  //     this.updateTextStyle();
+  //   },
+  //   updateTextStyle() {
+  //     if (this.isActive) {
+  //       this.textStyle = {
+  //         fontWeight: 'bold'
+  //       };
+  //     } else {
+  //       this.textStyle = {};
+  //     }
+  //   }
+  // },
+  data() {
+    return {
+      prevScroll: window.pageYOffset,
+      navbarHidden: false
+    };
+  },
+  computed: {
+    currentRoute() {
+      return this.$route.name;
     }
-  };
-  </script>
+  },
+  mounted() {
+    window.addEventListener('scroll', this.handleScroll);
+  },
+  methods: {
+    handleScroll() {
+      const currentScroll = window.pageYOffset;
+      if (this.prevScroll > currentScroll) {
+        this.navbarHidden = false;
+      } else {
+        this.navbarHidden = true;
+      }
+      this.prevScroll = currentScroll;
+    },
+  }
+};
+</script>
 <style>
 .items {
   display: flex;
@@ -109,5 +132,16 @@
   gap: 1.5rem;
   justify-content: center;
   background: #F6F6F6;
+}
+
+.navbar {
+  /* background-color: #f1f1f1; */
+  height: 60px;
+  transition: transform 0.5s;
+  transform: translateY(0);
+}
+
+.navbar-hidden {
+  transform: translateY(100%);
 }
 </style>

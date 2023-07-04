@@ -1,6 +1,10 @@
 <template>
-  <h3 class="text-start m-4">You may also like</h3>
-  <div class="container" style="padding-bottom: 100px;">
+  <h1 class="text-center mt-4">You May Also Like</h1>
+
+  <HomePageCard></HomePageCard>
+
+  <!-- <router-link to="/CardCatelog/Category1" class="text-decoration-none text-dark">
+    <div class="container" style="padding-bottom: 100px;">
     <div class="row row-cols-2 row-cols-md-3 row-cols-xl-4 g-3">
       <div class="col" v-for="(featuredCollection, index) in featuredCollections" :key="index">
         <div class="card">
@@ -16,14 +20,19 @@
       </div>
     </div>
   </div>
+  </router-link> -->
 </template>
 <script>
+import HomePageCard from './Collection/HomePageCard.vue';
 export default {
   name: "FeaturedCollections",
   computed: {
     featuredCollections() {
       return this.$store.getters.getfeaturedCollection;
     }
+  },
+  components: {
+    HomePageCard
   }
 };
 </script>

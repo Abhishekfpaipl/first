@@ -2,7 +2,7 @@
   <SimpleStepper step="1">
     <CartPage></CartPage>
     <div class="d-flex justify-content-center align-items center" style="padding-bottom: 100px;">
-      <router-link to="/SimpleStepper2" class="text-decoration-none">
+      <router-link to="simplestepper2" class="text-decoration-none">
         <button class="btn btn-success" >Continue</button>
       </router-link>
     </div>

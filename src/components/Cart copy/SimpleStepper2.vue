@@ -2,7 +2,7 @@
   <SimpleStepper step="2">
     <AddressPage></AddressPage>
     <div class="d-flex justify-content-center align-items-center"  style="padding-bottom: 100px;">
-      <router-link to="/SimpleStepper3" class="text-decoration-none">
+      <router-link to="simplestepper3" class="text-decoration-none">
         <button class="btn btn-success">Continue</button>
       </router-link>
     </div>

@@ -1,8 +1,8 @@
 <template>
     <div>
-      <CatelogFilter></CatelogFilter>
+    <!-- <CatelogFilter></CatelogFilter> -->
   
-      <div class="container pt-5">
+      <!-- <div class="container pt-5">
         <div v-for="x in looper" :key="x">
             <p class="small mb-0">{{ x }}</p>
             <div class="row row-cols-2  row-cols-md-3 row-cols-xl-4 g-3">
@@ -19,13 +19,17 @@
               </div>
             </div>
         </div>
-      </div>
+      </div> -->
+
+
+      <CardCatelog></CardCatelog>
 
     </div>
   </template>
   
   <script>
-  import CatelogFilter from '../Catelog/CatelogFilter.vue';
+  import CardCatelog from '../Catelog/CardCatelog.vue';
+  // import CatelogFilter from '../Catelog/CatelogFilter.vue';
   
   export default {
     name: "SubCatProduct",
@@ -42,7 +46,10 @@
     mounted() {
       console.log(this.$route.params);
     },
-    components: { CatelogFilter }
+    components: { 
+      // CatelogFilter,
+        CardCatelog
+      }
   }
   </script>
   

@@ -2,61 +2,25 @@
     <div>
         <p class="m-0 fw-bold text-decoration-underline" style="font-size:16px;">Enter Desired quantity Of Available
             Varients</p>
-        <div class="table-responsive mt-4">
+        <div class="table-responsive mt-4" id="scroll">
             <table class="table border border-1">
                 <thead>
                     <tr>
-                        <th scope="col">Enter Qty</th>
+                        <th scope="col">Qty</th>
                         <th scope="col" v-for="(size, index) in product.sizes" :key="index">
                             <div class="fw-bold d-flex flex-column align-items-center" style="">
                                 <p class="m-0">{{ size.name }}</p>
-                                <p class="m-0">₹{{ size.price }}</p>
+                                <!-- <p class="m-0">₹{{ size.price }}</p> -->
                             </div>
                         </th>
                     </tr>
                 </thead>
                 <tbody>
-                    <!-- <tr v-for="(color, index) in product.colors" :key="index">
-                        <th scope="row">
-                            <div class=" rounded-circle m-2 px-1 align-items-center justify-content-center d-flex "
-                                style="width:30px; height: 30px;" :style="'background-color:' + color.name">
-                            </div>
-                        </th>
-                         <td>
-                            <input type="number" class="form-control text-center" v-model="quantity0">
-                        </td>
-                       <td>
-                            <input type="number" class="form-control text-center" v-model="quantity1">
-                        </td>
-                        <td>
-                            <input type="number" class="form-control text-center" v-model="quantity2">
-                        </td>
-                        <td>
-                            <input type="number" class="form-control text-center" v-model="quantity3">
-                        </td> 
-                    </tr> -->
-
-                    <!-- <tr v-for="(color, colorindex) in product.colors" :key="colorindex">
-                        <td class="">
-                            <div class=" rounded-circle m-2 px-1 align-items-center justify-content-center d-flex "
-                                style="width:30px; height: 30px;" :style="'background-color:' + color.name">
-                            </div>
-                        </td>
-
-                        <td v-for="(size, sizeindex) in product.sizes" :key="sizeindex">
-                            <div>
-                                <p>{{ size.name }}</p>
-                                <p>{{ size.price }}</p>
-                            </div>
-                            <input type="text" class="form-control text-center" :value="colorindex + '-' + sizeindex">
-                            <input type="number" class="form-control text-center" v-model="this['quantity' + colorindex + sizeindex]">
-                        </td>
-                    </tr> -->
-
                     <tr v-for="(color, colorindex) in product.colors" :key="colorindex">
                         <td class="">
-                            <div class="rounded-circle m-2 px-1 align-items-center justify-content-center d-flex"
-                                style="width: 30px; height: 30px;" :style="'background-color:' + color.name"></div>
+                            <div class="rounded-circle align-items-center justify-content-center d-flex">
+                                <img class="rounded-circle" :src="color.img" style="width: 38px; height: 38px;object-fit: fill;">
+                            </div>
                         </td>
 
                         <td v-for="(size, sizeindex) in product.sizes" :key="sizeindex">
@@ -80,8 +44,6 @@
             <h2>₹{{ calculateGrandTotal }}</h2>
         </div>
     </div>
-
-    
 </template>
 
 <script>
@@ -89,18 +51,10 @@ export default {
     name: 'PremiumTable',
     data() {
         return {
-            // quantity: 0,
-            // quantity0: 0,
-            // quantity1: 0,
-            // quantity2: 0,
-            // quantity3: 0,
             quantities: [],
         }
     },
     computed: {
-        // products() {
-        //     return this.$store.getters.getProducts
-        // },
         product() {
             let productId = this.$route.params.productId;
             return this.$store.getters.getProduct(productId);
@@ -133,7 +87,7 @@ export default {
         },
     },
 
-    methods: {}, 
+    methods: {},
     created() {
         for (let colorIndex = 0; colorIndex < this.product.colors.length; colorIndex++) {
             this.quantities[colorIndex] = [];
@@ -146,4 +100,16 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style scoped>
+#scroll::-webkit-scrollbar {
+    background-color: none;
+    display: none;
+}
+table th:first-child,
+.table td:first-child {
+    position: sticky;
+    left: 0;
+    background-color: #e8e8e8;
+    color: #373737;
+}
+</style> 

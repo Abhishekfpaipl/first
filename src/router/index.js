@@ -1,28 +1,39 @@
 import { createRouter, createWebHistory } from "vue-router";
+
+import CartRoutes from './cart';
+// import ProductsRoute from './products';
+import CategoryRoutes from './category';
+import ordersRoute from './orders';
+
 import HomeView from "../views/HomeView.vue";
 import ProductPage from "../views/ProductPage.vue";
-// import ProductRating from "../components/ProductRating.vue";
-// import OfferBar from "../components/OfferBar.vue";
 import FeaturedCollections from "../components/FeaturedCollections.vue";
-import LastView from "@/components/LastView.vue";
 import CollectionPage from "../components/Collection/CollectionPage.vue";
 import CollectionGrid from "../components/Collection/CollectionGrid.vue";
 import SignupForm from "@/components/Form/SignupForm.vue";
-import CartPage from "@/components/Cart/CartPage.vue";
+
+
 import OrderPage from "../components/Orders/OrderPage.vue";
 import TopCart from "@/components/Cart/TopCart.vue";
 import TestRoute from "../views/TestRoute.vue";
 import T1Select from "@/components/Cart/T1Select.vue";
+
+
+
 import CardCatelog from "../components/Catelog/CardCatelog.vue";
+import CardCatelog_v1 from "../components/Catelog/CardCatelog_v1.vue";
+import CardCatelog_v2 from "../components/Catelog/CardCatelog_v2.vue";
+import CardCatelog_v3 from "../components/Catelog/CardCatelog_v3.vue";
+import CardCatelog_v4 from "../components/Catelog/CardCatelog_v4.vue";
+import CatelogPage from "../components/Catelog/CatelogPage.vue";
+import CardCatelogB from "../components/Catelog/CardCatelogB.vue";
+
+
+
 import CardColors from "@/components/Catelog/CardColors.vue";
-import SavedProduct from "@/components/SavedProducts/SavedProduct.vue";
+import FavouriteProducts from "@/components/SavedProducts/FavouriteProducts.vue";
 import ProductTest from "../views/ProductTest.vue";
-import FavProduct from "@/components/FavProduct.vue";
-import CategoryNew from "@/components/CategoryNew/CategoryNew.vue";
-import ScrollTest from '../components/ScrollTest.vue';
-import ChatG from '../components/ChatG.vue';
 import ContactUs from "../views/ContactUs.vue";
-import ChangeIcon from "../views/ChangeIcon.vue";
 import TableTest from '../components/TableTest.vue'
 import PremiumOrderNew from '../components/Orders/PremiumOrder/PremiumOrderNew.vue';
 import PremiumOrderStatus from '../components/Orders/PremiumOrder/PremiumOrderStatus.vue';
@@ -34,15 +45,25 @@ import OrdinaryOrderApproved from '../components/Orders/OrdinaryOrder/OrdinaryOr
 import OrdinaryOrderProcessing from '../components/Orders/OrdinaryOrder/OrdinaryOrderProcessing.vue';
 import OrdinaryOrderDispatched from '../components/Orders/OrdinaryOrder/OrdinaryOrderDispatched.vue';
 import OrdinaryOrderDelivered from '../components/Orders/OrdinaryOrder/OrdinaryOrderDelivered.vue';
-import AddressPage from "@/components/Cart copy/AddressPage.vue";
-import PaymentPage from "@/components/Cart copy/PaymentPage.vue";
-import SuccessPage from "@/components/Cart copy/SuccessPage.vue";
-import SimpleStepper1 from "@/components/Cart copy/SimpleStepper1.vue";
-import SimpleStepper2 from "@/components/Cart copy/SimpleStepper2.vue";
-import SimpleStepper3 from "@/components/Cart copy/SimpleStepper3.vue";
-import SimpleStepper4 from "@/components/Cart copy/SimpleStepper4.vue";
+
 import SubCatProduct  from "../components/CategoryNew/SubCatProduct.vue";
 
+import OrderDetail from "@/components/Orders/OrderDetail.vue";
+import CartPage1Vue from "@/components/Cart copy/CartPage1.vue";
+import CompletedOrderPage from "@/components/Orders/OrdinaryOrder/CompletedOrderPage.vue";
+import RefundPolicy from '@/components/Form/RefundPolicy.vue';
+import ReturnPolicy from '@/components/Form/ReturnPolicy.vue';
+import ShippingPolicy from '@/components/Form/ShippingPolicy.vue';
+import PrivacyPolicy from '@/components/Form/PrivacyPolicy.vue';
+import TOSPage from '@/components/Form/TOSPage.vue';
+import ProductTopnav from "@/components/NavBar/ProductTopnav.vue";
+import ProductList  from "@/components/Catelog/ProductList.vue";
+import UpdatePage from "@/views/notification/UpdatePage.vue";
+import OffersPage from "@/views/notification/OffersPage.vue";
+import PromotionPage from "@/views/notification/PromotionPage.vue";
+import DefaultPage from "@/views/notification/DefaultPage.vue";
+import StepperTest from '@/views/cart/StepperTest.vue';
+import SupplierSignUp from '@/components/Form/SupplierSignUp.vue';
 
 const routes = [
   {
@@ -65,35 +86,57 @@ const routes = [
     name: "ProductPage",
     component: ProductPage,
   },
+
+
   {
     path: "/CardCatelog/:categoryId",
     name: "CardCatelog",
     component: CardCatelog,
   },
   {
+    path: "/CardCatelogB/:categoryId",
+    name: "CardCatelogB",
+    component: CardCatelogB,
+  },
+  {
+    path: "/CardCatelog_v1/:categoryId",
+    name: "CardCatelog_v1",
+    component: CardCatelog_v1,
+  },
+  {
+    path: "/CardCatelog_v2/:categoryId",
+    name: "CardCatelog_v2",
+    component: CardCatelog_v2,
+  },
+  {
+    path: "/CardCatelog_v3/:categoryId",
+    name: "CardCatelog_v3",
+    component: CardCatelog_v3,
+  },
+  {
+    path: "/CardCatelog_v4/:categoryId",
+    name: "CardCatelog_v4",
+    component: CardCatelog_v4,
+  },
+
+  {
+    path: "/catelog-page",
+    name: "catelog-page",
+    component: CatelogPage,
+  },
+
+ 
+
+
+  {
     path: "/TableTest",
     name: "TableTest",
     component: TableTest,
   },
-  // {
-  //   path: "/ProductRating",
-  //   name: "ProductRating",
-  //   component: ProductRating,
-  // },
-  // {
-  //   path: "/OfferBar",
-  //   name: "OfferBar",
-  //   component: OfferBar,
-  // },
   {
     path: "/FeaturedCollections",
     name: "FeaturedCollections",
     component: FeaturedCollections,
-  },
-  {
-    path: "/LastView",
-    name: "LastView",
-    component: LastView,
   },
   {
     path: "/CollectionPage",
@@ -111,9 +154,9 @@ const routes = [
     component: SignupForm,
   },
   {
-    path: "/CartPage",
-    name: "CartPage",
-    component: CartPage,
+    path: "/CartPage1",
+    name: "CartPage1",
+    component: CartPage1Vue,
   },
   {
     path: "/OrderPage",
@@ -141,9 +184,9 @@ const routes = [
     component: CardColors,
   },
   {
-    path: "/SavedProduct",
-    name: "SavedProduct",
-    component: SavedProduct,
+    path: "/favourite-products",
+    name: "FavouriteProducts",
+    component: FavouriteProducts,
   },
   {
     path: "/ProductTest",
@@ -151,34 +194,9 @@ const routes = [
     component: ProductTest,
   },
   {
-    path: "/FavProduct",
-    name: "FavProduct",
-    component: FavProduct,
-  },
-  {
-    path: "/CategoryNew",
-    name: "CategoryNew",
-    component: CategoryNew,
-  },
-  {
-    path: "/ScrollTest",
-    name: "ScrollTest",
-    component: ScrollTest,
-  },
-  {
-    path: "/ChatG",
-    name: "ChatG",
-    component: ChatG,
-  },
-  {
     path: "/ContactUs",
     name: "ContactUs",
     component: ContactUs,
-  },
-  {
-    path: "/ChangeIcon",
-    name: "ChangeIcon",
-    component: ChangeIcon,
   },
   {
     path: "/PremiumOrderNew",
@@ -231,48 +249,95 @@ const routes = [
     name: "OrdinaryOrderDelivered",
     component: OrdinaryOrderDelivered,
   },
-  {
-    path: "/AddressPage",
-    name: "AddressPage",
-    component: AddressPage,
-  },
-  {
-    path: "/PaymentPage",
-    name: "PaymentPage",
-    component: PaymentPage,
-  },
-  {
-    path: "/SuccessPage",
-    name: "SuccessPage",
-    component: SuccessPage,
-  },
-  {
-    path: "/SimpleStepper1",
-    name: "SimpleStepper1",
-    component: SimpleStepper1,
-  },
-  {
-    path: "/SimpleStepper2",
-    name: "SimpleStepper2",
-    component: SimpleStepper2,
-  },
-  {
-    path: "/SimpleStepper3",
-    name: "SimpleStepper3",
-    component: SimpleStepper3,
-  },
- 
-  {
-    path: "/SimpleStepper4",
-    name: "SimpleStepper4",
-    component: SimpleStepper4,
-  },
+
+
   {
     path: "/SubCatProduct/:categoryId",
     name: "SubCatProduct",
     component: SubCatProduct,
   },
+  {
+    path: "/OrderDetail/:orderId",
+    name: "OrderDetail",
+    component: OrderDetail,
+  },
+ 
+  {
+    path: "/CompletedOrderPage/:completeId",
+    name: "CompletedOrderPage",
+    component: CompletedOrderPage,
+  },
+  {
+    path: "/RefundPolicy",
+    name: "RefundPolicy",
+    component: RefundPolicy,
+  },
+  {
+    path: "/ReturnPolicy",
+    name: "ReturnPolicy",
+    component: ReturnPolicy,
+  },
+  {
+    path: "/ShippingPolicy",
+    name: "ShippingPolicy",
+    component: ShippingPolicy,
+  },
+  {
+    path: "/PrivacyPolicy",
+    name: "PrivacyPolicy",
+    component: PrivacyPolicy,
+  },
+  {
+    path: "/TOSPage",
+    name: "TOSPage",
+    component: TOSPage,
+  },
   
+  {
+    path: "/ProductTopnav",
+    name: "ProductTopnav",
+    component: ProductTopnav,
+  },
+  {
+    path: "/ProductList",
+    name: "ProductList",
+    component: ProductList,
+  },
+  {
+    path: "/updatepage",
+    name: "updatepage",
+    component: UpdatePage,
+  },
+  {
+    path: "/offerpage",
+    name: "offerpage",
+    component: OffersPage,
+  },
+  {
+    path: "/promotionpage",
+    name: "promotionpage",
+    component: PromotionPage,
+  },
+  {
+    path: "/defaultpage",
+    name: "defaultpage",
+    component: DefaultPage,
+  },
+  {
+    path: "/StepperTest",
+    name: "StepperTest",
+    component: StepperTest,
+  },
+  {
+    path: "/supplier-signup",
+    name: "SupplierSignUp",
+    component: SupplierSignUp,
+  },
+  
+  ...CartRoutes,
+  // ...ProductsRoute,
+  ...CategoryRoutes,
+  ...ordersRoute,
  
 
 ];

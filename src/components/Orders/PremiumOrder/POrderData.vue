@@ -1,6 +1,6 @@
 <template>
     <div class="">
-        <div v-for="(Prodamt, index) in Prodamts" :key="index" class="container p-0 border border-1 mt-4 mb-4">
+        <!-- <div v-for="(Prodamt, index) in Prodamts" :key="index" class="container p-0 border border-1 mt-4 mb-4">
             <div class="row  mb-2">
                 <div class="col-4">
                     <div class="row">
@@ -55,128 +55,146 @@
                         </h2>
                         <div :id="'flush-collapseOne' + Prodamt.id" class="accordion-collapse collapse"
                             data-bs-parent="#accordionFlushExample">
-                            <div class="">
-                                <div class="table-responsive border border-1">
-                                    <table class="table">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col">Enter Qty</th>
-                                                <th scope="col">
-                                                    <div class="d-flex flex-column">
-                                                        <p class="m-0 text-center">XS</p>
-                                                        <p class="m-0 text-center">₹456</p>
-                                                    </div>
-                                                </th>
-                                                <th scope="col">
-                                                    <div class="d-flex flex-column">
-                                                        <p class="m-0 text-center">S</p>
-                                                        <p class="m-0 text-center">₹456</p>
-                                                    </div>
-                                                </th>
-                                                <th scope="col">
-                                                    <div class="d-flex flex-column">
-                                                        <p class="m-0 text-center">M</p>
-                                                        <p class="m-0 text-center">₹456</p>
-                                                    </div>
-                                                </th>
-                                                <th scope="col">
-                                                    <div class="d-flex flex-column">
-                                                        <p class="m-0 text-center">L</p>
-                                                        <p class="m-0 text-center">₹456</p>
-                                                    </div>
-                                                </th>
-                                                <th scope="col">
-                                                    <div class="d-flex flex-column">
-                                                        <p class="m-0 text-center">XL</p>
-                                                        <p class="m-0 text-center">₹456</p>
-                                                    </div>
-                                                </th>
-                                                <th scope="col">
-                                                    <div class="d-flex flex-column">
-                                                        <p class="m-0 text-center">Free</p>
-                                                        <p class="m-0 text-center">₹456</p>
-                                                    </div>
-                                                </th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <th scope="row" style="font-size:14px">
-                                                    <div class="rounded-circle m-2 px-1 align-items-center justify-content-center d-flex"
-                                                        style="width: 30px; height: 30px;background-color:black"></div>
-                                                </th>
-                                                <td class="text-center">
-                                                    <p class="mt-3">10</p>
-                                                </td>
-                                                <td class="text-center">
-                                                    <p class="mt-3">20</p>
-                                                </td>
-                                                <td class="text-center">
-                                                    <p class="mt-3">30</p>
-                                                </td>
-                                                <td class="text-center">
-                                                    <p class="mt-3">40</p>
-                                                </td>
-                                                <td class="text-center">
-                                                    <p class="mt-3">50</p>
-                                                </td>
-                                                <td class="text-center">
-                                                    <p class="mt-3">60</p>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row" style="font-size:14px">
-                                                    <div class="rounded-circle m-2 px-1 align-items-center justify-content-center d-flex"
-                                                        style="width: 30px; height: 30px;background-color:red"></div>
-                                                </th>
-                                                <td class="text-center">
-                                                    <p class="mt-3">10</p>
-                                                </td>
-                                                <td class="text-center">
-                                                    <p class="mt-3">20</p>
-                                                </td>
-                                                <td class="text-center">
-                                                    <p class="mt-3">30</p>
-                                                </td>
-                                                <td class="text-center">
-                                                    <p class="mt-3">40</p>
-                                                </td>
-                                                <td class="text-center">
-                                                    <p class="mt-3">50</p>
-                                                </td>
-                                                <td class="text-center">
-                                                    <p class="mt-3">60</p>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th>Total</th>
-                                                <td class="text-center">₹4560</td>
-                                                <td class="text-center">₹9120</td>
-                                                <td class="text-center">₹1368</td>
-                                                <td class="text-center">₹1824</td>
-                                                <td class="text-center">₹2280</td>
-                                                <td class="text-center">₹2736</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-
-                                </div>
-
-                                <div class="container d-flex justify-content-between">
-                                    <p class="">Grand Total</p>
-                                    <p class="">₹9576</p>
-                                </div>
-
-
-                                <!-- <PremiumTable></PremiumTable> -->
-                            </div>
+                           
                         </div>
                     </div>
                 </div>
 
 
             </div>
+        </div> -->
+
+        <div class="">
+            <div class="table-responsive  border-1" id="scroll"
+                style="background-color: #E8E8E8; font-size: 12px !important;">
+                <table class="table m-0">
+                    <thead>
+                        <tr>
+                            <th scope="col" class="text-center"> Qty</th>
+                            <th scope="col">
+                                <div class="d-flex flex-column">
+                                    <p class="m-0 text-center">XS</p>
+                                    <!-- <p class="m-0 text-center">₹456</p> -->
+                                </div>
+                            </th>
+                            <th scope="col">
+                                <div class="d-flex flex-column">
+                                    <p class="m-0 text-center">S</p>
+                                    <!-- <p class="m-0 text-center">₹456</p> -->
+                                </div>
+                            </th>
+                            <th scope="col">
+                                <div class="d-flex flex-column">
+                                    <p class="m-0 text-center">M</p>
+                                    <!-- <p class="m-0 text-center">₹456</p> -->
+                                </div>
+                            </th>
+                            <th scope="col">
+                                <div class="d-flex flex-column">
+                                    <p class="m-0 text-center">L</p>
+                                    <!-- <p class="m-0 text-center">₹456</p> -->
+                                </div>
+                            </th>
+                            <th scope="col">
+                                <div class="d-flex flex-column">
+                                    <p class="m-0 text-center">XL</p>
+                                    <!-- <p class="m-0 text-center">₹456</p> -->
+                                </div>
+                            </th>
+                            <th scope="col">
+                                <div class="d-flex flex-column">
+                                    <p class="m-0 text-center">Free</p>
+                                    <!-- <p class="m-0 text-center">₹456</p> -->
+                                </div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row" style="font-size:14px">
+                                <div class="rounded-circle m-2 px-1 align-items-center justify-content-center d-flex"
+                                    style="width: 30px; height: 30px;background-color:black"></div>
+                            </th>
+                            <td class="text-center">
+                                <input type="number" class="form-control" style="font-size: 12px !important;"
+                                    placeholder="10">
+                            </td>
+                            <td class="text-center">
+                                <input type="number" class="form-control" style="font-size: 12px !important;"
+                                    placeholder="20">
+                            </td>
+                            <td class="text-center">
+                                <input type="number" class="form-control" style="font-size: 12px !important;"
+                                    placeholder="30">
+                            </td>
+                            <td class="text-center">
+                                <input type="number" class="form-control" style="font-size: 12px !important;"
+                                    placeholder="40">
+                            </td>
+                            <td class="text-center">
+                                <input type="number" class="form-control" style="font-size: 12px !important;"
+                                    placeholder="50">
+                            </td>
+                            <td class="text-center">
+                                <input type="number" class="form-control" style="font-size: 12px !important;"
+                                    placeholder="60">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row" style="font-size:14px">
+                                <div class="rounded-circle m-2 px-1 align-items-center justify-content-center d-flex"
+                                    style="width: 30px; height: 30px;background-color:red"></div>
+                            </th>
+                            <td class="text-center">
+                                <input type="number" class="form-control" placeholder="10">
+                            </td>
+                            <td class="text-center">
+                                <input type="number" class="form-control" placeholder="20">
+                            </td>
+                            <td class="text-center">
+                                <input type="number" class="form-control" placeholder="30">
+                            </td>
+                            <td class="text-center">
+                                <input type="number" class="form-control" placeholder="40">
+                            </td>
+                            <td class="text-center">
+                                <input type="number" class="form-control" placeholder="50">
+                            </td>
+                            <td class="text-center">
+                                <input type="number" class="form-control" placeholder="60">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th style="padding:12px">Total</th>
+                            <td class="text-center" style="padding:12px">₹4560</td>
+                            <td class="text-center" style="padding:12px">₹9120</td>
+                            <td class="text-center" style="padding:12px">₹1368</td>
+                            <td class="text-center" style="padding:12px">₹1824</td>
+                            <td class="text-center" style="padding:12px">₹2280</td>
+                            <td class="text-center" style="padding:12px">₹2736</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+
+            <div class="bg-white" style="height: 10px ;"></div>
+            <div class="container d-flex justify-content-between"
+                style="font-size: 12px !important; padding:12px; background-color: #E8E8E8;">
+                <div class="" style=" background-color: #E8E8E8;">
+                    <p class="m-0">Sold by </p>
+                    <p class="m-0 fw-bold" style="font-size: 13px !important;">DeshiGirl</p>
+                </div>
+                <div class="">
+                    <p class="m-0">Grand Total</p>
+                    <p class="m-0 fw-bold" style="font-size: 13px !important;">₹9576</p>
+                </div>
+            </div>
+
+
+            <!-- <PremiumTable></PremiumTable> -->
         </div>
+
     </div>
 </template>
 <script>
@@ -212,5 +230,17 @@ export default {
 
 .accordion-button:hover {
     z-index: 0 !important;
+}
+
+#scroll::-webkit-scrollbar {
+    background-color: none;
+    display: none;
+}
+table th:first-child,
+.table td:first-child {
+    position: sticky;
+    left: 0;
+    background-color: #e8e8e8;
+    color: #373737;
 }
 </style>

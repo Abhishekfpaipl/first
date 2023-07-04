@@ -1,6 +1,7 @@
 <template>
-  <div>
-    <div id="carouselExampleInterval" class="carousel slide row-cols-xl" data-bs-ride="carousel">
+  <HomeTopnav></HomeTopnav>
+  <div style="padding-top: 35px;">
+      <div id="carouselExampleInterval" class="carousel slide row-cols-xl" data-bs-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active" data-bs-interval="2000">
           <img src="https://image.clovia.com/media/clovia-images/images/400x600/clovia-picture-rw0042d02-698574.jpg"
@@ -27,18 +28,25 @@
       </button>
     </div>
     <CollectionPage></CollectionPage>
+    <!-- <CollectionPage></CollectionPage>
+    <CollectionPage></CollectionPage> -->
+
+    <FeaturedCollections></FeaturedCollections>
     <!-- <CardCatelog></CardCatelog> -->
   </div>
 </template>
 
 <script>
+import FeaturedCollections from "@/components/FeaturedCollections.vue";
 import CollectionPage from "@/components/Collection/CollectionPage.vue";
+import HomeTopnav from "@/components/NavBar/HomeTopnav.vue";
 // import CardCatelog from "@/components/Catelog/CardCatelog.vue";
 export default {
   name: "HomeView",
-  components: { 
+  components: {
     CollectionPage,
-    // CardCatelog
-  }
+    FeaturedCollections,
+    HomeTopnav
+}
 };
 </script>

@@ -1,14 +1,14 @@
 
 <template>
-  <top-nav class="position-fixed bg-white" style="top:0px; z-index:10"></top-nav>
-  <div class="main-container" style="margin-top:80px">
+  <!-- <top-nav class="position-fixed bg-white" style="top:0px; z-index:10"></top-nav> -->
+  <div class="main-container">
     <router-view/>
     <bottom-nav></bottom-nav>
   </div>
 </template>
 <script setup>
 import BottomNav from "./components/NavBar/BottomNav.vue";
-import TopNav from "./components/NavBar/TopNav.vue";
+// import TopNav from "./components/NavBar/TopNav.vue";
 </script>
 <style lang="scss">
 .main-container{

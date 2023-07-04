@@ -1,7 +1,7 @@
 <template>
-  <div>
-
-    <div class="card d-flex align-items-center">
+  <home-topnav></home-topnav>
+  <div style="padding-top:50px;padding-bottom: 80px;">
+    <div class="card d-flex align-items-center border-0">
       <div class="card-body">
         <div class="">
           <form>
@@ -122,13 +122,167 @@
         </div>
       </div>
     </div>
+
+
+
+
+
+
+
+    <div class="accordion bg-light mt-2" id="accordionExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+            aria-expanded="false" aria-controls="collapseOne">
+            Get In Touch
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <div class=" d-flex">
+              <i class="bi bi-geo-alt"></i>
+              <p class="ms-2">B-94 Okhla Industrial Area, Phase-II New Delhi South Delhi DL 110020 IN</p>
+            </div>
+
+            <div class=" d-flex">
+              <i class="bi bi-envelope"></i>
+              <p class="ms-2">contact@deshigirl.com</p>
+            </div>
+
+            <div class=" d-flex">
+              <i class="bi bi-telephone"></i>
+              <p class="ms-2">+91 1234567890</p>
+            </div>
+
+            <p class="ms-2">Timings: 10 AM to 5 PM (Except Sundays and Public Holidays)</p>
+
+            <p class="m-0 fs-4 fw-bold">Social</p>
+            <div class="d-flex gap-2">
+              <div class="bg-secondary px-2 py-1">
+                <i class="bi bi-facebook fs-1"></i>
+              </div>
+
+              <div class="bg-secondary px-2 py-1">
+                <i class="bi bi-instagram fs-1"></i>
+              </div>
+
+              <div class="bg-secondary px-2 py-1">
+                <i class="bi bi-linkedin fs-1"></i>
+              </div>
+
+              <div class="bg-secondary px-2 py-1">
+                <i class="bi bi-youtube fs-1"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+            aria-expanded="false" aria-controls="collapseTwo">
+            Policies
+          </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <div v-for="(link, index) in links" :key="index" class="">
+              <router-link :to="link.route" class="text-decoration-none text-dark">
+                <p>{{ link.label }}</p>
+              </router-link>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            Other Contacts
+          </button>
+        </h2>
+        <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <div v-for="(contact, index) in contacts" :key="index" class="">
+              <div class="d-flex">
+                <i :class="contact.icon"></i>
+                <router-link :to="contact.route" class="text-decoration-none text-dark">
+                  <p class="ms-2">{{ contact.name }}</p>
+                </router-link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+            Newsletter Signup
+          </button>
+        </h2>
+        <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <div class="">
+              <p>Subscribe to our newsletter and get 10% off on your first purchase</p>
+              <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Your Email" aria-label="Recipient's username"
+                  aria-describedby="basic-addon2">
+                <span class="input-group-text" id="basic-addon2">Subscribe</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+            Popular Search
+          </button>
+        </h2>
+        <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <div class="">
+              Dress | T-Shirts | Kurtis | Designer Blouse | Gowns | Punjabi Suits | Myntra Fashion Show | Saree | Watches
+              |
+              Dresses
+              | Lehenga
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
   </div>
 </template>
 <script>
+import HomeTopnav from '../NavBar/HomeTopnav.vue';
 export default {
   name: "SignUP",
+  data() {
+    return {
+      links: [
+        { label: "Refund Policy", route: "/RefundPolicy" },
+        { label: "Shipping & Delivery Policy", route: "/ShippingPolicy" },
+        { label: "Return Policy", route: "/ReturnPolicy" },
+        { label: "Privacy Policy", route: "/RefundPolicy" },
+        { label: "Terms of Service", route: "/TOSPage" },
+      ],
+      contacts: [
+        { icon: "bi bi-envelope", name: "Collaborations: social@deshigirl.com", route: "" },
+        { icon: "bi bi-envelope", name: "Bulk Enquiry: Click Here", route: "" },
+        { icon: "bi bi-envelope", name: "Franchise Enquiry: Click Here", route: "" },
+        { icon: "bi bi-envelope", name: "About Us: Click Here", route: "" },
+      ]
+    };
+  },
   methods: {},
-
+  components: { HomeTopnav }
 }
 </script>
 <style></style>

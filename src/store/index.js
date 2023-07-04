@@ -8,7 +8,9 @@ export default createStore({
         slug: 1,
         name: 'Zuric two pc dfsdfsdfsdfdsfsdfsd',
         moq: 12,
-        info: '01-08-23636',
+        info: '#23636',
+        fabric:'Fabic',
+        favourite: false,
         images: [
           "https://img.ltwebstatic.com/images3_pi/2019/12/16/1576484402687c5cc3592067511e046fb985a5414a_thumbnail_900x.webp",
           "https://img.ltwebstatic.com/images3_pi/2020/03/16/1584329043f6a2b7ff18eed10fc606d386136fec59_thumbnail_750x.webp",
@@ -19,27 +21,150 @@ export default createStore({
         price: 6500,
         // fav:false,
         colors: [
-          { id: 1,name: 'black'},
-          { id: 2,name: 'red'},
+          { id: 1, name: 'black', img: "https://img.ltwebstatic.com/images3_pi/2019/12/16/1576484402687c5cc3592067511e046fb985a5414a_thumbnail_900x.webp" },
+          { id: 2, name: 'red',img: "https://img.ltwebstatic.com/images3_pi/2020/03/16/1584329043f6a2b7ff18eed10fc606d386136fec59_thumbnail_750x.webp" },
+          { id: 2, name: 'white',img: "https://img.ltwebstatic.com/images3_pi/2022/09/05/166236058465db391027c27d9351d3972053af2deb_thumbnail_750x.webp" },
+          { id: 2, name: 'green',img: "https://img.ltwebstatic.com/images3_pi/2021/01/18/1610969103d94c96d640a1de246d4e7cc1c104f08e_thumbnail_750x.webp" },
+          { id: 2, name: 'purple',img: "https://img.ltwebstatic.com/images3_pi/2021/05/18/1621310932862051acf1a77dd2fa5d7b29c2064d3c_thumbnail_750x.webp"},
         ],
-        ordcolors:[
-          { id: 1,name: 'black'},
-        ],
+        // sizes: [
+        //   { id: 1, name: 'S', price: '6500', },
+        //   { id: 2, name: 'M', price: '6500' },
+        //   { id: 3, name: 'L', price: '6500' },
+        //   { id: 4, name: 'F', price: '6500' },
+        //   { id: 5, name: 'XL', price: '6500' },
+        //   { id: 6, name: '2XL', price: '6500' },
+        // ],
         sizes: [
-          { id: 1,name: 'S',price:'6500'},
-          { id: 2,name: 'M',price:'6500'},
-          { id: 3,name: 'L',price:'6500'},
-          { id: 4,name: 'F',price:'6500'},
-          { id: 5,name: 'XL',price:'6500'},
-          { id: 6,name: '2XL',price:'6500'},
-        ]
+          {
+            name: "S",
+            price: '6500',
+            mesurements: [
+              {
+                name: "Bottom Length",
+                value: "40in"
+              },
+              {
+                name: "Hips",
+                value: "38.2in"
+              },
+              {
+                name: "Thigh",
+                value: "25.1in"
+              },
+              {
+                name: "Waist",
+                value: "38.6in"
+              },
+              {
+                name: "Bust",
+                value: "38.6in"
+              },
+              {
+                name: "Sleeve Width",
+                value: "38.6in"
+              },
+            ]
+          },
+          {
+            name: "M",
+            price: '6500',
+            mesurements: [
+              {
+                name: "Length",
+                value: "45.2in"
+              },
+              {
+                name: "Hips",
+                value: "41.7in"
+              },
+              {
+                name: "Thigh",
+                value: "24.8in"
+              },
+              {
+                name: "Waist",
+                value: "32.6in"
+              },
+            ]
+          },
+          {
+            name: "L",
+            price: '6500',
+            mesurements: [
+              {
+                name: "Length",
+                value: "38.2in"
+              },
+              {
+                name: "Hips",
+                value: "40.7in"
+              },
+              {
+                name: "Thigh",
+                value: "22.8in"
+              },
+              {
+                name: "Waist",
+                value: "32.6in"
+              },
+            ]
+          },
+          {
+            name: "XL",
+            price: '6500',
+            mesurements: [
+              {
+                name: "Length",
+                value: "38.2in"
+              },
+              {
+                name: "Hips",
+                value: "40.7in"
+              },
+              {
+                name: "Thigh",
+                value: "22.8in"
+              },
+              {
+                name: "Waist",
+                value: "32.6in"
+              },
+            ]
+          },
+          {
+            name: "XXL",
+            price: '6500',
+            mesurements: [
+              {
+                name: "Length",
+                value: "38.2in"
+              },
+              {
+                name: "Hips",
+                value: "40.7in"
+              },
+              {
+                name: "Thigh",
+                value: "22.8in"
+              },
+              {
+                name: "Waist",
+                value: "32.6in"
+              },
+            ]
+          },
+        ],
+
       },
       {
         id: 2,
         slug: 2,
+
         name: 'Spun Twill 3 PC',
         moq: 10,
         info: '01-08-23636',
+        favourite: false,
         images: [
           "https://img.ltwebstatic.com/images3_pi/2019/12/23/15770878616a86e80aeb3e5c5667029c6ad6d4cab9_thumbnail_900x.webp",
           "https://img.ltwebstatic.com/images2_pi/2019/05/14/15578224524054588556_thumbnail_900x1199.webp",
@@ -48,18 +173,115 @@ export default createStore({
         ],
         price: 820,
         colors: [
-          { id: 1, name: 'hotpink' },
-          { id: 2, name: 'greenyellow' },
+          { id: 1, name: 'hotpink', img:"https://img.ltwebstatic.com/images3_pi/2019/12/23/15770878616a86e80aeb3e5c5667029c6ad6d4cab9_thumbnail_900x.webp" },
+          { id: 2, name: 'greenyellow', img:"https://img.ltwebstatic.com/images2_pi/2019/05/14/15578224524054588556_thumbnail_900x1199.webp" },
+          { id: 2, name: 'voilet', img:"https://img.ltwebstatic.com/images3_pi/2021/05/21/16215736080c2485af24a73cff52515c060d9c0e9e_thumbnail_900x.webp"},
+          { id: 2, name: 'cyan', img:"https://img.ltwebstatic.com/images3_pi/2021/05/25/162192916718585f2179949535d5de57db64572870_thumbnail_900x.webp"},
         ],
-        ordcolors:[
-          {id: 1, name: 'hotpink'},
-        ],
+        // sizes: [
+        //   { id: 1, name: 'S', price: 820, },
+        //   { id: 2, name: 'M', price: 820, },
+        //   { id: 3, name: 'L', price: 820, },
+        //   { id: 4, name: 'F', price: 820, }
+        // ],
         sizes: [
-          { id: 1, name: 'S', price: 820, },
-          { id: 2, name: 'M', price: 820, },
-          { id: 3, name: 'L', price: 820, },
-          { id: 4, name: 'F', price: 820, }
-        ], 
+          {
+            name: "S",
+            price: 820,
+            mesurements: [
+              {
+                name: "Bottom Length",
+                value: "40in"
+              },
+              {
+                name: "Hips",
+                value: "38.2in"
+              },
+              {
+                name: "Thigh",
+                value: "25.1in"
+              },
+              {
+                name: "Waist",
+                value: "38.6in"
+              },
+              {
+                name: "Bust",
+                value: "38.6in"
+              },
+              {
+                name: "Sleeve Width",
+                value: "38.6in"
+              },
+            ]
+          },
+          {
+            name: "M",
+            price: 820,
+            mesurements: [
+              {
+                name: "Length",
+                value: "45.2in"
+              },
+              {
+                name: "Hips",
+                value: "41.7in"
+              },
+              {
+                name: "Thigh",
+                value: "24.8in"
+              },
+              {
+                name: "Waist",
+                value: "32.6in"
+              },
+            ]
+          },
+          {
+            name: "L",
+            price: 820,
+            mesurements: [
+              {
+                name: "Length",
+                value: "38.2in"
+              },
+              {
+                name: "Hips",
+                value: "40.7in"
+              },
+              {
+                name: "Thigh",
+                value: "22.8in"
+              },
+              {
+                name: "Waist",
+                value: "32.6in"
+              },
+            ]
+          },
+          {
+            name: "XL",
+            price: 820,
+            mesurements: [
+              {
+                name: "Length",
+                value: "38.2in"
+              },
+              {
+                name: "Hips",
+                value: "40.7in"
+              },
+              {
+                name: "Thigh",
+                value: "22.8in"
+              },
+              {
+                name: "Waist",
+                value: "32.6in"
+              },
+            ]
+          },
+        ],
       },
       {
         id: 3,
@@ -67,6 +289,7 @@ export default createStore({
         name: 'RIB TOP',
         moq: 10,
         info: '01-08-23636',
+        favourite: false,
         images: [
           "https://img.ltwebstatic.com/images3_pi/2019/11/27/157484286459ed9e2b1037c98c9ff519c695214cab_thumbnail_900x.webp",
           "https://img.ltwebstatic.com/images3_pi/2019/12/31/1577777275a6a049541520c22575516a85bc719dda_thumbnail_900x.webp",
@@ -75,18 +298,137 @@ export default createStore({
         ],
         price: 250,
         colors: [
-          { id: 1, name: 'Yellow' },
-          { id: 2, name: 'khaki' },
+          { id: 1, name: 'Yellow', img:"https://img.ltwebstatic.com/images3_pi/2019/11/27/157484286459ed9e2b1037c98c9ff519c695214cab_thumbnail_900x.webp" },
+          { id: 2, name: 'purple', img:"https://img.ltwebstatic.com/images3_pi/2019/12/31/1577777275a6a049541520c22575516a85bc719dda_thumbnail_900x.webp" },
+          { id: 3, name: 'green', img:"https://img.ltwebstatic.com/images3_pi/2019/11/27/1574842852778931f48b996a3ba180d57176fc90d2_thumbnail_900x.webp"},
+          { id: 4, name: 'khaki', img:"https://img.ltwebstatic.com/images3_pi/2019/12/31/1577777275a6a049541520c22575516a85bc719dda_thumbnail_900x.webp" },
         ],
-        ordcolors:[
-          {id: 1, name: 'Yellow'},
-        ],
+        // sizes: [
+        //   { id: 1, name: 'S', price: 250, },
+        //   { id: 2, name: 'M', price: 250, },
+        //   { id: 3, name: 'L', price: 250, },
+        //   { id: 4, name: 'F', price: 250, }
+        // ],
         sizes: [
-          { id: 1, name: 'S', price: 250, },
-          { id: 2, name: 'M', price: 250, },
-          { id: 3, name: 'L', price: 250, },
-          { id: 4, name: 'F', price: 250, }
-        ]
+          {
+            name: "S",
+            price: 250,
+            mesurements: [
+              {
+                name: "Bottom Length",
+                value: "40in"
+              },
+              {
+                name: "Hips",
+                value: "38.2in"
+              },
+              {
+                name: "Thigh",
+                value: "25.1in"
+              },
+              {
+                name: "Waist",
+                value: "38.6in"
+              },
+              {
+                name: "Bust",
+                value: "38.6in"
+              },
+              {
+                name: "Sleeve Width",
+                value: "38.6in"
+              },
+            ]
+          },
+          {
+            name: "M",
+            price: 250,
+            mesurements: [
+              {
+                name: "Length",
+                value: "45.2in"
+              },
+              {
+                name: "Hips",
+                value: "41.7in"
+              },
+              {
+                name: "Thigh",
+                value: "24.8in"
+              },
+              {
+                name: "Waist",
+                value: "32.6in"
+              },
+            ]
+          },
+          {
+            name: "L",
+            price: 250,
+            mesurements: [
+              {
+                name: "Length",
+                value: "38.2in"
+              },
+              {
+                name: "Hips",
+                value: "40.7in"
+              },
+              {
+                name: "Thigh",
+                value: "22.8in"
+              },
+              {
+                name: "Waist",
+                value: "32.6in"
+              },
+            ]
+          },
+          {
+            name: "XL",
+            price: 250,
+            mesurements: [
+              {
+                name: "Length",
+                value: "38.2in"
+              },
+              {
+                name: "Hips",
+                value: "40.7in"
+              },
+              {
+                name: "Thigh",
+                value: "22.8in"
+              },
+              {
+                name: "Waist",
+                value: "32.6in"
+              },
+            ]
+          },
+          {
+            name: "XXL",
+            price: 250,
+            mesurements: [
+              {
+                name: "Length",
+                value: "38.2in"
+              },
+              {
+                name: "Hips",
+                value: "40.7in"
+              },
+              {
+                name: "Thigh",
+                value: "22.8in"
+              },
+              {
+                name: "Waist",
+                value: "32.6in"
+              },
+            ]
+          },
+        ],
       },
       {
         id: 4,
@@ -94,6 +436,7 @@ export default createStore({
         name: 'Zuric two pc',
         moq: 10,
         info: '01-08-23636',
+        favourite: false,
         images: [
           "https://img.ltwebstatic.com/images3_pi/2020/01/15/157908187102b895ac68d9286f66e7132bd7701940_thumbnail_900x.webp",
           "https://img.ltwebstatic.com/images3_pi/2019/09/29/1569747933696b184c8bfb16b7da53ae86f5aaf296_thumbnail_900x.webp",
@@ -101,18 +444,136 @@ export default createStore({
         ],
         price: 730,
         colors: [
-          { id: 1, name: 'brown' },
-          { id: 2, name: 'red' },
+          { id: 1, name: 'brown', img:"https://img.ltwebstatic.com/images3_pi/2020/01/15/157908187102b895ac68d9286f66e7132bd7701940_thumbnail_900x.webp" },
+          { id: 2, name: 'red', img:"https://img.ltwebstatic.com/images3_pi/2019/09/29/1569747933696b184c8bfb16b7da53ae86f5aaf296_thumbnail_900x.webp"},
+          { id: 3, name: 'brown', img:"https://img.ltwebstatic.com/images3_pi/2020/01/15/157908187102b895ac68d9286f66e7132bd7701940_thumbnail_900x.webp" },
         ],
-        ordcolors:[
-          { id: 1, name: 'brown'},
-        ],
+        // sizes: [
+        //   { id: 1, name: 'S', price: 730, },
+        //   { id: 2, name: 'M', price: 730, },
+        //   { id: 3, name: 'L', price: 730, },
+        //   { id: 4, name: 'F', price: 730, }
+        // ],
         sizes: [
-          { id: 1, name: 'S', price: 730, },
-          { id: 2, name: 'M', price: 730, },
-          { id: 3, name: 'L', price: 730, },
-          { id: 4, name: 'F', price: 730, }
-        ]
+          {
+            name: "S",
+            price: 730,
+            mesurements: [
+              {
+                name: "Bottom Length",
+                value: "40in"
+              },
+              {
+                name: "Hips",
+                value: "38.2in"
+              },
+              {
+                name: "Thigh",
+                value: "25.1in"
+              },
+              {
+                name: "Waist",
+                value: "38.6in"
+              },
+              {
+                name: "Bust",
+                value: "38.6in"
+              },
+              {
+                name: "Sleeve Width",
+                value: "38.6in"
+              },
+            ]
+          },
+          {
+            name: "M",
+            price: 730,
+            mesurements: [
+              {
+                name: "Length",
+                value: "45.2in"
+              },
+              {
+                name: "Hips",
+                value: "41.7in"
+              },
+              {
+                name: "Thigh",
+                value: "24.8in"
+              },
+              {
+                name: "Waist",
+                value: "32.6in"
+              },
+            ]
+          },
+          {
+            name: "L",
+            price: 730,
+            mesurements: [
+              {
+                name: "Length",
+                value: "38.2in"
+              },
+              {
+                name: "Hips",
+                value: "40.7in"
+              },
+              {
+                name: "Thigh",
+                value: "22.8in"
+              },
+              {
+                name: "Waist",
+                value: "32.6in"
+              },
+            ]
+          },
+          {
+            name: "XL",
+            price: 730,
+            mesurements: [
+              {
+                name: "Length",
+                value: "38.2in"
+              },
+              {
+                name: "Hips",
+                value: "40.7in"
+              },
+              {
+                name: "Thigh",
+                value: "22.8in"
+              },
+              {
+                name: "Waist",
+                value: "32.6in"
+              },
+            ]
+          },
+          {
+            name: "XXL",
+            price: 730,
+            mesurements: [
+              {
+                name: "Length",
+                value: "38.2in"
+              },
+              {
+                name: "Hips",
+                value: "40.7in"
+              },
+              {
+                name: "Thigh",
+                value: "22.8in"
+              },
+              {
+                name: "Waist",
+                value: "32.6in"
+              },
+            ]
+          },
+        ],
       },
       {
         id: 5,
@@ -120,24 +581,142 @@ export default createStore({
         name: 'oversized t-shirt',
         moq: 10,
         info: '01-08-23636',
+        favourite: false,
         images: [
           "https://img.ltwebstatic.com/images3_pi/2019/10/22/15717339355bd984905d3dad38aad16f10c8aa8a6d_thumbnail_900x.webp",
           "https://img.ltwebstatic.com/images3_pi/2021/01/13/1610505625cef5573c92b4d1df43eca292954c67e2_thumbnail_900x.webp",
         ],
         price: 324,
         colors: [
-          { id: 1, name: 'black' },
-          { id: 2, name: 'blue' },
+          { id: 1, name: 'black', img:"https://img.ltwebstatic.com/images3_pi/2019/10/22/15717339355bd984905d3dad38aad16f10c8aa8a6d_thumbnail_900x.webp" },
+          { id: 2, name: 'blue', img:"https://img.ltwebstatic.com/images3_pi/2021/01/13/1610505625cef5573c92b4d1df43eca292954c67e2_thumbnail_900x.webp" },
         ],
-        ordcolors:[
-          {id: 1, name: 'black'},
-        ],
+        // sizes: [
+        //   { id: 1, name: 'S', price: 324, },
+        //   { id: 2, name: 'M', price: 324, },
+        //   { id: 3, name: 'L', price: 324, },
+        //   { id: 4, name: 'F', price: 324, }
+        // ],
         sizes: [
-          { id: 1, name: 'S', price: 324, },
-          { id: 2, name: 'M', price: 324, },
-          { id: 3, name: 'L', price: 324, },
-          { id: 4, name: 'F', price: 324, }
-        ]
+          {
+            name: "S",
+            price: 324,
+            mesurements: [
+              {
+                name: "Bottom Length",
+                value: "40in"
+              },
+              {
+                name: "Hips",
+                value: "38.2in"
+              },
+              {
+                name: "Thigh",
+                value: "25.1in"
+              },
+              {
+                name: "Waist",
+                value: "38.6in"
+              },
+              {
+                name: "Bust",
+                value: "38.6in"
+              },
+              {
+                name: "Sleeve Width",
+                value: "38.6in"
+              },
+            ]
+          },
+          {
+            name: "M",
+            price: 324,
+            mesurements: [
+              {
+                name: "Length",
+                value: "45.2in"
+              },
+              {
+                name: "Hips",
+                value: "41.7in"
+              },
+              {
+                name: "Thigh",
+                value: "24.8in"
+              },
+              {
+                name: "Waist",
+                value: "32.6in"
+              },
+            ]
+          },
+          {
+            name: "L",
+            price: 324,
+            mesurements: [
+              {
+                name: "Length",
+                value: "38.2in"
+              },
+              {
+                name: "Hips",
+                value: "40.7in"
+              },
+              {
+                name: "Thigh",
+                value: "22.8in"
+              },
+              {
+                name: "Waist",
+                value: "32.6in"
+              },
+            ]
+          },
+          {
+            name: "XL",
+            price: 324,
+            mesurements: [
+              {
+                name: "Length",
+                value: "38.2in"
+              },
+              {
+                name: "Hips",
+                value: "40.7in"
+              },
+              {
+                name: "Thigh",
+                value: "22.8in"
+              },
+              {
+                name: "Waist",
+                value: "32.6in"
+              },
+            ]
+          },
+          {
+            name: "XXL",
+            price: 324,
+            mesurements: [
+              {
+                name: "Length",
+                value: "38.2in"
+              },
+              {
+                name: "Hips",
+                value: "40.7in"
+              },
+              {
+                name: "Thigh",
+                value: "22.8in"
+              },
+              {
+                name: "Waist",
+                value: "32.6in"
+              },
+            ]
+          },
+        ],
       },
       {
         id: 6,
@@ -145,6 +724,7 @@ export default createStore({
         name: '22y28 oversized',
         moq: 10,
         info: '01-08-23636',
+        favourite: false,
         images: [
           "https://img.ltwebstatic.com/images3_pi/2023/03/17/1679030387b6eeb09f553300f8cd45a6e8f7b1d02d_thumbnail_900x.webp",
           "https://img.ltwebstatic.com/images3_pi/2022/09/14/166313694495cfd7691ca5422891a3bd80f1a50c91_thumbnail_900x.webp",
@@ -152,28 +732,147 @@ export default createStore({
         ],
         price: 282,
         colors: [
-          { id: 1, name: 'skyblue' },
-          { id: 2, name: 'mediumpurple' },
+          { id: 1, name: 'skyblue', img: "https://img.ltwebstatic.com/images3_pi/2023/03/17/1679030387b6eeb09f553300f8cd45a6e8f7b1d02d_thumbnail_900x.webp"},
+          { id: 2, name: 'white', img:"https://img.ltwebstatic.com/images3_pi/2022/09/14/166313694495cfd7691ca5422891a3bd80f1a50c91_thumbnail_900x.webp" },
+          { id: 3, name: 'mediumpurple', img:"https://img.ltwebstatic.com/images3_pi/2021/07/26/16272673011d5d95943a7ef250d2190675a68d56e0_thumbnail_900x.webp"},
         ],
-        ordcolors:[
-          { id: 1, name: 'skyblue'},
-        ],
+        // sizes: [
+        //   { id: 1, name: 'S', price: 282, },
+        //   { id: 2, name: 'M', price: 282, },
+        //   { id: 3, name: 'L', price: 282, },
+        //   { id: 4, name: 'F', price: 282, }
+        // ],
         sizes: [
-          { id: 1, name: 'S', price: 282, },
-          { id: 2, name: 'M', price: 282, },
-          { id: 3, name: 'L', price: 282, },
-          { id: 4, name: 'F', price: 282, }
-        ]
+          {
+            name: "S",
+            price: 282,
+            mesurements: [
+              {
+                name: "Bottom Length",
+                value: "40in"
+              },
+              {
+                name: "Hips",
+                value: "38.2in"
+              },
+              {
+                name: "Thigh",
+                value: "25.1in"
+              },
+              {
+                name: "Waist",
+                value: "38.6in"
+              },
+              {
+                name: "Bust",
+                value: "38.6in"
+              },
+              {
+                name: "Sleeve Width",
+                value: "38.6in"
+              },
+            ]
+          },
+          {
+            name: "M",
+            price: 282,
+            mesurements: [
+              {
+                name: "Length",
+                value: "45.2in"
+              },
+              {
+                name: "Hips",
+                value: "41.7in"
+              },
+              {
+                name: "Thigh",
+                value: "24.8in"
+              },
+              {
+                name: "Waist",
+                value: "32.6in"
+              },
+            ]
+          },
+          {
+            name: "L",
+            price: 282,
+            mesurements: [
+              {
+                name: "Length",
+                value: "38.2in"
+              },
+              {
+                name: "Hips",
+                value: "40.7in"
+              },
+              {
+                name: "Thigh",
+                value: "22.8in"
+              },
+              {
+                name: "Waist",
+                value: "32.6in"
+              },
+            ]
+          },
+          {
+            name: "XL",
+            price: 282,
+            mesurements: [
+              {
+                name: "Length",
+                value: "38.2in"
+              },
+              {
+                name: "Hips",
+                value: "40.7in"
+              },
+              {
+                name: "Thigh",
+                value: "22.8in"
+              },
+              {
+                name: "Waist",
+                value: "32.6in"
+              },
+            ]
+          },
+          {
+            name: "XXL",
+            price: 282,
+            mesurements: [
+              {
+                name: "Length",
+                value: "38.2in"
+              },
+              {
+                name: "Hips",
+                value: "40.7in"
+              },
+              {
+                name: "Thigh",
+                value: "22.8in"
+              },
+              {
+                name: "Waist",
+                value: "32.6in"
+              },
+            ]
+          },
+        ],
       },
     ],
     activeProduct: {},
+    savedProducts: [],
     Prodamts: [
       {
         id: 1,
         ttlamount: "2001",
+        img: "img/icons/test1.png",
         avgrate: "562",
         ttlpieces: "15",
-        imgdp: "img/icons/test1.png",
       },
       // {
       //   id: 2,
@@ -191,7 +890,7 @@ export default createStore({
       // },
     ],
     cart: [],
-   
+
     items: [
       {
         id: 1,
@@ -229,6 +928,7 @@ export default createStore({
       {
         id: 1,
         name: 'Special Prices',
+        slug: 'special-price',
         img: 'https://images.meesho.com/images/marketing/1591970222196_64.webp',
         child: {
           '': [
@@ -236,7 +936,7 @@ export default createStore({
               id: 1,
               name: 'Dresses',
               img: 'https://static2.urbanic.com/images/v/edb847e55d548b3075bef1914867caf3.png',
-              route: '/CardCatelog/Category1'
+              route: '/CardCatelog/Category1',
             },
             {
               id: 2,
@@ -248,13 +948,13 @@ export default createStore({
               id: 3,
               name: 'Bottoms',
               img: 'https://static2.urbanic.com/images/v/7346bf39cb60692f982ce28b58653b12.jpeg',
-              route: ''
+              route: '/CardCatelog/category3'
             },
             {
               id: 4,
               name: 'Top & T-shirts',
               img: 'https://static2.urbanic.com/images/v/3e41f5da8f8925b7e7afbb1fef946c88.jpeg',
-              route: ''
+              route: '/catelog-page'
             },
             {
               id: 5,
@@ -281,7 +981,7 @@ export default createStore({
               route: ''
             },
           ],
-          
+
           // 'Blouses': [
           //   {
           //     id: 1,
@@ -308,7 +1008,7 @@ export default createStore({
           //     route: ''
           //   },
           // ],
-          
+
           // 'Bottoms': [
           //   {
           //     id: 1,
@@ -340,6 +1040,7 @@ export default createStore({
       {
         id: 2,
         name: 'Dresses',
+        slug: 'dresses',
         img: 'https://images.meesho.com/images/marketing/1591969710874_64.webp',
         child: {
           '': [
@@ -449,6 +1150,7 @@ export default createStore({
       {
         id: 3,
         name: 'Tops',
+        slug: 'tops',
         img: 'https://images.meesho.com/images/marketing/1591969693743_64.webp',
         child: {
           '': [
@@ -552,6 +1254,7 @@ export default createStore({
       {
         id: 4,
         name: 'Bottoms',
+        slug: 'bottoms',
         img: 'https://images.meesho.com/images/marketing/1591969654748_64.webp',
         child: {
           '': [
@@ -637,6 +1340,7 @@ export default createStore({
       {
         id: 5,
         name: 'Denim',
+        slug: 'denim',
         img: 'https://images.meesho.com/images/marketing/1591969736036_64.webp',
         child: {
           '': [
@@ -710,6 +1414,7 @@ export default createStore({
       {
         id: 6,
         name: 'Sports',
+        slug: 'sports',
         img: 'https://images.meesho.com/images/marketing/1591969678285_64.webp',
         child: {
           '': [
@@ -825,6 +1530,7 @@ export default createStore({
       {
         id: 7,
         name: 'Payjamas & Lingeire',
+        slug: 'payjamas-lingerie',
         img: 'https://images.meesho.com/images/marketing/1591969621244_64.webp',
         child: {
           '': [
@@ -892,6 +1598,7 @@ export default createStore({
       {
         id: 8,
         name: 'Co-Ords',
+        slug: 'co-ords',
         img: 'https://images.meesho.com/images/marketing/1591969621244_64.webp',
         child: {
           '': [
@@ -913,6 +1620,7 @@ export default createStore({
       {
         id: 9,
         name: 'Curve',
+        slug: 'curve',
         img: 'https://images.meesho.com/images/marketing/1591969621244_64.webp',
         child: {
           '': [
@@ -933,7 +1641,7 @@ export default createStore({
       },
 
     ],
-    
+
     // Old order loop
     // orders: [
     //   {
@@ -988,197 +1696,761 @@ export default createStore({
     //     push: '300',
     //   },
     // ],
-    
-    orders:[
+
+    orders: [
       {
-        id:1,
-        date:'14 June',
-        oid:'OID 542630',
-        price:'150000',
-        item:'25',
-        qty:'200',
-        status:'Pending',
-        days:'7',
-        dispatch:'2',
-        deliver:'2'
+        id: 1,
+        oid: '5426308975',
+        date: '14',
+        month: 'Jun',
+        item: '25',
+        qty: '200',
+        statusone: 'Pending',
+        status: 'Unpaid',
+        days: '7',
+        dispatch: '2',
+        deliver: '2',
+        datetime: '10 June, 5.15 PM',
+        invoiceno: '152364',
+        payment: [
+          {
+            amount: '720000',
+            mode: 'UPI',
+            details: 'Uploaded',
+            status: 'Unpaid'
+          }
+        ],
+        delivery: [
+          {
+            charges: '30000',
+            suborder: '3',
+            items: '24',
+            date: '18-June-23',
+            mode: 'Pickup',
+            status: 'Pending',
+            address: 'B-94 Okhla Industrial Area, Phase-II New Delhi South Delhi DL 110020 IN'
+          }
+        ],
+        products: [
+          {
+            suboid: '12542630',
+            name: 'Crochet Skirt Two-Piece Outfits pack of 2',
+            img: 'img/icons/test1.png',
+            amount: '2000',
+            sku: '562',
+            unit: '15',
+            subproduct: [
+              {
+                id: 1,
+                img: 'https://img.ltwebstatic.com/images3_pi/2019/12/16/1576484402687c5cc3592067511e046fb985a5414a_thumbnail_900x.webp',
+                skuid: '957223654824',
+                size: 'S',
+                color: 'Red',
+                pcs: '20'
+              },
+              {
+                id: 2,
+                img: 'https://img.ltwebstatic.com/images3_pi/2019/12/16/1576484402687c5cc3592067511e046fb985a5414a_thumbnail_900x.webp',
+                skuid: '6453654824',
+                size: 'M',
+                color: 'Blue',
+                pcs: '39'
+              },
+            ]
+          },
+          {
+            suboid: 'PID 542630',
+            name: ' Two-Piece Outfits pack of 2',
+            img: 'img/icons/test1.png',
+            amount: '2000',
+            sku: '562',
+            unit: '15',
+            subproduct: [
+              {
+                id: 1,
+                img: 'https://img.ltwebstatic.com/images3_pi/2019/12/23/15770878616a86e80aeb3e5c5667029c6ad6d4cab9_thumbnail_900x.webp',
+                skuid: '957223654824',
+                size: 'S',
+                color: 'Red',
+                pcs: '20'
+              },
+              {
+                id: 2,
+                img: 'https://img.ltwebstatic.com/images3_pi/2019/12/23/15770878616a86e80aeb3e5c5667029c6ad6d4cab9_thumbnail_900x.webp',
+                skuid: '6453654824',
+                size: 'M',
+                color: 'Blue',
+                pcs: '39'
+              },
+            ]
+          }
+        ]
       },
       {
-        id:2,
-        date:'15 June',
-        oid:'OID 542631',
-        price:'150000',
-        item:'25',
-        qty:'200',
-        status:'Approved',
-        days:'7',
-        dispatch:'2',
-        deliver:'2'
+        id: 2,
+        date: '15',
+        month: 'Jul',
+        oid: '54263152365',
+        // price:'150000',
+        // item:'25',
+        // qty:'200',
+        statusone: 'Shipped',
+        status: 'Unpaid',
+        days: '7',
+        dispatch: '2',
+        deliver: '2',
+        datetime: '09 June, 6.15 PM',
+        invoiceno: '152365',
+        payment: [
+          {
+            amount: '720000',
+            mode: 'UPI',
+            details: 'Uploaded',
+            status: 'Unpaid'
+          }
+        ],
+        delivery: [
+          {
+            charges: '30000',
+            suborder: '3',
+            items: '24',
+            date: '18-June-23',
+            mode: 'Pickup',
+            status: 'Shipped',
+            address: 'B-94 Okhla Industrial Area, Phase-II New Delhi South Delhi DL 110020 IN'
+          }
+        ],
+        products: [
+          {
+            suboid: 'PID 542631',
+            name: 'Crochet Skirt Two-Piece Outfits pack of 2',
+            img: 'img/icons/pd1.png',
+            amount: '2000',
+            sku: '562',
+            unit: '15'
+          },
+          {
+            suboid: 'PID 542631',
+            name: 'Crochet Skirt Two-Piece Outfits pack of 2',
+            img: 'img/icons/pd2.png',
+            amount: '2000',
+            sku: '562',
+            unit: '15'
+          }
+        ]
       },
       {
-        id:3,
-        date:'16 June',
-        oid:'OID 542632',
-        price:'150000',
-        item:'25',
-        qty:'200',
-        status:'Processing',
-        days:'7',
-        dispatch:'2',
-        deliver:'2'
+        id: 3,
+        date: '14',
+        month: 'Aug',
+        oid: '5426326574',
+        // price:'150000',
+        item: '25',
+        qty: '200',
+        statusone: 'Delivered',
+        status: 'Rejected',
+        days: '7',
+        dispatch: '2',
+        deliver: '2',
+        datetime: '09 June, 6.15 PM',
+        invoiceno: '152365',
+        payment: [
+          {
+            amount: '720000',
+            mode: 'UPI',
+            details: 'Uploaded',
+            status: 'Unpaid'
+          }
+        ],
+        delivery: [
+          {
+            charges: '30000',
+            suborder: '3',
+            items: '24',
+            date: '18-June-23',
+            mode: 'Pickup',
+            status: 'Shipped',
+            address: 'B-94 Okhla Industrial Area, Phase-II New Delhi South Delhi DL 110020 IN'
+          }
+        ],
+        products: [
+          {
+            suboid: 'PID 542631',
+            name: 'Crochet Skirt Two-Piece Outfits pack of 2',
+            img: 'img/icons/pd1.png',
+            amount: '2000',
+            sku: '562',
+            unit: '15'
+          },
+          {
+            suboid: 'PID 542631',
+            name: 'Crochet Skirt Two-Piece Outfits pack of 2',
+            img: 'img/icons/pd2.png',
+            amount: '2000',
+            sku: '562',
+            unit: '15'
+          }
+        ]
       },
       {
-        id:4,
-        date:'17 June',
-        oid:'OID 542633',
-        price:'150000',
-        item:'25',
-        qty:'200',
-        status:'Dispatched',
-        days:'7',
-        dispatch:'2',
-        deliver:'2'
+        id: 4,
+        date: '14',
+        month: 'Sept',
+        oid: '5426333654',
+        // price:'150000',
+        item: '25',
+        qty: '200',
+        statusone: 'Cancelled',
+        status: 'Unpaid',
+        days: '7',
+        dispatch: '2',
+        deliver: '2'
       },
       {
-        id:4,
-        date:'17 June',
-        oid:'OID 542633',
-        price:'150000',
-        item:'25',
-        qty:'200',
-        status:'Arrived in 2 Days',
-        days:'7',
-        dispatch:'2',
-        deliver:'2'
+        id: 5,
+        date: '14',
+        month: 'Oct',
+        oid: '542633245',
+        price: '150000',
+        item: '25',
+        qty: '200',
+        statusone: 'Pending',
+        status: 'Paid',
+        days: '7',
+        dispatch: '2',
+        deliver: '2'
       },
       {
-        id:4,
-        date:'17 June',
-        oid:'OID 542633',
-        price:'150000',
-        item:'25',
-        qty:'200',
-        status:'Delivered',
-        days:'7',
-        dispatch:'2',
-        deliver:'2'
+        id: 6,
+        date: '14',
+        month: 'Nov',
+        oid: '5426337854',
+        price: '150000',
+        item: '25',
+        qty: '200',
+        statusone: 'Shipped',
+        status: 'Paid',
+        days: '7',
+        dispatch: '2',
+        deliver: '2'
+      },
+      // {
+      //   id: 7,
+      //   date: '14',
+      //   month: 'Dec',
+      //   oid: '542633124',
+      //   price: '150000',
+      //   item: '25',
+      //   qty: '200',
+      //   statusone:'Delivered',
+      //   status: 'Paid',
+      //   days: '7',
+      //   dispatch: '2',
+      //   deliver: '2'
+      // },
+      {
+        id: 8,
+        date: '14',
+        month: 'Jan',
+        oid: '542633568',
+        price: '150000',
+        item: '25',
+        qty: '200',
+        statusone: 'Cancelled',
+        status: 'Paid',
+        days: '7',
+        dispatch: '2',
+        deliver: '2'
+      },
+    ],
+    activeOrder: {},
+    completedOrders: [
+      {
+        id: 1,
+        img: 'https://img.ltwebstatic.com/images3_pi/2019/12/16/1576484402687c5cc3592067511e046fb985a5414a_thumbnail_900x.webp',
+        oid: '4526589182365',
+        name: 'Stylish Western Girl Trouser',
+        datetime: '10 June, 12:30 pm',
+        suboid: '4526589182365',
+        sku: '8',
+        unit: '200',
+        amount: '240000',
+        catelog_id: 1,
+        subproduct: [
+          {
+            id: 1,
+            img: 'https://img.ltwebstatic.com/images3_pi/2019/12/16/1576484402687c5cc3592067511e046fb985a5414a_thumbnail_900x.webp',
+            skuid: '957223654824',
+            size: 'S',
+            color: 'Red',
+            pcs: '20'
+          },
+          {
+            id: 2,
+            img: 'https://img.ltwebstatic.com/images3_pi/2019/12/16/1576484402687c5cc3592067511e046fb985a5414a_thumbnail_900x.webp',
+            skuid: '655323654824',
+            size: 'L',
+            color: 'Blue',
+            pcs: '15'
+          },
+          {
+            id: 3,
+            img: 'https://img.ltwebstatic.com/images3_pi/2019/12/16/1576484402687c5cc3592067511e046fb985a5414a_thumbnail_900x.webp',
+            skuid: '457873654824',
+            size: 'XL',
+            color: 'Black',
+            pcs: '41'
+          },
+          {
+            id: 4,
+            img: 'https://img.ltwebstatic.com/images3_pi/2019/12/16/1576484402687c5cc3592067511e046fb985a5414a_thumbnail_900x.webp',
+            skuid: '451223654824',
+            size: 'XXL',
+            color: 'Burgandy',
+            pcs: '50'
+          },
+        ]
       },
       {
-        id:4,
-        date:'17 June',
-        oid:'OID 542633',
-        price:'150000',
-        item:'25',
-        qty:'200',
-        status:'Canceled',
-        days:'7',
-        dispatch:'2',
-        deliver:'2'
+        id: 2,
+        img: 'https://img.ltwebstatic.com/images3_pi/2019/10/22/15717339355bd984905d3dad38aad16f10c8aa8a6d_thumbnail_900x.webp',
+        oid: '4526589182365',
+        name: 'Spun Twill 3 Pc',
+        datetime: '10 June, 12:30 pm',
+        suboid: '4526589182365',
+        sku: '8',
+        unit: '200',
+        amount: '240000',
+        catelog_id: 5,
+        subproduct: [
+          {
+            id: 1,
+            img: 'https://img.ltwebstatic.com/images3_pi/2019/10/22/15717339355bd984905d3dad38aad16f10c8aa8a6d_thumbnail_900x.webp',
+            skuid: '451223654824',
+            size: 'XXL',
+            color: 'Burgandy',
+            pcs: '25'
+          },
+          {
+            id: 2,
+            img: 'https://img.ltwebstatic.com/images3_pi/2019/10/22/15717339355bd984905d3dad38aad16f10c8aa8a6d_thumbnail_900x.webp',
+            skuid: '451223654824',
+            size: 'XXL',
+            color: 'Burgandy',
+            pcs: '25'
+          },
+          {
+            id: 3,
+            img: 'https://img.ltwebstatic.com/images3_pi/2019/10/22/15717339355bd984905d3dad38aad16f10c8aa8a6d_thumbnail_900x.webp',
+            skuid: '451223654824',
+            size: 'XXL',
+            color: 'Burgandy',
+            pcs: '25'
+          },
+          {
+            id: 4,
+            img: 'https://img.ltwebstatic.com/images3_pi/2019/10/22/15717339355bd984905d3dad38aad16f10c8aa8a6d_thumbnail_900x.webp',
+            skuid: '451223654824',
+            size: 'XXL',
+            color: 'Burgandy',
+            pcs: '25'
+          },
+        ]
       },
       {
-        id:4,
-        date:'17 June',
-        oid:'OID 542633',
-        price:'150000',
-        item:'25',
-        qty:'200',
-        status:'Rejected',
-        days:'7',
-        dispatch:'2',
-        deliver:'2'
+        id: 3,
+        img: 'https://img.ltwebstatic.com/images3_pi/2019/12/23/15770878616a86e80aeb3e5c5667029c6ad6d4cab9_thumbnail_900x.webp',
+        oid: '4526589182365',
+        name: 'RIB TOP',
+        datetime: '10 June, 12:30 pm',
+        suboid: '4526589182365',
+        sku: '8',
+        unit: '200',
+        amount: '240000',
+        catelog_id: 2,
+        subproduct: [
+          {
+            id: 1,
+            img: 'https://img.ltwebstatic.com/images3_pi/2019/12/23/15770878616a86e80aeb3e5c5667029c6ad6d4cab9_thumbnail_900x.webp',
+            skuid: '451223654824',
+            size: 'XXL',
+            color: 'Burgandy',
+            pcs: '25'
+          },
+          {
+            id: 2,
+            img: 'https://img.ltwebstatic.com/images3_pi/2019/12/23/15770878616a86e80aeb3e5c5667029c6ad6d4cab9_thumbnail_900x.webp',
+            skuid: '451223654824',
+            size: 'XXL',
+            color: 'Burgandy',
+            pcs: '25'
+          },
+          {
+            id: 3,
+            img: 'https://img.ltwebstatic.com/images3_pi/2019/12/23/15770878616a86e80aeb3e5c5667029c6ad6d4cab9_thumbnail_900x.webp',
+            skuid: '451223654824',
+            size: 'XXL',
+            color: 'Burgandy',
+            pcs: '25'
+          },
+          {
+            id: 4,
+            img: 'https://img.ltwebstatic.com/images3_pi/2019/12/23/15770878616a86e80aeb3e5c5667029c6ad6d4cab9_thumbnail_900x.webp',
+            skuid: '451223654824',
+            size: 'XXL',
+            color: 'Burgandy',
+            pcs: '25'
+          },
+        ]
+      },
+      {
+        id: 4,
+        img: 'https://img.ltwebstatic.com/images3_pi/2019/11/27/157484286459ed9e2b1037c98c9ff519c695214cab_thumbnail_900x.webp',
+        oid: '4526589182365',
+        name: 'Zuric Two Pc',
+        datetime: '10 June, 12:30 pm',
+        suboid: '4526589182365',
+        sku: '8',
+        unit: '200',
+        amount: '240000',
+        catelog_id: 3,
+        subproduct: [
+          {
+            id: 1,
+            img: 'https://img.ltwebstatic.com/images3_pi/2019/11/27/157484286459ed9e2b1037c98c9ff519c695214cab_thumbnail_900x.webp',
+            skuid: '957223654824',
+            size: 'S',
+            color: 'Red',
+            pcs: '20'
+          },
+          {
+            id: 2,
+            img: 'https://img.ltwebstatic.com/images3_pi/2019/11/27/157484286459ed9e2b1037c98c9ff519c695214cab_thumbnail_900x.webp',
+            skuid: '655323654824',
+            size: 'L',
+            color: 'Blue',
+            pcs: '15'
+          },
+          {
+            id: 3,
+            img: 'https://img.ltwebstatic.com/images3_pi/2019/11/27/157484286459ed9e2b1037c98c9ff519c695214cab_thumbnail_900x.webp',
+            skuid: '457873654824',
+            size: 'XL',
+            color: 'Black',
+            pcs: '41'
+          },
+          {
+            id: 4,
+            img: 'https://img.ltwebstatic.com/images3_pi/2019/11/27/157484286459ed9e2b1037c98c9ff519c695214cab_thumbnail_900x.webp',
+            skuid: '451223654824',
+            size: 'XXL',
+            color: 'Burgandy',
+            pcs: '50'
+          },
+        ]
       },
     ],
     collections: [
       {
         id: 1,
-        img: 'https://img101.urbanic.com/v1/goods-pic/db9525d5bbd74861af64a5589f26cb5cUR_w540_h720_q85.webp',
-        price: '1190'
+        heading: 'Under 199',
+        text: 'Sleek & graceful fits for every occasion',
+        order: '0',
+        button: 'SHOP NOW',
+        img: 'img/banner/one.png',
+        one: [
+          {
+            id: 1,
+            img: 'https://img101.urbanic.com/v1/goods-pic/27e6d1538adc45cfaac2f7f79997dd65UR_w540_h720_q85.webp',
+            price: '1290'
+          },
+          {
+            id: 2,
+            img: 'https://img101.urbanic.com/v1/goods-pic/69e05a4dfe784169afd0179b6172d47cUR_w540_h720_q85.webp',
+            price: '990'
+          },
+          {
+            id: 3,
+            img: 'https://img101.urbanic.com/v1/goods-pic/f5a8f7e7cfcc42238f8c4619e829c7a9UR_w540_h720_q85.webp',
+            price: '1890'
+          },
+          {
+            id: 4,
+            img: 'https://img101.urbanic.com/v1/goods-pic/bfd49b51ec644c28bc316949e650f8d0UR_w540_h720_q85.webp',
+            price: '1790'
+          },
+          {
+            id: 5,
+            img: 'https://img101.urbanic.com/v1/goods-pic/63f5574a5b5f440fb29f4b441141c113UR_w540_h720_q85.webp',
+            price: '3490'
+          },
+          {
+            id: 6,
+            img: 'https://img101.urbanic.com/v1/goods-pic/a9d445352ac84bef80e6d957684e9802UR_w540_h720_q85.webp',
+            price: '1590'
+          }
+        ]
       },
       {
         id: 2,
-        img: 'https://img101.urbanic.com/v1/goods-pic/655b4152e57640bc82a311f087de3025UR_w540_h720_q85.webp',
-        price: '1590'
+        heading: 'Under 299',
+        text: 'Tops that will make you stand apart',
+        order: '1',
+        button: 'SHOP NOW',
+        img: 'img/banner/two.png',
+        one: [
+          {
+            id: 1,
+            img: 'https://img101.urbanic.com/v1/goods-pic/a52a3d827248461bb69c8839e12e4ca5UR_w540_h720_q85.webp',
+            price: '790'
+          },
+          {
+            id: 2,
+            img: 'https://img101.urbanic.com/v1/goods-pic/ce8d7bda1deb421ca5e37fabd9af4106UR_w540_h720_q85.webp',
+            price: '690'
+          },
+          {
+            id: 3,
+            img: 'https://img101.urbanic.com/v1/goods-pic/aca98e67c531405b85c2d70cf930debfUR_w540_h720_q85.webp',
+            price: '690'
+          },
+          {
+            id: 4,
+            img: 'https://img101.urbanic.com/v1/goods-pic/f73e659e15df46418ff4a56faf471874UR_w540_h720_q85.webp',
+            price: '1190'
+          },
+          {
+            id: 5,
+            img: 'https://img101.urbanic.com/v1/goods-pic/bf48a147dfd44245bd709ff916d62966UR_w540_h720_q85.webp',
+            price: '990'
+          },
+          {
+            id: 6,
+            img: 'https://img101.urbanic.com/v1/goods-pic/56ea8b04a8ff4904ab91783c85caaca2UR_w540_h720_q85.webp',
+            price: '1790'
+          }
+        ]
       },
       {
         id: 3,
-        img: 'https://img101.urbanic.com/v1/goods-pic/e123a5fdaf3e46d9a6070b567a851397UR_w540_h720_q85.webp',
-        price: '1290'
+        heading: 'Under 399',
+        text: 'Slack on with dungarees, pants, skirts and much',
+        order: '0',
+        button: 'SHOP NOW',
+        img: 'img/banner/three.png',
+        one: [
+          {
+            id: 1,
+            img: 'https://img101.urbanic.com/v1/goods-pic/665b90d85f94418dbd7eaddab79bab8bUR_w540_h720_q85.webp',
+            price: '1390'
+          },
+          {
+            id: 2,
+            img: 'https://img101.urbanic.com/v1/goods-pic/ead3bacdcd49498b87786e957d9c3a51UR_w540_h720_q85.webp',
+            price: '1890'
+          },
+          {
+            id: 3,
+            img: 'https://img101.urbanic.com/v1/goods-pic/6c7da1814f614cc388dc42cfd2b96e76UR_w540_h720_q85.webp',
+            price: '1890'
+          },
+          {
+            id: 4,
+            img: 'https://img101.urbanic.com/v1/goods-pic/1cb7e4785db74116b96e8d126f830c23UR_w540_h720_q85.webp',
+            price: '1990'
+          },
+          {
+            id: 5,
+            img: 'https://img101.urbanic.com/v1/goods-pic/56f7bbddff7243338c96253745c989cfUR_w540_h720_q85.webp',
+            price: '1690'
+          },
+          {
+            id: 6,
+            img: 'https://img101.urbanic.com/v1/goods-pic/997d1709ab564a669c70ec9b007cc365UR_w540_h720_q85.webp',
+            price: '1290'
+          }
+        ]
       },
       {
         id: 4,
-        img: 'https://img101.urbanic.com/v1/goods-pic/53499390bb1346d184332be782eb2846UR_w540_h720_q85.webp',
-        price: '1790'
+        heading: 'Under 499',
+        text: 'Psst... They go with everything',
+        order: '1',
+        button: 'SHOP NOW',
+        img: 'img/banner/four.png',
+        one: [
+          {
+            id: 1,
+            img: 'https://img101.urbanic.com/v1/goods-pic/cd7cc3d445b64bdca311ed8391bbff17UR_w540_h720_q85.webp',
+            price: '1290'
+          },
+          {
+            id: 2,
+            img: 'https://img101.urbanic.com/v1/goods-pic/4ba3249fbb0844b7b537f35fe8142ca3UR_w540_h720_q85.webp',
+            price: '1190'
+          },
+          {
+            id: 3,
+            img: 'https://img101.urbanic.com/v1/goods-pic/03eb795b1e29456c8336fe0cf5dd3820UR_w540_h720_q85.webp',
+            price: '1290'
+          },
+          {
+            id: 4,
+            img: 'https://img101.urbanic.com/v1/goods-pic/12fd582c783a412283e204c30d613cd6UR_w540_h720_q85.webp',
+            price: '1390'
+          },
+          {
+            id: 5,
+            img: 'https://img101.urbanic.com/v1/goods-pic/4f2d9de0478d4e37b692c8fab55d3b86UR_w540_h720_q85.webp',
+            price: '1190'
+          },
+          {
+            id: 6,
+            img: 'https://img101.urbanic.com/v1/goods-pic/d8212341a0b44b59882aceeb32d33959UR_w540_h720_q85.webp',
+            price: '1290'
+          }
+        ]
       },
       {
         id: 5,
-        img: 'https://img101.urbanic.com/v1/goods-pic/926f9106f7f04c8eacd82fad243677bfUR_w540_h720_q85.webp',
-        price: '2190'
-      },
-      {
-        id: 6,
-        img: 'https://img101.urbanic.com/v1/goods-pic/383b9454c9cb4b92b346323034e4019eUR_w540_h720_q85.webp',
-        price: '1990'
+        heading: 'Under 599',
+        text: 'Get your A-game on with voguish sets & ensembles',
+        order: '0',
+        button: 'SHOP NOW',
+        img: 'img/banner/five.png',
+        one: [
+          {
+            id: 1,
+            img: 'https://img101.urbanic.com/v1/goods-pic/396c1d0c6bd744d688af1161e3eaacd9UR_w540_h720_q85.webp',
+            price: '1590'
+          },
+          {
+            id: 2,
+            img: 'https://img101.urbanic.com/v1/goods-pic/e2a8f8d972864dfe9897c38c4edfbf3eUR_w540_h720_q85.webp',
+            price: '2690'
+          },
+          {
+            id: 3,
+            img: 'https://img101.urbanic.com/v1/goods-pic/3ab4dce0365249afa36fa97a1bedc0faUR_w540_h720_q85.webp',
+            price: '1690'
+          },
+          {
+            id: 4,
+            img: 'https://img101.urbanic.com/v1/goods-pic/1175e59eb5a94b1bb14dc74332988436UR_w540_h720_q85.webp',
+            price: '1590'
+          },
+          {
+            id: 5,
+            img: 'https://img101.urbanic.com/v1/goods-pic/031001b5097240e092131a0778530ce0UR_w540_h720_q85.webp',
+            price: '1690'
+          },
+          {
+            id: 6,
+            img: 'https://img101.urbanic.com/v1/goods-pic/e0cfb5747ef64b15a89b5351659108b0UR_w540_h720_q85.webp',
+            price: '2690'
+          }
+        ]
       },
     ],
-    SubCatProducts:[
+
+
+    SubCatProducts: [
+      {
+        id: 1,
+        img: 'https://img101.urbanic.com/v1/goods-pic/626c54fdfd92417e835c5ef39e8fc920UR_w540_h720_q85.webp',
+        name: 'Beaded Bodycon Dress',
+        price: '895',
+        color: 'yellow',
+      },
+      {
+        id: 2,
+        img: 'https://img101.urbanic.com/v1/goods-pic/2f2a7cb90fcf4e859242dad5a8ea39ee_w1000_q90.webp',
+        name: 'Beaded Bodycon Dress',
+        price: '894',
+        color: 'purple',
+      },
+      {
+        id: 3,
+        img: 'https://img101.urbanic.com/v1/goods-pic/04084a9545bc48b9a803a7170cc34f62UR_w540_h720_q85.webp',
+        name: 'Beaded Bodycon Dress',
+        price: '890',
+        color: 'green',
+      },
+      {
+        id: 4,
+        img: 'https://img101.urbanic.com/v1/goods-pic/3e2f9f130fc442079e250044c328de36_w540_h720_q85.webp',
+        name: 'Beaded Bodycon Dress',
+        price: '899',
+        color: 'red',
+      },
+    ],
+    featuredCollection: [
+      {
+        id: 1,
+        name: 'Dress',
+        moq: '10',
+        price: '438',
+        img: 'https://image.clovia.com/media/clovia-images/images/400x600/clovia-picture-padded-non-wired-full-cup-longline-bralette-in-black-878341.jpg',
+      },
+      {
+        id: 2,
+        name: 'Dress',
+        moq: '10',
+        price: '435',
+        img: 'https://image.clovia.com/media/clovia-images/images/400x600/clovia-picture-pretty-florals-two-piece-swimsuit-in-multicolour-784300.jpg',
+      },
+      {
+        id: 3,
+        name: 'Dress',
+        moq: '10',
+        price: '636',
+        img: 'https://image.clovia.com/media/clovia-images/images/400x600/clovia-picture-padded-non-wired-full-cup-longline-bralette-in-black-878341.jpg',
+      },
+      {
+        id: 4,
+        name: 'Dress',
+        moq: '10',
+        price: '522',
+        img: 'https://image.clovia.com/media/clovia-images/images/400x600/clovia-picture-pretty-florals-two-piece-swimsuit-in-multicolour-784300.jpg',
+      },
+    ],
+
+    cartProduct:[
       {
         id:1,
-        img:'https://img101.urbanic.com/v1/goods-pic/626c54fdfd92417e835c5ef39e8fc920UR_w540_h720_q85.webp',
-        name:'Beaded Bodycon Dress',
-        price:'895',
-        color:'yellow',
+        img:'https://img101.urbanic.com/v1/goods-pic/14569697283c4cd9866e5bfee6034459UR_w1000_q90.webp',
+        name:'Ruffle A-Line Dress',
+        amount:'120000',
+        rate:'1200',
+        pieces:'100'
       },
       {
         id:2,
-        img:'https://img101.urbanic.com/v1/goods-pic/2f2a7cb90fcf4e859242dad5a8ea39ee_w1000_q90.webp',
-        name:'Beaded Bodycon Dress',
-        price:'894',
-        color:'purple',
+        img:'https://img101.urbanic.com/v1/goods-pic/3ab4dce0365249afa36fa97a1bedc0faUR_w540_h720_q85.webp',
+        name:'Texture Shorts Co-ords pack of 2',
+        amount:'130500',
+        rate:'150',
+        pieces:'120'
       },
       {
         id:3,
-        img:'https://img101.urbanic.com/v1/goods-pic/04084a9545bc48b9a803a7170cc34f62UR_w540_h720_q85.webp',
-        name:'Beaded Bodycon Dress',
-        price:'890',
-        color:'green',
+        img:'https://img101.urbanic.com/v1/goods-pic/14569697283c4cd9866e5bfee6034459UR_w1000_q90.webp',
+        name:'Ruffle A-Line Dress',
+        amount:'120000',
+        rate:'1200',
+        pieces:'100'
       },
       {
         id:4,
-        img:'https://img101.urbanic.com/v1/goods-pic/3e2f9f130fc442079e250044c328de36_w540_h720_q85.webp',
-        name:'Beaded Bodycon Dress',
-        price:'899',
-        color:'red',
+        img:'https://img101.urbanic.com/v1/goods-pic/3ab4dce0365249afa36fa97a1bedc0faUR_w540_h720_q85.webp',
+        name:'Texture Shorts Co-ords pack of 2',
+        amount:'130500',
+        rate:'150',
+        pieces:'120'
       },
     ],
-    featuredCollection:[
-      {
-        id:1,
-        name:'Dress',
-        moq:'10',
-        price:'438',
-        img:'https://image.clovia.com/media/clovia-images/images/400x600/clovia-picture-padded-non-wired-full-cup-longline-bralette-in-black-878341.jpg',
-      },
-      {
-        id:2,
-        name:'Dress',
-        moq:'10',
-        price:'435',
-        img:'https://image.clovia.com/media/clovia-images/images/400x600/clovia-picture-pretty-florals-two-piece-swimsuit-in-multicolour-784300.jpg',
-      },
-      {
-        id:3,
-        name:'Dress',
-        moq:'10',
-        price:'636',
-        img:'https://image.clovia.com/media/clovia-images/images/400x600/clovia-picture-padded-non-wired-full-cup-longline-bralette-in-black-878341.jpg',
-      },
-      {
-        id:4,
-        name:'Dress',
-        moq:'10',
-        price:'522',
-        img:'https://image.clovia.com/media/clovia-images/images/400x600/clovia-picture-pretty-florals-two-piece-swimsuit-in-multicolour-784300.jpg',
-      },
-    ]
+    activeCartProduct:{},
+    activeRemoveProduct:{},
   },
   getters: {
     getColors(state) {
@@ -1196,6 +2468,20 @@ export default createStore({
     getProduct: (state) => (productId) => {
       let index = state.products.findIndex(product => product.id == productId);
       return state.products[index];
+    },
+
+    getOrder: (state) => (orderId) => {
+      let index = state.orders.findIndex(order => order.id == orderId);
+      return state.orders[index];
+    },
+
+    getcomplete: (state) => (completeId) => {
+      let index = state.completedOrders.findIndex(complete => complete.id == completeId);
+      return state.completedOrders[index];
+    },
+
+    getActiveOrder(state) {
+      return state.activeOrder
     },
 
     getProducts(state) {
@@ -1220,14 +2506,31 @@ export default createStore({
     getOrders(state) {
       return state.orders
     },
+    getCompletedOrders(state) {
+      return state.completedOrders
+    },
+
     getCollections(state) {
       return state.collections;
     },
-    getSubCatProducts(state){
+
+    getSubCatProducts(state) {
       return state.SubCatProducts;
     },
-    getfeaturedCollection(state){
+    getfeaturedCollection(state) {
       return state.featuredCollection;
+    },
+    getSavedProducts(state) {
+      return state.savedProducts;
+    },
+    getCartProduct(state){
+      return state.cartProduct;
+    },
+    getActiveCartProduct(state){
+      return state.activeCartProduct
+    },
+    getActiveRemoveProduct(state){
+      return state.activeRemoveProduct
     },
   },
   mutations: {
@@ -1430,7 +2733,31 @@ export default createStore({
     // addToFav: (state, id) => {
     //   state.items[state.items.findIndex(item => item.id == id)].fav = true;
     // }
-    
+
+    selectOrder(state, order) {
+      state.activeOrder = order
+    },
+    hideProduct(state) {
+      state.activeProduct = {}
+    },
+    saveProduct(state, data) {
+      state.savedProducts.push(data)
+    },
+    unSaveProduct(state, productIndex) {
+      state.savedProducts.splice(productIndex, 1)
+    },
+    selectCartProduct(state, product){
+      state.activeCartProduct = product
+    },
+    hideCartProduct(state){
+      state.activeCartProduct = {}
+    },
+    selectRemoveProduct(state, product){
+      state.activeRemoveProduct = product
+    },
+    hideRemoveProduct(state){
+      state.activeRemoveProduct = {}
+    }
   },
   actions: {
     addToCart({ commit }, data) {
@@ -1445,9 +2772,29 @@ export default createStore({
     selectProduct({ commit }, product) {
       commit('selectProduct', product)
     },
-   
     addItem(context, item) {
       context.commit("addItem", item);
+    },
+    hideProduct({ commit }) {
+      commit('hideProduct')
+    },
+    saveProduct({ commit }, data) {
+      commit('saveProduct', data)
+    },
+    unSaveProduct({ commit }, productIndex) {
+      commit('unSaveProduct', productIndex)
+    },
+    selectCartProduct({commit}, product){
+      commit('selectCartProduct', product)
+    },
+    hideCartProduct({commit}){
+      commit('hideCartProduct')
+    },
+    selectRemoveProduct({commit},product){
+      commit('selectRemoveProduct', product)
+    },
+    hideRemoveProduct({commit}){
+      commit('hideRemoveProduct')
     }
   },
 

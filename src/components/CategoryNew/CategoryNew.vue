@@ -1,36 +1,40 @@
 <template>
-
-<div class="w-100 d-flex position-relative" style="height:80%; ">
+    <!-- <HomeTopnav class=""></HomeTopnav>
+<OrderFilter class="position border-top border-bottom py-3 position-fixed top-0" style="z-index: 9; background-color: white;"></OrderFilter> -->
+    <div class="w-100 d-flex position-relative" style="height:80%;">
         <!-- <button class="btn " @click="ss">btn</button> -->
         <div class="w-25 position-fixed test-scroll " style="height:100vh; overflow-y:scroll; padding-bottom:150px;">
             <div id="list-example" class=" list-group text-center">
-                <CategoryLinks v-for="(category, index) in categories" :key="index" :category="category"></CategoryLinks>
+                <CategoryLink v-for="(category, index) in categories" :key="index" :category="category"></CategoryLink>
             </div>
         </div>
         <div class="w-75 position-absolute" style="right:0px;padding-bottom:150px;">
             <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-smooth-scroll="true" class="scrollspy-example"
                 tabindex="0">
-                <SubCategory v-for="(category, index) in categories" :key="index" :category="category"></SubCategory>
+                <SubCategory v-for="(category, index) in categories" :key="index" :category="category" class="py-3">
+                </SubCategory>
             </div>
         </div>
 
     </div>
 </template>
 <script>
-// import bootstrap from 'bootstrap'
-// import {ScrollSpy} from 'bootstrap'
+// import HomeTopnav from '../NavBar/HomeTopnav.vue';
 import SubCategory from './SubCategory.vue'
-import CategoryLinks from './CategoryLinks.vue'
+import CategoryLink from './CategoryLink.vue'
+// import OrderFilter from '../Orders/OrdinaryOrder/OrderFilter.vue'
 export default {
     name: 'CategoryNew',
     data() {
         return {
-            publicPath: process.env.BASE_URL
+            publicPath: process.env.BASE_URL,
         }
     },
     components: {
         SubCategory,
-        CategoryLinks
+        CategoryLink,
+        // HomeTopnav,
+        // OrderFilter
     },
     computed: {
         categories() {
@@ -39,6 +43,7 @@ export default {
     },
 
     mounted() {
+        // :class="{ active : active_el == li.id }"
         // const dataSpyList = document.querySelectorAll('[data-bs-spy="scroll"]')
         // dataSpyList.forEach(dataSpyEl => {
         //     // dataSpyEl.forEach(sample => {
@@ -56,6 +61,7 @@ export default {
         // })
     },
     methods: {
+        
         // ss() {
         //     console.log('hh');
         //     let m = document.getElementById('product6').scrollIntoView();
@@ -69,13 +75,17 @@ export default {
 <style>
 .list-group-item.active {
     background-color: pink !important;
+    /* background-color: white !important; */
     color: black !important;
+    /* font-weight: 800 !important; */
     border-color: pink !important;
+    /* border-color: black !important; */
 }
 
 .test-scroll::-webkit-scrollbar {
     display: none !important;
-    -ms-overflow-style: none;/* IE and Edge */
+    -ms-overflow-style: none;
+    /* IE and Edge */
     scrollbar-width: none;
 }
 </style>

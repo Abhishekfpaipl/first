@@ -1,24 +1,12 @@
 <template>
     <div class="">
-        <div v-for="(Prodamt, index) in Prodamts" :key="index" class="container p-0 border border-1 mt-4 mb-4">
+        <!-- <div v-for="(Prodamt, index) in Prodamts" :key="index" class="container p-0 border border-1 mt-4 mb-4">
             <div class="row  mb-2">
                 <div class="col-4">
-                    <!-- <div class="card">
-                        <img :src="`${publicPath}${Prodamt.imgdp}`" />
-                        <div class="card-img-overlay p-0">
-                            <h5 class="card-title">
-                                <i class="bi bi-check2-square card-title"></i>
-                            </h5>
-                        </div>
-                    </div> -->
                     <div class="row">
                         <div class="col-md-3">
                             <img :src="`${publicPath}${Prodamt.imgdp}`" alt="#" class="img-fluid">
-                            <!-- <div class="custom-control custom-radio image-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="ck1a" style="position: absolute;">
-                                <label class="custom-control-label" for="ck2a">
-                                </label>
-                            </div> -->
+
                         </div>
                     </div>
 
@@ -61,23 +49,7 @@
             <div class="bottom ">
                 <div class="accordion accordion-flush" :id="'accordionFlushExample' + index">
                 </div>
-                <!-- <div class="accordion-item">
-                    <h2 class="accordion-header" id="flush-headingOne">
-                        <button class="accordion-button collapsed border border-1"
-                            style="color: black; background-color: white; box-shadow: none" type="button"
-                            data-bs-toggle="collapse" :data-bs-target="'#flush-collapseOne' + index" aria-expanded="false"
-                            aria-controls="flush-collapseOne">
-                            Change
-                        </button>
-                    </h2>
-                    <div :id="'flush-collapseOne' + index" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
-                        :data-bs-parent="'#accordionFlushExample' + index">
-                        <div class="accordion-body" style="padding:1rem 0.25rem !important">             
-                        <TestRoute></TestRoute> 
-                        <OrdinaryTable></OrdinaryTable>
-                        </div>
-                    </div>
-                </div> -->
+
 
                 <div class="accordion accordion-flush" id="accordionFlushExample">
                     <div class="accordion-item">
@@ -90,97 +62,117 @@
                         </h2>
                         <div :id="'flush-collapseOne' + Prodamt.id" class="accordion-collapse collapse"
                             data-bs-parent="#accordionFlushExample">
-                            <div class="">
-                                <div class="table-responsive border border-1">
-                                    <table class="table">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col">Enter Qty</th>
-                                                <th scope="col">
-                                                    <div class="d-flex flex-column">
-                                                        <p class="m-0 text-center">XS</p>
-                                                        <p class="m-0 text-center">₹456</p>
-                                                    </div>
-                                                </th>
-                                                <th scope="col">
-                                                    <div class="d-flex flex-column">
-                                                        <p class="m-0 text-center">S</p>
-                                                        <p class="m-0 text-center">₹456</p>
-                                                    </div>
-                                                </th>
-                                                <th scope="col">
-                                                    <div class="d-flex flex-column">
-                                                        <p class="m-0 text-center">M</p>
-                                                        <p class="m-0 text-center">₹456</p>
-                                                    </div>
-                                                </th>
-                                                <th scope="col">
-                                                    <div class="d-flex flex-column">
-                                                        <p class="m-0 text-center">L</p>
-                                                        <p class="m-0 text-center">₹456</p>
-                                                    </div>
-                                                </th>
-                                                <th scope="col">
-                                                    <div class="d-flex flex-column">
-                                                        <p class="m-0 text-center">XL</p>
-                                                        <p class="m-0 text-center">₹456</p>
-                                                    </div>
-                                                </th>
-                                                <th scope="col">
-                                                    <div class="d-flex flex-column">
-                                                        <p class="m-0 text-center">Free</p>
-                                                        <p class="m-0 text-center">₹456</p>
-                                                    </div>
-                                                </th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <th scope="row" style="font-size:14px">Mix of 5 Colors</th>
-                                                <td class="text-center">
-                                                    <p class="mt-3">10</p>
-                                                </td>
-                                                <td class="text-center">
-                                                    <p class="mt-3">20</p>
-                                                </td>
-                                                <td class="text-center">
-                                                    <p class="mt-3">30</p>
-                                                </td>
-                                                <td class="text-center">
-                                                    <p class="mt-3">40</p>
-                                                </td>
-                                                <td class="text-center">
-                                                    <p class="mt-3">50</p>
-                                                </td>
-                                                <td class="text-center">
-                                                    <p class="mt-3">60</p>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th>Total</th>
-                                                <td class="text-center">₹4560</td>
-                                                <td class="text-center">₹9120</td>
-                                                <td class="text-center">₹1368</td>
-                                                <td class="text-center">₹1824</td>
-                                                <td class="text-center">₹2280</td>
-                                                <td class="text-center">₹2736</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
 
-                                </div>
-                                <div class="container d-flex justify-content-between">
-                                    <p class="">Grand Total</p>
-                                    <p class="">₹9576</p>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
 
 
             </div>
+        </div> -->
+
+
+        <div class="">
+            <div class="table-responsive  border-1" id="scroll"
+                style="background-color: #E8E8E8; font-size: 12px !important;">
+                <table class="table m-0">
+                    <thead>
+                        <tr>
+                            <th scope="col" class="text-center">Qty</th>
+                            <th scope="col">
+                                <div class="d-flex flex-column">
+                                    <p class="m-0 text-center">XS</p>
+                                    <!-- <p class="m-0 text-center">₹456</p> -->
+                                </div>
+                            </th>
+                            <th scope="col">
+                                <div class="d-flex flex-column">
+                                    <p class="m-0 text-center">S</p>
+                                    <!-- <p class="m-0 text-center">₹456</p> -->
+                                </div>
+                            </th>
+                            <th scope="col">
+                                <div class="d-flex flex-column">
+                                    <p class="m-0 text-center">M</p>
+                                    <!-- <p class="m-0 text-center">₹456</p> -->
+                                </div>
+                            </th>
+                            <th scope="col">
+                                <div class="d-flex flex-column">
+                                    <p class="m-0 text-center">L</p>
+                                    <!-- <p class="m-0 text-center">₹456</p> -->
+                                </div>
+                            </th>
+                            <th scope="col">
+                                <div class="d-flex flex-column">
+                                    <p class="m-0 text-center">XL</p>
+                                    <!-- <p class="m-0 text-center">₹456</p> -->
+                                </div>
+                            </th>
+                            <th scope="col">
+                                <div class="d-flex flex-column">
+                                    <p class="m-0 text-center">Free</p>
+                                    <!-- <p class="m-0 text-center">₹456</p> -->
+                                </div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="font-size: 12px !important;">
+                            <th scope="row" class="text-center">5 Mix Colors</th>
+                            <td class="text-center">
+                                <input type="number" class="form-control" style="font-size: 12px !important;"
+                                    placeholder="10">
+                            </td>
+                            <td class="text-center">
+                                <input type="number" class="form-control" style="font-size: 12px !important;"
+                                    placeholder="20">
+                            </td>
+                            <td class="text-center">
+                                <input type="number" class="form-control" style="font-size: 12px !important;"
+                                    placeholder="30">
+                            </td>
+                            <td class="text-center">
+                                <input type="number" class="form-control" style="font-size: 12px !important;"
+                                    placeholder="40">
+                            </td>
+                            <td class="text-center">
+                                <input type="number" class="form-control" style="font-size: 12px !important;"
+                                    placeholder="50">
+                            </td>
+                            <td class="text-center">
+                                <input type="number" class="form-control" style="font-size: 12px !important;"
+                                    placeholder="60">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th style="padding:12px">Total</th>
+                            <td class="text-center" style="padding:12px">₹4560</td>
+                            <td class="text-center" style="padding:12px">₹9120</td>
+                            <td class="text-center" style="padding:12px">₹1368</td>
+                            <td class="text-center" style="padding:12px">₹1824</td>
+                            <td class="text-center" style="padding:12px">₹2280</td>
+                            <td class="text-center" style="padding:12px">₹2736</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+            <div class="bg-white" style="height: 10px ;"></div>
+            <div class="container d-flex justify-content-between border"
+                style="font-size: 12px !important; padding:12px; background-color: #E8E8E8;">
+                <div class=""
+                    style=" background-color: #E8E8E8;">
+                    <p class="m-0">Sold by </p>
+                    <p class="m-0 fw-bold" style="font-size: 13px !important;">DeshiGirl</p>
+                </div>
+                <div class="">
+                    <p class="m-0">Grand Total</p>
+                    <p class="m-0 fw-bold" style="font-size: 13px !important;">₹9576</p>
+                </div>
+            </div>
         </div>
+
     </div>
 </template>
 <script>
@@ -218,5 +210,17 @@ export default {
 
 .accordion-button:hover {
     z-index: 0 !important;
+}
+
+#scroll::-webkit-scrollbar {
+    background-color: none;
+    display: none;
+}
+table th:first-child,
+.table td:first-child {
+    position: sticky;
+    left: 0;
+    background-color: #e8e8e8;
+    color: #373737;
 }
 </style>

@@ -188,9 +188,6 @@
                 </div>
                 <div class="d-flex flex-column">
                     <small class="text-info">Clicking on Continue will not deduct any money</small>
-
-                    <!-- <button class="btn btn-success mt-4">Continue</button> -->
-
                 </div>
             </div>
         </div>
@@ -216,9 +213,6 @@ export default {
             },
             savedAddresses: [],
         };
-    },
-    components: {
-
     },
     methods: {
         saveAddress() {

@@ -1,170 +1,116 @@
 <template>
-   <CatelogFilter></CatelogFilter>
-
-    <div class="container" style="padding-top:30px;padding-bottom:80px">
+    <!-- <CatelogFilter></CatelogFilter> -->
+    <OrderFilter class="border-top  py-3 position-fixed top-0" style="z-index: 9; background-color: white;"></OrderFilter>
+    <div class="container" style="padding-top:72px;padding-bottom:80px">
         <div class="row row-cols-2 row-cols-md-3 row-cols-xl-4 g-3">
-            <div class="col " v-for="(product, index) in products" :key="index">
-                <div class="card show-on-hover">
-                    <router-link :to="'/ProductPage/' + product.id">
-                        <!-- <div @click="showProduct(product)" class="position-relative"> -->
-                        <!-- <img src="../../../public/img/icons/cardimg.png" class="card-img-top" alt="" style="min-height:250px;"> -->
-                        <img :src="product.images[0]" class="card-img-top" alt="" style="min-height:100px;">
-
-                        <!-- <img :src="`${publicPath}${product.image}`" class="card-img-top" alt=""
-                        style="min-height:100px;height: 280px;object-fit: fill;"> -->
-                        <!-- </div> -->
+            <div class="col" v-for="(product, index) in products" :key="index">
+                <div class="card show-on-hover rounded-0">
+                    <router-link :to="'/ProductPage/' + product.id" class="text-decoration-none text-dark">
+                        <div :id="'productImages' + index" class="carousel slide">
+                            <div class="carousel-inner">
+                                <div :id="'cardCarousel' + imgIndex" class="carousel-item"
+                                    :class="{ active: imgIndex === 0 }" v-for="(image, imgIndex) in product.images"
+                                    :key="imgIndex">
+                                    <img :src="image" class="card-img-top rounded-0" alt="" style="min-height:100px;">
+                                </div>
+                            </div>
+                            <div class="d-flex mt-1" id="scroll" style="overflow-x: scroll;">
+                                <button type="button" class="rounded-circle p-0 border me-1"
+                                    :data-bs-target="'#productImages' + index" :data-bs-slide-to="imgIndex"
+                                    :class="{ active: imgIndex === 0 }" :aria-current="imgIndex === 0 ? true : false"
+                                    v-for="(image, imgIndex) in product.images" :key="imgIndex">
+                                    <img :src="image" class="rounded-circle" alt=""
+                                        style="width: 35px; height: 35px; object-fit: fill;">
+                                </button>
+                            </div>
+                        </div>
                     </router-link>
                     <div @click="showProduct(product)" class=" position-absolute w-100 soh-div">
-                        <div class="d-flex justify-content-between align-items-start"
-                            style="max-height:200px; overflow-y:scroll;">
-                            <CardColors :colors="product.colors"></CardColors>
-                            <CardSize :sizes="product.sizes"></CardSize>
+                        <div class="d-flex flex-column align-items-start" style="max-height:200px; overflow-y:scroll;margin-top: 3px !important;">
+                            <div class=" m-0 p-1 fw-bold bg-light rounded-circle d-flex flex-column align-items-center"
+                                style="font-size:9px;width: 35px; height: 35px;margin-left:2.5px !important">
+                                <p class="m-0">{{ product.moq }}</p>
+                                <p class="m-0">MOQ</p>
+                            </div>
+                            <CardSize :sizes="product.sizes" class="ms-2" style="margin-top: 0.08rem !important;"></CardSize>
                         </div>
                     </div>
-                    <div @click="showProduct(product)" class="card-body" style="padding:3px">
-                      
-                            <div class="d-flex justify-content-between">
-                                <p class="test text-start ms-1 m-0" style="font-size:10px"> {{ product.name }}</p>
-                                <p class="text-start m-0"  style="font-size:10px">{{ product.info }}</p>
-                            </div>
-                            <div class="d-flex justify-content-between mt-1 ms-1">
-                                <p class="m-0" style="font-size:16px;">₹{{ product.price }}</p>
-                                <p class="m-0" style="font-size:16px;">{{ product.moq }}pcs</p>
-                            
-                            </div>
-                        
+
+                    <div class="card-body" style="padding:3px">
+
+                        <!-- <p class="m-0 text-center">Fabric Name</p> -->
+                        <!-- <div class="d-flex justify-content-between" id="scroll">
+                            <p class="test text-start ms-1 m-0" style="font-size:10px"> {{ product.name }}</p>
+                            <p class="text-start m-0" style="font-size:10px">{{ product.info }}</p>
+                        </div> -->
+
+                        <!-- <CardColors :colors="product.colors"></CardColors> -->
+
+                        <div class="d-flex justify-content-between mt-1 ms-1 pb-1">
+                            <p class="m-0 fw-bold" style="font-size:13px;">₹{{ product.price }} / pc</p>
+                            <p class="m-0 fw-bold" style="font-size:13px;">{{ product.info }}</p>
+
+                        </div>
+
                     </div>
-                    <div class="card-footer p-0">
-                        <div class="btn-group w-100 rounded-bottom overflow-hidden" style="opacity: .85;">
-                            <button class="btn bg-outline-dark rounded-0">
-                                <i class="bi bi-heart"></i>
-                            </button>
-                            <button class="btn bg-outline-dark rounded-0">
-                                <i class="bi bi-cart-plus-fill"></i>
-                            </button>
+                    <div class="card-footer rounded-0 p-0" style="">
+                        <div class="btn-group w-100 overflow-hidden" style="opacity: .85;border-radius: 0px !important;">
+                            <!-- <button class="btn bg-outline-dark rounded-0 border-end p-0"> -->
+                            <!-- <i :class="product.hearticon"></i> -->
+                            <div class="w-50 border-end ">
+                                <!-- <button type="button" class="btn btn-outline-danger border-0 w-100 rounded-0 h-100"
+                                    @click="saveProduct(product)" style="padding:3px  !important">
+                                    <i class="bi bi-heart fs-4"></i>
+                                </button> -->
+
+                                <input type="checkbox" class="btn-check" name="fav" :id="'fav' + product.id"
+                                    autocomplete="off">
+                                <label class="btn btn-outline-danger rounded-0 border-0 w-100 h-100"
+                                    :for="'fav' + product.id" style="padding:3px  !important">
+                                    <i class="bi bi-heart fs-4" @click="saveProduct(product)"></i>
+                                </label>
+
+                            </div>
+                            <!-- <i class="bi bi-heart fs-4"></i> -->
+                            <!-- </button> -->
+                            <!-- <button class="btn bg-outline-dark rounded-0 py-0"> -->
+                            <div class="w-50 ">
+                                <input type="checkbox" class="btn-check" name="cart" :id="'cart' + product.id"
+                                    autocomplete="off">
+                                <label class="btn btn-outline-primary rounded-0 border-0 h-100 w-100" :for="'cart' + product.id"
+                                    style="padding:0px  !important">
+                                    <i class="bi bi-cart-plus fs-3"></i>
+                                </label>
+                            </div>
+
+                            <!-- <i class="bi bi-cart-plus fs-3"></i> -->
+                            <!-- </button> -->
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!--   <div class="d-flex position-relative" style="height: 80%; overflow-y: scroll;">
-        <div class="position-sticky" style="top: 0;">
-            <div id="list-example" class="list-group" style="overflow-y: scroll; height: 100%;">
-                <a class="list-group-item list-group-item-action text-center" href="#list-item-1">
-                    <i class="bi bi-patch-check-fill fs-3"></i> Popular</a>
-                <a class="list-group-item list-group-item-action text-center" href="#list-item-2">
-                    <i class="bi bi-award-fill fs-3"></i>New</a>
-                <a class="list-group-item list-group-item-action text-center" href="#list-item-3"><img src="https://images.meesho.com/images/marketing/1591970222196_64.webp" alt="" style="height: 24px; width: 24px;">Item 3</a>
-                <a class="list-group-item list-group-item-action" href="#list-item-4">Item 4</a>
-                <a class="list-group-item list-group-item-action" href="#list-item-5">Item 5</a>
-              
-            </div>
-        </div> -->
-    <!-- <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-offset="50" class="scrollspy-example" tabindex="0">
-            <h4 id="list-item-1" class="text-center">Popular</h4>
-            <h4 id="list-item-2" class="text-center mt-4">New</h4>
-           <CollectionGrid></CollectionGrid> 
-            <h4 id="list-item-3" class="text-center mt-4">Item 3</h4>
-            <p class="container">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est vero enim laudantium ex
-                voluptatem temporibus
-                numquam eum laborum excepturi at asperiores voluptates totam, quam cumque officiis, suscipit tenetur
-                repudiandae
-                error quasi maiores corrupti nemo necessitatibus nisi. Doloribus magnam reiciendis delectus voluptas
-                perferendis
-                repudiandae qui dolores!Lorem ipsum dolor sit amet consectetur adipisicing elit. Est vero enim laudantium ex
-                voluptatem temporibus
-                numquam eum laborum excepturi at asperiores voluptates totam, quam cumque officiis, suscipit tenetur
-                repudiandae
-                error quasi maiores corrupti nemo necessitatibus nisi. Doloribus magnam reiciendis delectus voluptas
-                perferendis
-                repudiandae qui dolores!Lorem ipsum dolor sit amet consectetur adipisicing elit. Est vero enim laudantium ex
-                voluptatem temporibus
-                numquam eum laborum excepturi at asperiores voluptates totam, quam cumque officiis, suscipit tenetur
-                repudiandae
-                error quasi maiores corrupti nemo necessitatibus nisi. Doloribus magnam reiciendis delectus voluptas
-                perferendis
-                repudiandae qui dolores!Lorem ipsum dolor sit amet consectetur adipisicing elit. Est vero enim laudantium ex
-                voluptatem temporibus
-                numquam eum laborum excepturi at asperiores voluptates totam, quam cumque officiis, suscipit tenetur
-                repudiandae
-                error quasi maiores corrupti nemo necessitatibus nisi. Doloribus magnam reiciendis delectus voluptas
-                perferendis
-                repudiandae qui dolores!</p>
-            <h4 id="list-item-4" class="text-center mt-4">  Item 4</h4>
-            <p class="container">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rerum animi hic beatae, minus
-                quam repudiandae
-                error
-                eos consequuntur aspernatur tenetur sed omnis commodi dolor officiis culpa ducimus incidunt laborum tempore
-                corporis dolores fuga alias cum. Rerum, dolor? Vero dolor maiores, mollitia sequi blanditiis nihil
-                reprehenderit, in quibusdam, sit consectetur quaerat vel nostrum esse expedita accusamus dolorum. Nihil
-                voluptate fuga eaque iste consectetur dignissimos consequatur recusandae corporis numquam?</p>
-        </div> 
-    </div>-->
 </template>
 <script>
-import CardColors from '../Catelog/CardColors.vue';
+// import CardColors from '../Catelog/CardColors.vue';
 import CardSize from '../Catelog/CardSize.vue';
 import router from '../../router';
-import CatelogFilter from './CatelogFilter.vue';
-// import CollectionGrid from '../Collection/CollectionGrid.vue';
-
+// import CatelogFilter from './CatelogFilter.vue';
+import OrderFilter from '../Orders/OrdinaryOrder/OrderFilter.vue';
 export default {
     name: "CardCatelog",
-    // data(){
-    //     return{
-    //         products:[
-    //             {
-    //                 name: '10pcs @ ₹3500',
-    //                 info: 'Rate @ ₹250/ pcs'
-    //             },
-    //             {
-    //                 name: '10pcs @ ₹300',
-    //                 info: 'Rate @ ₹250/ pcs'
-    //             },
-    //             {
-    //                 name: '10pcs @ ₹3700',
-    //                 info: 'Rate @ ₹250/ pcs'
-    //             },
-    //             {
-    //                 name: '10pcs @ ₹3800',
-    //                 info: 'Rate @ ₹250/ pcs'
-    //             },
-    //             {
-    //                 name: '10pcs @ ₹3900',
-    //                 info: 'Rate @ ₹250/ pcs'
-    //             },
-    //             {
-    //                 name: '10pcs @ ₹4000',
-    //                 info: 'Rate @ ₹250/ pcs'
-    //             },
-    //             {
-    //                 name: '10pcs @ ₹500',
-    //                 info: 'Rate @ ₹250/ pcs'
-    //             },
-    //             {
-    //                 name: '10pcs @ ₹300',
-    //                 info: 'Rate @ ₹250/ pcs'
-    //             },
-    //             {
-    //                 name: '10pcs @ ₹6000',
-    //                 info: 'Rate @ ₹250/ pcs'
-    //             },
-    //             {
-    //                 name: '10pcs @ ₹900',
-    //                 info: 'Rate @ ₹250/ pcs'
-    //             },
-    //             {
-    //                 name: '10pcs @ ₹1000',
-    //                 info: 'Rate @ ₹250/ pcs'
-    //             },
-    //         ]
-    //     }
-    // },
+    data() {
+        return {
+            publicPath: process.env.BASE_URL,
+            selectedImage: {},
+        }
+    },
     computed: {
         products() {
             return this.$store.getters.getProducts
         },
+
     },
     methods: {
         showProduct(product) {
@@ -173,21 +119,23 @@ export default {
                     router.push('/ProductPage/' + product.id)
                 }
             )
-        }
+        },
+        saveProduct(product) {
+            this.$store.dispatch('saveProduct', product)
+        },
+        selectImage(image) {
+            this.selectedImage = image;
+        },
+
     },
-    data() {
-        return {
-            publicPath: process.env.BASE_URL
-        }
-    },
+
     components: {
-    CardColors,
-    CardSize,
-    CatelogFilter
-},
-    mounted(){
-        // console.log(this.$router.params.categoryId)
-    }
+        // CardColors,
+        CardSize,
+        // CatelogFilter,
+        OrderFilter
+    },
+
 }
 </script>
 <style>
@@ -200,18 +148,23 @@ export default {
     /* display: block; */
     opacity: 1;
 }
+
 .test {
-float: left;
-font-family: Arial;
-/* background: #FAFA41; */
-margin: 5px 0;
-padding: 1%;
-width: 60%;
-overflow: hidden;
-text-overflow: ellipsis;
-white-space: nowrap;
-height: 17px;
-color: #505050;
+    width: 60%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #505050;
+}
+
+#scroll::-webkit-scrollbar {
+    background-color: none;
+    display: none;
+}
+
+.bi-cart-plus::before {
+    content: "\f23f";
+    margin-bottom: 2px;
 }
 </style>
 
