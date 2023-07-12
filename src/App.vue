@@ -1,18 +1,22 @@
-
 <template>
-  <!-- <top-nav class="position-fixed bg-white" style="top:0px; z-index:10"></top-nav> -->
-  <div class="main-container">
-    <router-view/>
-    <bottom-nav></bottom-nav>
+  <div >
+    <router-view />
+    <BottomNavbar v-if="!hide"></BottomNavbar>
   </div>
 </template>
-<script setup>
-import BottomNav from "./components/NavBar/BottomNav.vue";
-// import TopNav from "./components/NavBar/TopNav.vue";
-</script>
-<style lang="scss">
-.main-container{
-  width: 100%;
-  height: 100vh;
+<script>
+import BottomNavbar from "./components/NavBar/BottomNavbar.vue";
+export default {
+  components: {
+    BottomNavbar
+  },
+  computed: {
+    hide() {
+      const hiddenPages = ['ProfilePage', 'CatalogDetailPage', 'EmailVerificationPage', 'ForgotPasswordPage', 'LoginPage', 'OTPPage', 'RegistrationPage', 'ResetPasswordPage'];
+      return hiddenPages.includes(this.$route.name)
+    }
+  }
 }
-</style>
+</script>
+
+
