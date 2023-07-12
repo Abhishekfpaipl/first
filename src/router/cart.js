@@ -1,32 +1,27 @@
 
 const routes = [
-//   {
-//     path: "/cart",
-//     name: "Cart",
-//     component:() => import("../views/cart/CartStepper.vue"),
-//   },
   {
     path: "/checkout",
     children:[
       {
         path:'cart',
-        name: "CheckoutCart",
-        component:() => import("../views/cart/CartStepper.vue"),
+        name: "CartPage",
+        component:() => import("../views/cart/CartPage.vue"),
       },
       {
-        path:'address',
-        name: "CheckoutAddress",
-        component:() => import("../views/cart/CheckoutAddress.vue"),
+        path:'delivery_payment',
+        name: "DeliveryAndPaymentMode",
+        component: () => import("../views/cart/DeliveryAndPaymentMode.vue"),
       },
       {
-        path:'delivery',
-        name: "CheckoutDelivery",
-        component: () => import("../views/cart/CheckoutDelivery.vue"),
+      path:'address',
+        name: "DeliveryAddress",
+        component:() => import("../views/cart/DeliveryAddress.vue"),
       },
       {
         path:'confirm',
-        name: "CheckoutConfirm",
-        component: () => import("../views/cart/CheckoutConfirm.vue"),
+        name: "OrderConfirm",
+        component: () => import("../views/cart/OrderConfirm.vue"),
       },
     ]
   },

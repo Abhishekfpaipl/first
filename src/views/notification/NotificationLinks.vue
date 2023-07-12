@@ -16,10 +16,8 @@ export default {
     data() {
         return {
             links: [
-                { route: 'updatepage', label: 'Updates' },
-                { route: 'offerpage', label: 'Offers' },
-                { route: 'promotionpage', label: 'Promotions' },
-                { route: 'defaultpage', label: 'Default' },
+                { route: 'update-page', label: 'Update' },
+                { route: 'promotion-page', label: 'Promotions' },
 
             ]
         }
@@ -30,7 +28,7 @@ export default {
         }
 
     },
-  
+
 
 }
 </script>

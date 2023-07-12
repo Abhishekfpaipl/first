@@ -1,9 +1,9 @@
 <template>
     <div>
         <div class="d-flex p-2 bg-dark text-white">
-            <!-- <router-link to="/" class="text-decoration-none text-white"> -->
-                <i class="bi bi-chevron-left" @click="goback()"></i>
-            <!-- </router-link> -->
+            <router-link to="/" class="text-decoration-none text-white">
+                <i class="bi bi-chevron-left"></i>
+            </router-link>
             <p class="ms-3 mb-0">Notifications</p>
         </div>
         <NotificationLinks></NotificationLinks>
@@ -53,10 +53,10 @@
 import NotificationLinks from './NotificationLinks.vue';
 export default {
     components: { NotificationLinks },
-    methods:{
-        goback(){
-            window.history.back()
-        }
+    methods: {
+        // goback(){
+        //     window.history.back()
+        // }
     }
 
 

@@ -1,9 +1,10 @@
 <template>
+    <h1 class="text-center mt-4">You May Also Like</h1>
     <div class="container" style="padding-top:20px;padding-bottom:80px">
         <div class="row row-cols-2 row-cols-md-3 row-cols-xl-4 g-3">
             <div class="col" v-for="(product, index) in products" :key="index">
                 <div class="card show-on-hover rounded-0">
-                    <router-link :to="'/ProductPage/' + product.id" class="text-decoration-none text-dark">
+                    <router-link :to="'/catalog-page/' + product.id" class="text-decoration-none text-dark">
                         <div :id="'productImages' + index" class="carousel slide">
                             <div class="carousel-inner">
                                 <div :id="'cardCarousel' + imgIndex" class="carousel-item"
@@ -38,14 +39,6 @@
 
                     <div class="card-body" style="padding:3px">
 
-                        <!-- <p class="m-0 text-center">Fabric Name</p> -->
-                        <!-- <div class="d-flex justify-content-between" id="scroll">
-                            <p class="test text-start ms-1 m-0" style="font-size:10px"> {{ product.name }}</p>
-                            <p class="text-start m-0" style="font-size:10px">{{ product.info }}</p>
-                        </div> -->
-
-                        <!-- <CardColors :colors="product.colors"></CardColors> -->
-
                         <div class="d-flex justify-content-between mt-1 ms-1 pb-1">
                             <p class="m-0 fw-bold" style="font-size:13px;">₹{{ product.price }} / pc</p>
                             <p class="m-0 fw-bold" style="font-size:13px;">{{ product.info }}</p>
@@ -55,14 +48,7 @@
                     </div>
                     <div class="card-footer rounded-0 p-0" style="">
                         <div class="btn-group w-100 overflow-hidden" style="opacity: .85;border-radius: 0px !important;">
-                            <!-- <button class="btn bg-outline-dark rounded-0 border-end p-0"> -->
-                            <!-- <i :class="product.hearticon"></i> -->
                             <div class="w-50 border-end ">
-                                <!-- <button type="button" class="btn btn-outline-danger border-0 w-100 rounded-0 h-100"
-                                    @click="saveProduct(product)" style="padding:3px  !important">
-                                    <i class="bi bi-heart fs-4"></i>
-                                </button> -->
-
                                 <input type="checkbox" class="btn-check" name="fav" :id="'fav' + product.id"
                                     autocomplete="off">
                                 <label class="btn btn-outline-danger rounded-0 border-0 w-100 h-100"
@@ -71,20 +57,14 @@
                                 </label>
 
                             </div>
-                            <!-- <i class="bi bi-heart fs-4"></i> -->
-                            <!-- </button> -->
-                            <!-- <button class="btn bg-outline-dark rounded-0 py-0"> -->
                             <div class="w-50 ">
                                 <input type="checkbox" class="btn-check" name="cart" :id="'cart' + product.id"
                                     autocomplete="off">
-                                <label class="btn btn-outline-primary rounded-0 border-0 w-100" :for="'cart' + product.id"
+                                <label class="btn btn-outline-primary rounded-0 border-0 w-100 h-100" :for="'cart' + product.id"
                                     style="padding:0px  !important">
                                     <i class="bi bi-cart-plus fs-3"></i>
                                 </label>
                             </div>
-
-                            <!-- <i class="bi bi-cart-plus fs-3"></i> -->
-                            <!-- </button> -->
                         </div>
                     </div>
                 </div>
@@ -93,7 +73,6 @@
     </div>
 </template>
 <script>
-// import CardColors from '../Catelog/CardColors.vue';
 import CardSize from '../Catelog/CardSize.vue';
 import router from '../../router';
 
@@ -106,23 +85,22 @@ export default {
     },
     computed: {
         products() {
-            return this.$store.getters.getProducts
+            return this.$store.getters['catalog/getProducts']
         },
     },
     methods: {
         showProduct(product) {
-            return this.$store.dispatch('selectProduct', product).then(
+            return this.$store.dispatch('catalog/selectProduct', product).then(
                 () => {
-                    router.push('/ProductPage/' + product.id)
+                    router.push('/catalog-page/' + product.id)
                 }
             )
         },
         saveProduct(product) {
-            this.$store.dispatch('saveProduct', product)
+            this.$store.dispatch('catalog/saveProduct', product)
         }
     },
     components: {
-        // CardColors,
         CardSize,
     },
 }

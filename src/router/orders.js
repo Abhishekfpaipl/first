@@ -1,22 +1,32 @@
 
 const routes = [
     {
-      path: "/orders",
-      children:[
-          {
-              path:'running',
-              name:'orders-running',
-              component:() => import("@/components/Orders/OrdinaryOrder/RunningOrders.vue"),
-          },
-          {
-              path:'completed',
-              name:'orders-completed',
-              component:() => import("@/components/Orders/OrdinaryOrder/CompletedOrders.vue"),
-          }
-      ]
+        path: "/orders",
+        children: [
+            {
+                path: 'pending',
+                name: 'PendingOrdersPage',
+                component: () => import("@/views/order/PendingOrdersPage.vue"),
+            },
+            {
+                path: 'completed',
+                name: 'CompletedOrdersPage',
+                component: () => import("@/views/order/CompletedOrdersPage.vue"),
+            },
+            {
+                path: "pending/:orderId",
+                name: "PendingOrderDetailPage",
+                component: () => import('@/views/order/PendingOrderDetailPage.vue'),
+            },
+            {
+                path: "completed-order/:completeId",
+                name: "CompletedOrderDetailPage",
+                component: () => import('@/views/order/CompletedOrderDetailPage.vue')
+            },
+        ]
     },
-   
-    
-  ];
-  
-  export default routes;
+
+
+];
+
+export default routes;

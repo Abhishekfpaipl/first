@@ -10,7 +10,6 @@
                         <th scope="col" v-for="(size, index) in product.sizes" :key="index">
                             <div class="fw-bold d-flex flex-column align-items-center" style="">
                                 <p class="m-0">{{ size.name }}</p>
-                                <!-- <p class="m-0">₹{{ size.price }}</p> -->
                             </div>
                         </th>
                     </tr>
@@ -19,7 +18,8 @@
                     <tr v-for="(color, colorindex) in product.colors" :key="colorindex">
                         <td class="">
                             <div class="rounded-circle align-items-center justify-content-center d-flex">
-                                <img class="rounded-circle" :src="color.img" style="width: 38px; height: 38px;object-fit: fill;">
+                                <img class="rounded-circle" :src="color.img"
+                                    style="width: 38px; height: 38px;object-fit: fill;">
                             </div>
                         </td>
 
@@ -57,7 +57,7 @@ export default {
     computed: {
         product() {
             let productId = this.$route.params.productId;
-            return this.$store.getters.getProduct(productId);
+            return this.$store.getters['catalog/getProduct'](productId);
         },
         total() {
             let totalPrice = 0;
@@ -105,6 +105,7 @@ export default {
     background-color: none;
     display: none;
 }
+
 table th:first-child,
 .table td:first-child {
     position: sticky;

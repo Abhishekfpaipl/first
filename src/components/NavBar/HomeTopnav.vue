@@ -1,23 +1,27 @@
 <template>
     <div class="py-2">
-        <div class="container d-flex justify-content-between position-fixed align-items-center py-2"
-            style="top: 0; z-index: 10; background: white; box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;"
-            ref="topnav">
+        <div class="container d-flex justify-content-between position-fixed align-items-center py-2 border-bottom"
+            style="top: 0; z-index: 10; background: white;" ref="topnav">
             <div class="d-flex align-items-center gap-3">
                 <i class="bi bi-list fs-4" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExampleMenu"
                     aria-controls="offcanvasExampleMenu"></i>
 
-                <i class="bi bi-search fs-4" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExampleSearch"
-                    aria-controls="offcanvasExampleSearch"></i>
+                <router-link to="/search" class="text-dark">
+                    <i class="bi bi-search fs-4"></i>
+                </router-link>
             </div>
-            <p class="text-center m-0 fs-4">
-                DeshiGirl
-            </p>
+            <router-link to="/" class="text-decoration-none text-dark d-flex align-items-center">
+                <!-- <DeshiGirlLogo></DeshiGirlLogo> -->
+                <img :src="logo" style="height: 40px;">
+                <p class="text-center m-0 fs-2 fw-bold" style="color:#ECA1A6;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+                    Deshi girl
+                </p>
+            </router-link>
             <div class="d-flex align-items-center gap-3">
-                <router-link to="/updatepage" style="text-decoration:none;color:black;">
+                <router-link to="/update-page" style="text-decoration:none;color:black;">
                     <i class="bi bi-bell fs-4"></i>
                 </router-link>
-                <router-link to="/ContactUs" style="text-decoration:none;color:black;">
+                <router-link to="/contact-us" style="text-decoration:none;color:black;">
                     <i class="bi bi-chat-dots fs-4"></i>
                 </router-link>
             </div>
@@ -34,51 +38,20 @@
                 <div class="offcanvas-body p-0">
                     <div>
                         <ul class="list-group rounded-0">
-                            <router-link to="/SignupForm" class="text-decoration-none text-dark">    
+                            <router-link to="/login-page" class="text-decoration-none text-dark">
                                 <li class="list-group-item">Login / SignUp</li>
                             </router-link>
-                            <router-link to="/supplier-signup" class="text-decoration-none text-dark">
+                            <router-link to="/profile-page" class="text-decoration-none text-dark">
                                 <li class="list-group-item">Profile / Account</li>
+                            </router-link>
+                            <router-link to="/update-password-page" class="text-decoration-none text-dark">
+                                <li class="list-group-item">Update Password</li>
+                            </router-link>
+                            <router-link to="/otp-page" class="text-decoration-none text-dark">
+                                <li class="list-group-item">Email Verification</li>
                             </router-link>
                         </ul>
                     </div>
-                </div>
-            </div>
-
-
-
-
-            <!-- Search -->
-            <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExampleSearch"
-                aria-labelledby="offcanvasExampleLabel" style="width:90vw">
-                <div class="offcanvas-header border-bottom">
-                    <h5 class="offcanvas-title" id="offcanvasExampleLabel">Search</h5>
-                    <button type="button" class="btn-close animation" data-bs-dismiss="offcanvas"
-                        aria-label="Close"></button>
-                </div>
-                <div class="offcanvas-body">
-
-                    <div class="">
-                        <select class="form-select" aria-label="Default select example">
-                            <option selected>All Categories</option>
-                            <option value="1">Clothing Sets</option>
-                            <option value="2">Jumpsuit</option>
-                            <option value="3">Jumpsuits & Jacket</option>
-                            <option value="3">Kurta Sets</option>
-                        </select>
-                    </div>
-
-                    <div class=" mt-5">
-                        <div class="input-group d-flex justify-content-center">
-                            <div class="form-outline">
-                                <input type="search" id="form1" class="form-control" placeholder="Search" />
-                            </div>
-                            <button type="button" class="btn btn-primary">
-                                <i class="bi bi-search"></i>
-                            </button>
-                        </div>
-                    </div>
-
                 </div>
             </div>
         </div>
@@ -86,8 +59,15 @@
 </template>
 
 <script>
+// import DeshiGirlLogo from '@/views/auths/DeshiGirlLogo.vue';
 export default {
-    name: 'HomeTopnav'
+    name: "HomeTopnav",
+    data(){
+        return{
+            logo:'img/logo/logo.png'
+        }
+    }
+    // components: { DeshiGirlLogo }
 }
 </script>
 

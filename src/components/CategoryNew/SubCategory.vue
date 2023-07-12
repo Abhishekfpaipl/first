@@ -4,7 +4,7 @@
             <h5  class="ps-2 text-success fw-bold">
                 {{category.name}}
             </h5>
-            <router-link :to="'/SubCatProduct/' + category.id" class="text-decoration-none text-dark">
+            <router-link :to="'/catalogs/' + category.id" class="text-decoration-none text-dark">
                 <p>View All <i class="bi bi-arrow-right"></i></p>
             </router-link>
         </div>

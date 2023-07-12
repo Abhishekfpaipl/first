@@ -2,7 +2,7 @@
     <div>
         <p class="m-0 fw-bold text-decoration-underline" style="font-size:16px;">Enter Desired quantity Of Available
             Varients</p>
-        <div class="table-responsive mt-4"  id="scroll">
+        <div class="table-responsive mt-4" id="scroll">
             <table class="table border border-1">
                 <thead>
                     <tr>
@@ -10,7 +10,6 @@
                         <th scope="col" v-for="(size, index) in product.sizes" :key="index">
                             <div class="fw-bold d-flex flex-column align-items-center" style="">
                                 <p class="m-0">{{ size.name }}</p>
-                                <!-- <p class="m-0">₹{{ size.price }}</p> -->
                             </div>
                         </th>
                     </tr>
@@ -19,9 +18,6 @@
                     <tr v-show="colorindex === 0" v-for="(color, colorindex) in product.colors" :key="colorindex">
                         <td>
                         <th class="ms-3">All</th>
-                        <!-- <th>Mix of {{ product.colors.length }}</th> -->
-                        <!-- <div class="rounded-circle m-2 px-1 align-items-center justify-content-center d-flex"
-                                style="width: 30px; height: 30px;" :style="'background-color:' + color.name"></div> -->
                         </td>
 
                         <td v-for="(size, sizeindex) in product.sizes" :key="sizeindex">
@@ -60,7 +56,7 @@ export default {
     computed: {
         product() {
             let productId = this.$route.params.productId;
-            return this.$store.getters.getProduct(productId);
+            return this.$store.getters['catalog/getProduct'](productId);
         },
         total() {
             let totalPrice = 0;
@@ -104,7 +100,9 @@ export default {
 #scroll::-webkit-scrollbar {
     background-color: none;
     display: none;
-} table th:first-child,
+}
+
+table th:first-child,
 .table td:first-child {
     position: sticky;
     left: 0;
