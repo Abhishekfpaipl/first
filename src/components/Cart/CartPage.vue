@@ -1,89 +1,140 @@
 <template>
-        <!-- <h1 class="text-center mt-4">Your cart is empty</h1> -->
-        <div class="container">
-            <button type="button" class="btn btn-outline-secondary mt-4"><i class="bi bi-trash-fill"></i> Clear Cart</button>
-            <div class="container mt-4" style="padding-bottom: 100px;">
-                <div class="row row-cols-xl">
-                    <div class="border bg-light d-flex flex-column align-items-center">
-                        <div>
-                            <img src="https://image.clovia.com/media/clovia-images/images/400x600/clovia-picture-medium-impact-padded-sports-bra-in-stone-blue-with-racerback-734363.jpg" alt="" class="card-img-top">
+    <div class="accordion mt-2" id="accordionExample">
+        <div class="accordion-item py-2 m-3 rounded-0 border" v-for="(product, index) in products" :key="index">
+
+            <h2 class="accordion-header container m-0" style="padding: 0px 8px !important;">
+                <button class="accordion-button p-0 d-flex flex-column" type="button" data-bs-toggle="collapse"
+                    :data-bs-target="'#collapseCart' + product.id" aria-expanded="true"
+                    :aria-controls="'collapseCart' + product.id">
+                    <div class="d-flex ">
+                        <img :src="product.img" class=""
+                            style="height:155px; width: 125px;object-fit: fill;">
+
+                        <div class="d-flex flex-column justify-content-between">
+                            <div class="ms-2 ">
+                                <p class="ss">{{ product.name }}sdfsd dfdfs sdfasd www</p>
+                                <div class="d-flex gap-2">
+                                    <div class="">
+                                        <p class="mb-1" style="font-size: 14px">Total Amount :</p>
+                                        <p class="mb-1" style="font-size: 14px">Average Rate:</p>
+                                        <p class="mb-1" style="font-size: 14px">Total Pieces:</p>
+                                    </div>
+                                    <div class="">
+                                        <p class="mb-1" style="font-size: 14px">{{ product.amount }}</p>
+                                        <p class="mb-1" style="font-size: 14px">{{ product.rate }}</p>
+                                        <p class="mb-1" style="font-size: 14px">{{ product.pieces }}</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="qaunt d-flex flex-column align-items-center">
-                            <p class="text-center fw-bold mt-4">Quantity</p>
-                            <div class="quantity-toggle">
-                                <button @click="decrement()" class="btn btn-light border border-1">&mdash;</button>
-                                <input type="text" :value="quantity" readonly class="text-center fw-bold mt-4">
-                                <button @click="increment()" class="btn btn-light border border-1">&#xff0b;</button>
-                            </div>  
+                    </div>
+
+                </button>
+            </h2>
+            <div :id="'collapseCart' + product.id" class="accordion-collapse collapse " data-bs-parent="#accordionExample">
+                <div class="accordion-body  rounded-0 border-0" style="    padding: 12px 12px 0px 12px !important;  ">
+                    <template v-if="index === 0">
+                        <OrderData style="background-color: #E8E8E8;"></OrderData>
+                        <div class="d-flex gap-2 mt-2">
+                            <button class="w-50 btn btn-outline-dark fw-bold"
+                                style="font-size: 12px;">Remove
+                                From Cart</button>
+                            <button class="w-50 btn btn-outline-dark fw-bold" @click="saveProduct(product)"
+                                style="font-size: 12px;">Move
+                                To Wishlist</button>
                         </div>
-                        <div class="card-text fw-bold mt-4">
-                            Price : ₹1427
+                    </template>
+                    <template v-else-if="index === 1">
+                        <POrderData style="background-color: #E8E8E8;"></POrderData>
+                        <div class="d-flex gap-2 mt-2">
+                            <button class="w-50 btn btn-outline-dark fw-bold"
+                                style="box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em; font-size: 12px;">Remove
+                                From Cart</button>
+                            <button class="w-50 btn btn-outline-dark fw-bold"
+                                style="box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em; font-size: 12px;">Move
+                                To Wishlist</button>
                         </div>
-                        <div class="card-text fw-bold mt-4">
-                            <i class="bi bi-heart-fill"></i> Save for later
-                        </div>
-                        <div class="card-text">
-                            <button type="button" class="btn btn-outline-danger mt-4"><i class="bi bi-trash-fill"></i>Remove</button>
-                        </div>
-                </div> 
+
+                    </template>
                 </div>
             </div>
         </div>
-    
-        <!-- <div class="cartData" @receiveInCart="storeData" style="padding-bottom: 100px;">
-      <h1>Your cart</h1>
-      <div v-for="item in getCart"  :key="item.id">
-        <div class="cart-items">
-          <h5 class="text-wrap" style="width: 10%;">{{ item.name }}</h5>
-          <p>{{ item.quantity }}</p>
-          <p>{{ item.val }}</p>
-          <h5>{{ amount(item) }}</h5>
+
+        <RouterLink to="/favourite-catalogs" class="text-decoration-none text-dark">
+            <div class="d-flex justify-content-between border-top border-bottom border-2 p-3">
+                <p class=" m-0 fw-bold">Wishlist</p>
+                <p class=" m-0 fw-bold">></p>
+            </div>
+        </RouterLink>
+
+        <PriceDetails></PriceDetails>
+
+        <!-- Button trigger modal -->
+        <div class="d-flex justify-content-center align-items-center my-3">
+            <button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
+                    class="bi bi-trash me-1"></i>Clear Cart</button>
         </div>
-      </div>
-      <h3>TOTAL : {{ total }}</h3>
-    </div> -->
+        <!-- Clear Cart Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Are You Sure</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body d-flex justify-content-center gap-4">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Yes</button>
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">No</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
+        <div class="border-top border-bottom bg-light">
+            <p class="m-0 my-3 text-center">Proceeding will not deduct any money</p>
+        </div>
 
+        <CartBottomnav></CartBottomnav>
+    </div>
 </template>
-<script>
-//  import { mapGetters } from "vuex";
-export default {
-    name:"CartPage",
-    data () {
-    return {
-      quantity: 1,
-      // cartData: [],
-    }
-  },
 
-  methods: {
-    increment () {
-      this.quantity++
+<script>
+import CartBottomnav from '@/components/NavBar/CartBottomnav.vue';
+import OrderData from '@/components/Orders/OrderData.vue';
+import POrderData from '@/components/Orders/POrderData.vue';
+import PriceDetails from './PriceDetails.vue';
+import FavCatalog from '@/mixins/FavCatalog';
+export default {
+    name: "CartPage",
+    mixins:[FavCatalog],
+    computed: {
+        products() {
+            return this.$store.getters['cart/getCartProduct'];
+        },
+
     },
-    decrement () {
-      if(this.quantity === 1) {
-        console.log('0 nhi hoga')
-      } else {
-        this.quantity--
-      }
-    },
-    // storeData(data) {
-    //     this.cartData = data;
-    //   },
-    //   amount(item) {
-    //     return (Math.round(item.quantity * item.val * 100) / 100).toFixed(2);
-    //   },
-  },
-    // computed: {
-    //   ...mapGetters(["getCart"]),
-    //   total() {
-    //     return (
-    //       Math.round(
-    //         this.getCart.reduce((acc, cur) => acc + cur.val * cur.quantity, 0) *
-    //           100
-    //       ) / 100
-    //     ).toFixed(2);
-    //   },
-    // },
-  };
+    components: { OrderData, POrderData, CartBottomnav, PriceDetails }
+}
 </script>
+
+<style scoped>
+.ss {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.accordion-button::after {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+.accordion {
+    --bs-accordion-active-color: none;
+    --bs-accordion-active-bg: none;
+    --bs-accordion-btn-focus-box-shadow: none;
+    --bs-accordion-border-color: transparent !important
+}
+</style>
