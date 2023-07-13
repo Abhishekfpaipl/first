@@ -12,7 +12,7 @@
               <div class="d-flex align-items-center">
                 <i v-if="message.type === 'outgoing'" class="bi bi-person fs-4 border rounded-circle me-2"
                   style="padding: 5px 10px !important;"></i>
-                <div class="message-content border w-100" :class="{ 'bg-primary': message.type === 'outgoing' }"
+                <div class="message-content border w-100" :class="{ 'bg-danger opacity-50': message.type === 'outgoing' }"
                   style="word-wrap: break-word; padding: 10px !important; border-radius: 8px 15px 0px 15px !important; color: white;">
                   {{ message.text }}
                 </div>
@@ -44,7 +44,7 @@
       <div class=" d-flex bg-light p-2 align-items-center">
         <input v-model="newMessage" @keyup.enter="sendMessage" type="text" class="form-control"
           placeholder="Type your message..." />
-        <div @click="sendMessage" class="ms-2 "><i class="bi bi-telegram fs-2 text-primary"></i></div>
+        <div @click="sendMessage" class="ms-2 "><i class="bi bi-telegram fs-2 " style="color:#e9848b"></i></div>
       </div>
     </div>
   </div>

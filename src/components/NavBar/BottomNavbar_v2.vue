@@ -1,8 +1,8 @@
 <template>
     <nav class="navbar fixed-bottom " style="z-index:1;">
         <div class=" position-fixed w-100" style="bottom: 0;">
-            <div style="background-color: white;">
-                <div class="d-flex justify-content-evenly text-center w-100 border-top borde-light" >
+            <div style="background-color: #492C2E;">
+                <div class="d-flex justify-content-evenly text-center w-100 border-top border-dark">
                     <BottomNav v-for="(link, index) in links" :key="index" :link="link"></BottomNav>
 
                 </div>

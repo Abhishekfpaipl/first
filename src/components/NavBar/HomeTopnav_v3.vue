@@ -1,33 +1,33 @@
 <template>
     <div class="py-2">
         <div class="container d-flex justify-content-between position-fixed align-items-center py-2 border-bottom "
-            style="top: 0; z-index: 10; background: #e9848b; border-color: #6d6c6c !important;" ref="topnav">
+            style="top: 0; z-index: 10; background: #492C2E; border-color: black !important;" ref="topnav">
             <div class="d-flex align-items-center gap-3">
-                <i class="bi bi-list fs-4 text-white" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExampleMenu"
+                <i class="bi bi-list fs-4" style="color:#ECA1A6" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExampleMenu"
                     aria-controls="offcanvasExampleMenu"></i>
 
                 <router-link to="/search" class="text-dark">
-                    <i class="bi bi-search fs-4 text-white"></i>
+                    <i class="bi bi-search fs-4" style="color:#ECA1A6"></i>
                 </router-link>
             </div>
             <router-link to="/" class="text-decoration-none text-dark d-flex align-items-center">
-                <img :src="logo" style="height: 40px;filter: brightness(1.5);">
-                <p class="text-center m-0 fs-2 fw-bold" style="color:white;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+                <img :src="logo" style="height: 40px;">
+                <p class="text-center m-0 fs-2 fw-bold" style="color:#ECA1A6;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
                     Deshi girl
                 </p>
             </router-link>
             <div class="d-flex align-items-center gap-3">
                 <router-link to="/update-page" style="text-decoration:none;color:black;">
-                    <i class="bi bi-bell fs-4 text-white"></i>
+                    <i class="bi bi-bell fs-4" style="color:#ECA1A6"></i>
                 </router-link>
                 <router-link to="/contact-us" style="text-decoration:none;color:black;">
-                    <i class="bi bi-chat-dots fs-4 text-white"></i>
+                    <i class="bi bi-chat-dots fs-4" style="color:#ECA1A6"></i>
                 </router-link>
             </div>
             <!-- Menu -->
 
             <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExampleMenu"
-                aria-labelledby="offcanvasExampleLabel" style="width:80vw !important">
+                aria-labelledby="offcanvasExampleLabel" style="width:80vw">
                 <div class="offcanvas-header">
                     <h5 class="offcanvas-title" id="offcanvasExampleLabel">Menu</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
