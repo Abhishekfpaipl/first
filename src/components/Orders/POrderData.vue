@@ -16,21 +16,25 @@
                     <tr>
                         <th scope="row" style="font-size:14px">
                             <div class="rounded-circle m-2 px-1 align-items-center justify-content-center d-flex"
-                                style="width: 30px; height: 30px;background-color:black"></div>
+                                style="width: 35px; height: 35px;">
+                                <img :src="img1" style="height: 100%;width: 100%;object-fit:fill;" class="rounded-circle">
+                            </div>
                         </th>
                         <td v-for="(input, index) in inputs" :key="index" class="text-center">
                             <input type="number" class="form-control" style="font-size: 12px !important;"
-                                :placeholder="input.placeholder">
+                                :value="input.placeholder" readonly>
                         </td>
                     </tr>
                     <tr>
                         <th scope="row" style="font-size:14px">
                             <div class="rounded-circle m-2 px-1 align-items-center justify-content-center d-flex"
-                                style="width: 30px; height: 30px;background-color:red"></div>
+                                style="width: 30px; height: 30px;">
+                                <img :src="img2" style="height: 100%;width: 100%;object-fit:fill;" class="rounded-circle">
+                            </div>
                         </th>
                         <td v-for="(input, index) in inputs" :key="index" class="text-center">
                             <input type="number" class="form-control" style="font-size: 12px !important;"
-                                :placeholder="input.placeholder">
+                                :value="input.placeholder" readonly>
                         </td>
                     </tr>
                     <tr>
@@ -69,6 +73,8 @@ export default {
     data() {
         return {
             publicPath: process.env.BASE_URL,
+            img1: "https://img.ltwebstatic.com/images3_pi/2022/09/05/166236058465db391027c27d9351d3972053af2deb_thumbnail_750x.webp",
+            img2: "https://img.ltwebstatic.com/images3_pi/2020/03/16/1584329043f6a2b7ff18eed10fc606d386136fec59_thumbnail_750x.webp",
             sizes: [
                 { id: 1, name: 'XS' },
                 { id: 2, name: 'S' },
@@ -102,6 +108,7 @@ export default {
     background-color: none;
     display: none;
 }
+
 table th:first-child,
 .table td:first-child {
     position: sticky;

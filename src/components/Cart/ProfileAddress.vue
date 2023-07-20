@@ -1,7 +1,6 @@
 <template>
     <div class="container-fluid d-flex flex-md-row justify-content-center mt-2 flex-column">
-        <button class="btn" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop"
-            style="background-color: #eca1a6; box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;">+
+        <button class="btn top-brand" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">+
             Add New Address
         </button>
         <b class="text-center mt-3">Select Delivery Address</b>
@@ -83,7 +82,7 @@
                     </div>
                     <div class="d-flex align-items-center justify-content-end flex-wrap">
                         <p class="m-0 mt-2 fw-bold" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop"
-                            aria-controls="staticBackdrop" @click="editAddress(index)" style="color:hotpink;">Edit</p>
+                            aria-controls="staticBackdrop" @click="editAddress(index)" style="color:#E35D6A;">Edit</p>
                     </div>
                 </div>
             </div>

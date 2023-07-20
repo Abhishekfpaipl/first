@@ -20,10 +20,6 @@
                     aria-controls="offcanvasExampleOne">
                     <i class="bi bi-arrow-down-up fs-4"></i>
                 </div>
-                <div class="mx-1 btn btn-outline-primary" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExampleTwo"
-                    aria-controls="offcanvasExampleTwo">
-                    <i class="bi bi-info-lg fs-4"></i>
-                </div>
             </div>
         </div>
 
@@ -100,12 +96,6 @@
                         <div id="flush-collapseThree" class="accordion-collapse collapse"
                             data-bs-parent="#accordionFlushExample">
                             <div class="accordion-body ">
-                                <!-- <div v-for="(sup, index) in suppliers" :key="index" class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
-                                    <label class="form-check-label" for="flexCheckChecked">
-                                          {{ sup.name }}
-                                    </label>
-                                </div> -->
                                 <div class="d-flex gap-2">
                                     <div v-for="(color, index) in colors" :key="index" @click="selectColor(index)"
                                         :style="{ backgroundColor: color }" style="height: 30px; width: 30px;"
@@ -145,64 +135,7 @@
             </div>
         </div>
 
-        <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasExampleTwo"
-            aria-labelledby="offcanvasExampleLabel" style="height: 60vh;">
-            <div class="offcanvas-header border-bottom">
-                <h5 class="offcanvas-title" id="offcanvasExampleLabel">Status</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-            </div>
-            <div class="offcanvas-body">
-                <div>
-                    <div class="w-100">
-                        <div class="" data-bs-dismiss="offcanvas">
-                            <p class="mt-2 mb-1 fw-bold">Delivery Status</p>
-                            <div class="d-flex flex-column ">
-                                <div class="d-flex align-items-center my-1">
-                                    <i class="bi bi-truck fs-5 px-2"></i>
-                                    <i class="bi bi-clock-history fs-5 px-1"></i>
-                                    <p class="mb-0 px-2">Delivery Pending</p>
-                                </div>
-                                <div class="d-flex align-items-center text-primary my-1">
-                                    <i class="bi bi-truck fs-5 px-2"></i>
-                                    <i class="bi bi-send fs-5 px-1"></i>
-                                    <p class="mb-0 px-2">Delivery Shipped</p>
-                                </div>
-                                <div class="d-flex align-items-center text-success my-1">
-                                    <i class="bi bi-truck fs-5 px-2"></i>
-                                    <i class="bi bi-check-circle fs-5 px-1"></i>
-                                    <p class="mb-0 px-2">Delivery Completed</p>
-                                </div>
-                                <div class="d-flex align-items-center text-danger my-1">
-                                    <i class="bi bi-truck fs-5 px-2"></i>
-                                    <i class="bi bi-x-circle fs-5 px-1"></i>
-                                    <p class="mb-0 px-2">Delivery Cancelled</p>
-                                </div>
-                            </div>
-                            <p class="mt-4 mb-1 fw-bold">Payment Status</p>
-                            <div class="d-flex flex-column">
-                                <div class="d-flex align-items-center my-1">
-                                    <i class="bi bi-wallet2 fs-5 px-2"></i>
-                                    <i class="bi bi-clock-history fs-5 px-1"></i>
-                                    <p class="mb-0 px-2">Payment Pending</p>
-                                </div>
-                                
-                                <div class="d-flex align-items-center text-success my-1">
-                                    <i class="bi bi-wallet2 fs-5 px-2"></i>
-                                    <i class="bi bi-check-circle fs-5 px-1"></i>
-                                    <p class="mb-0 px-2">Payment Completed</p>
-                                </div>
-                                
-                                <div class="d-flex align-items-center text-danger my-1">
-                                    <i class="bi bi-wallet2 fs-5 px-2"></i>
-                                    <i class="bi bi-x-circle fs-5 px-1"></i>
-                                    <p class="mb-0 px-2">Payment Cancelled</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        
 
 
     </div>

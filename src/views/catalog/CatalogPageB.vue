@@ -173,33 +173,3 @@ export default {
     margin-bottom: 2px;
 }
 </style>
-
-<!-- 
-passing prop via route
-
-<div class="card show-on-hover">
-    <router-link :to="{ name: 'ProductPage', params: { product: product } }" class="text-decoration-none text-dark position-relative">
-        <img :src="`${publicPath}${product.img}`" class="card-img-top" alt="" style="min-height:250px;">
-    </router-link>
-    <router-link :to="{ name: 'ProductPage', params: { product: product } }" class="text-decoration-none text-dark position-absolute w-100 soh-div">
-        <div class="d-flex justify-content-between align-items-start"
-            style="max-height:300px; overflow-y:scroll;">
-            <CardColors :colors="product.colors"></CardColors>
-            <CardSize :sizes="product.sizes"></CardSize>
-        </div>
-    </router-link>
-    <router-link to="/ProductPage" class="text-decoration-none text-dark card-body px-1">
-        <p class="text-center fs-5 mb-1 fw-bold"> {{ product.name }}</p>
-        <p class="text-center m-0">{{product.info}}</p>
-    </router-link>
-    <div class="card-footer p-0">
-        <div class="btn-group w-100 rounded-bottom overflow-hidden" style="opacity: .85;">
-            <button class="btn bg-outline-dark rounded-0">
-                <i class="bi bi-heart"></i>
-            </button>
-            <button class="btn bg-outline-dark rounded-0">
-                <i class="bi bi-cart-plus-fill"></i>
-            </button>
-        </div>
-    </div>
-</div> -->

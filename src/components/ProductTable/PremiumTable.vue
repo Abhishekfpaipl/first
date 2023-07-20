@@ -6,13 +6,20 @@
             <table class="table border border-1">
                 <thead>
                     <tr>
-                        <th scope="col">Qty</th>
-                        <th scope="col" v-for="(size, index) in product.sizes" :key="index">
+                        <th scope="col">
+                            <div class="d-flex flex-column align-items-center">
+                                <p class="m-0">SKU</p>
+                                <p class="m-0">{{ skuCount }}</p>
+                            </div>
+                        </th>
+                        <th scope="col" v-for="(size, index) in product.sizes" :key="index" style="background-color: #e6e6e6;">
                             <div class="fw-bold d-flex flex-column align-items-center" style="">
                                 <p class="m-0">{{ size.name }}</p>
+                                <p class="m-0">₹{{ size.price }}</p>
                             </div>
                         </th>
                     </tr>
+
                 </thead>
                 <tbody>
                     <tr v-for="(color, colorindex) in product.colors" :key="colorindex">
@@ -22,16 +29,21 @@
                                     style="width: 38px; height: 38px;object-fit: fill;">
                             </div>
                         </td>
-
                         <td v-for="(size, sizeindex) in product.sizes" :key="sizeindex">
                             <div>
                                 <input type="number" class="form-control text-center" placeholder="0"
-                                    v-model="quantities[colorindex][sizeindex]">
+                                    v-model="quantities[colorindex][sizeindex]" >
                             </div>
                         </td>
                     </tr>
-                    <tr scope="row">
-                        <th>Total</th>
+                    <tr scope="row" style="background-color: #e6e6e6;">
+                        <th>Qty</th>
+                        <td class="text-center" v-for="(size, sizeindex) in product.sizes" :key="sizeindex">
+                            {{ calculateQty(sizeindex) }}
+                        </td>
+                    </tr>
+                    <tr scope="row" style="background-color: #e6e6e6;">
+                        <th>Amt.</th>
                         <td class="text-center" v-for="(size, sizeindex) in product.sizes" :key="sizeindex">
                             ₹{{ calculateTotal(sizeindex) }}
                         </td>
@@ -39,16 +51,30 @@
                 </tbody>
             </table>
         </div>
-        <div class="d-flex justify-content-between">
-            <h2>Grand Total</h2>
-            <h2>₹{{ calculateGrandTotal }}</h2>
+        <div class="d-flex justify-content-between p-2" style="background-color:#e6e6e6;font-size:12px">
+           <div class="d-flex flex-column">
+            <div class="d-flex gap-2">
+                <p class="mb-0">Total Sku</p>
+                <p class="mb-0 fw-bold" style="">{{ skuCounter }}</p>
+            </div>
+            <div class="d-flex gap-2">
+                <p class="mb-0">Total Qty</p>
+                <p class="mb-0 fw-bold">{{ calculateTotalQty }}</p>
+            </div>
+           </div>
+            <div class="">
+                <p class="mb-0">Grand Total</p>
+                <p class="mb-0 fw-bold">₹{{ calculateGrandTotal }}</p>
+            </div>
         </div>
     </div>
 </template>
 
 <script>
+import ProductTable from '@/mixins/ProductTable.js'
 export default {
     name: 'PremiumTable',
+    mixins:[ProductTable],
     data() {
         return {
             quantities: [],
@@ -59,43 +85,11 @@ export default {
             let productId = this.$route.params.productId;
             return this.$store.getters['catalog/getProduct'](productId);
         },
-        total() {
-            let totalPrice = 0;
-            for (let [index, size] of this.product.sizes.entries()) {
-                totalPrice += size.price * this['quantity' + index];
-            }
-
-            return totalPrice;
-        },
-        calculateTotal() {
-            return (sizeIndex) => {
-                let totalPrice = 0;
-                for (let colorIndex = 0; colorIndex < this.product.colors.length; colorIndex++) {
-                    const quantity = this.quantities[colorIndex][sizeIndex] || 0;
-                    const price = this.product.sizes[sizeIndex].price;
-                    totalPrice += quantity * price;
-                }
-                return totalPrice;
-            };
-        },
-        calculateGrandTotal() {
-            let grandTotal = 0;
-            for (let sizeIndex = 0; sizeIndex < this.product.sizes.length; sizeIndex++) {
-                grandTotal += this.calculateTotal(sizeIndex);
-            }
-            return grandTotal;
-        },
     },
 
-    methods: {},
-    created() {
-        for (let colorIndex = 0; colorIndex < this.product.colors.length; colorIndex++) {
-            this.quantities[colorIndex] = [];
-            for (let sizeIndex = ''; sizeIndex < this.product.sizes.length; sizeIndex++) {
-                this.quantities[colorIndex][sizeIndex] = '';
-            }
-        }
+    methods: {
     },
+    
 
 }
 </script>

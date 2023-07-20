@@ -1,19 +1,19 @@
 <template>
-    <div>
-        <div class="d-flex w-100 justify-content-between bg-light align-items-center position-fixed px-2 border-bottom"
+    <div class="">
+        <div class="d-flex w-100 justify-content-between top-brand align-items-center position-fixed px-2 border-bottom"
             style="z-index:1;top:0px;height:50px">
             <div class="d-flex">
-                <i class="bi bi-arrow-left fs-4" @click="goBack()"></i>
-                <p class="m-0 ms-2 fs-5">Page Name</p>
+                <i class="bi bi-arrow-left fs-4 brand-text" @click="goBack()"></i>
+                <p class="m-0 ms-2 fs-5  brand-text">Page Name</p>
             </div>
 
             <div class="d-flex gap-4">
                 <router-link to="/search" class="text-dark">
-                    <i class="bi bi-search fs-4"></i>
+                    <i class="bi bi-search fs-4 brand-text"></i>
                 </router-link>
-                <i class="bi bi-arrow-down-up fs-4" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExampleOne"
+                <i class="bi bi-arrow-down-up fs-4 brand-text" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExampleOne"
                     aria-controls="offcanvasExampleOne"></i>
-                <i class="bi bi-funnel fs-4" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" role="button"
+                <i class="bi bi-funnel fs-4 brand-text" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" role="button"
                     aria-expanded="false"></i>
             </div>
         </div>
@@ -49,8 +49,8 @@
 
                     <div class=" bg-white w-100" style="bottom:0px;">
                         <div class="d-flex justify-content-evenly gap-1">
-                            <button class="btn btn-outline-dark rounded-0 w-25">Clear</button>
-                            <button class="btn bg-dark text-white rounded-0 w-25" data-bs-dismiss="offcanvas">Apply</button>
+                            <button class="btn top-brand rounded-0 w-25" data-bs-dismiss="offcanvas">Clear</button>
+                            <button class="btn top-brand  rounded-0 w-25" data-bs-dismiss="offcanvas">Apply</button>
                         </div>
                     </div>
 
@@ -73,7 +73,7 @@
 
                                     <div v-for="(cat, index) in category" :key="index" class="">
                                         <input :type="cat.type" class="btn-check" :id="cat.name" autocomplete="off">
-                                        <label class="btn btn-outline-success rounded-0 m-2" :for="cat.name">{{
+                                        <label class="btn btn-outline-danger rounded-0 m-2" style="opacity: 80%;" :for="cat.name">{{
                                             cat.label }}</label>
                                     </div>
                                 </div>
@@ -132,14 +132,14 @@
                             </h2>
                             <div id="flush-collapseFour" class="accordion-collapse collapse"
                                 data-bs-parent="#accordionFlushExample">
-                                <div class="accordion-body d-flex gap-4 flex-wrap">
+                                <div class="accordion-body d-flex flex-wrap">
                                     <div class="btn-group d-flex flex-wrap " role="group"
                                         aria-label="Basic checkbox toggle button group">
 
-                                        <div class="form-check" v-for="(s, index) in size" :key="index">
+                                        <div class="" v-for="(s, index) in size" :key="index">
                                             <input class="btn-check" :type="s.type" name="flexRadioDefault"
                                                 :id="'flexRadioDefault1' + index">
-                                            <label class="btn btn-outline-success rounded-0 m-2"
+                                            <label class="btn btn-outline-danger rounded-0 m-2" style="opacity: 80%;"
                                                 :for="'flexRadioDefault1' + index">
                                                 {{ s.label }}
                                             </label>
@@ -160,11 +160,11 @@
                             </h2>
                             <div id="flush-collapseFive" class="accordion-collapse collapse"
                                 data-bs-parent="#accordionFlushExample">
-                                <div class="accordion-body d-flex gap-4 flex-wrap">
+                                <div class="accordion-body d-flex flex-wrap">
 
                                     <div v-for="(pat, index) in pattern" :key="index" class="">
                                         <input :type="pat.type" class="btn-check" :id="pat.name" autocomplete="off">
-                                        <label class="btn btn-outline-success rounded-0 m-2" :for="pat.name">{{
+                                        <label class="btn btn-outline-danger rounded-0 m-2" style="opacity: 80%;" :for="pat.name">{{
                                             pat.label }}</label>
                                     </div>
                                 </div>
@@ -181,11 +181,11 @@
                             </h2>
                             <div id="flush-collapseSix" class="accordion-collapse collapse"
                                 data-bs-parent="#accordionFlushExample">
-                                <div class="accordion-body d-flex gap-4 flex-wrap">
+                                <div class="accordion-body d-flex flex-wrap">
 
                                     <div v-for="(len, index) in length" :key="index" class="">
                                         <input :type="len.type" class="btn-check" :id="len.name" autocomplete="off">
-                                        <label class="btn btn-outline-success rounded-0 m-2" :for="len.name">{{
+                                        <label class="btn btn-outline-danger rounded-0 m-2" style="opacity: 80%;" :for="len.name">{{
                                             len.label }}</label>
                                     </div>
 
@@ -203,11 +203,11 @@
                             </h2>
                             <div id="flush-collapseSeven" class="accordion-collapse collapse"
                                 data-bs-parent="#accordionFlushExample">
-                                <div class="accordion-body d-flex gap-4 flex-wrap">
+                                <div class="accordion-body d-flex flex-wrap">
 
                                     <div v-for="(style, index) in styles" :key="index" class="">
                                         <input :type="style.type" class="btn-check" :id="style.name" autocomplete="off">
-                                        <label class="btn btn-outline-success rounded-0 m-2" :for="style.name">{{
+                                        <label class="btn btn-outline-danger rounded-0 m-2" style="opacity: 80%;" :for="style.name">{{
                                             style.label }}</label>
                                     </div>
                                 </div>

@@ -14,8 +14,6 @@ const routes = [
     name: "HomePage",
     component: HomePage,
   },
-  
- 
 
   ...CartRoutes,
   ...ordersRoute,

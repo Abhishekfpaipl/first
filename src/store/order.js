@@ -6,6 +6,7 @@ export default {
                 id: 1,
                 oid: '5426308975',
                 date: '14',
+                amount: '2,88,000',
                 month: 'Jun',
                 item: '25',
                 qty: '200',
@@ -18,18 +19,24 @@ export default {
                 invoiceno: '152364',
                 payment: [
                     {
-                        amount: '720000',
+                        amount: '288000 ',
                         mode: 'UPI',
                         details: 'Uploaded',
                         status: 'Unpaid'
                     }
                 ],
+                orderSummary: [
+                    {
+                        charges: '2,88,000',
+                        catalogs: '2',
+                        items: '37',
+                        taxes: '28,000',
+                        qty: '220',
+                        date: '18-June-23',
+                    }
+                ],
                 delivery: [
                     {
-                        charges: '30000',
-                        suborder: '3',
-                        items: '24',
-                        date: '18-June-23',
                         mode: 'Pickup',
                         status: 'Pending',
                         address: 'B-94 Okhla Industrial Area, Phase-II New Delhi South Delhi DL 110020 IN'
@@ -39,10 +46,12 @@ export default {
                     {
                         suboid: '12542630',
                         name: 'Crochet Skirt Two-Piece Outfits pack of 2',
-                        img: 'img/icons/test1.png',
-                        amount: '2000',
-                        sku: '562',
-                        unit: '15',
+                        img: 'https://img.ltwebstatic.com/images3_pi/2019/12/16/1576484402687c5cc3592067511e046fb985a5414a_thumbnail_900x.webp',
+                        style: "#23567",
+                        amount: '1,20,000',
+                        rate: '1,200',
+                        sku: '25',
+                        qty: '100',
                         subproduct: [
                             {
                                 id: 1,
@@ -65,10 +74,12 @@ export default {
                     {
                         suboid: 'PID 542630',
                         name: ' Two-Piece Outfits pack of 2',
-                        img: 'img/icons/test1.png',
-                        amount: '2000',
-                        sku: '562',
-                        unit: '15',
+                        img: 'https://img.ltwebstatic.com/images3_pi/2019/12/23/15770878616a86e80aeb3e5c5667029c6ad6d4cab9_thumbnail_900x.webp',
+                        style: "#23568",
+                        amount: '1,68,000',
+                        rate: '840',
+                        sku: '30',
+                        qty: '200',
                         subproduct: [
                             {
                                 id: 1,
@@ -93,6 +104,7 @@ export default {
             {
                 id: 2,
                 date: '15',
+                amount: '2,88,000',
                 month: 'Jul',
                 oid: '54263152365',
                 statusone: 'Shipped',
@@ -110,12 +122,16 @@ export default {
                         status: 'Unpaid'
                     }
                 ],
-                delivery: [
+                orderSummary: [
                     {
-                        charges: '30000',
-                        suborder: '3',
+                        charges: '2,88,000',
+                        catalogs: '2',
                         items: '24',
                         date: '18-June-23',
+                    }
+                ],
+                delivery: [
+                    {
                         mode: 'Pickup',
                         status: 'Shipped',
                         address: 'B-94 Okhla Industrial Area, Phase-II New Delhi South Delhi DL 110020 IN'
@@ -143,6 +159,7 @@ export default {
             {
                 id: 3,
                 date: '14',
+                amount: '298000',
                 month: 'Aug',
                 oid: '5426326574',
                 item: '25',
@@ -162,12 +179,16 @@ export default {
                         status: 'Unpaid'
                     }
                 ],
-                delivery: [
+                orderSummary: [
                     {
                         charges: '30000',
                         suborder: '3',
                         items: '24',
                         date: '18-June-23',
+                    }
+                ],
+                delivery: [
+                    {
                         mode: 'Pickup',
                         status: 'Shipped',
                         address: 'B-94 Okhla Industrial Area, Phase-II New Delhi South Delhi DL 110020 IN'
@@ -261,6 +282,32 @@ export default {
                 unit: '200',
                 amount: '240000',
                 catelog_id: 1,
+                payment: [
+                    {
+                        amount: '250500 ',
+                        mode: 'UPI',
+                        details: 'Uploaded',
+                        status: 'Paid'
+                    }
+                ],
+                delivery: [
+                    {
+                        date: '18-June-23',
+                        mode: 'Pickup',
+                        status: 'Pending',
+                        address: 'B-94 Okhla Industrial Area, Phase-II New Delhi South Delhi DL 110020 IN'
+                    }
+                ],
+                orderSummary: [
+                    {
+                        oid: '4526589182365',
+                        charges: '2,88,000',
+                        catalogs: '2',
+                        items: '37',
+                        taxes: '28,000',
+                        qty: '220',
+                    }
+                ],
                 subproduct: [
                     {
                         id: 1,
@@ -268,7 +315,8 @@ export default {
                         skuid: '957223654824',
                         size: 'S',
                         color: 'Red',
-                        pcs: '20'
+                        pcs: '20',
+                        amount: '72,000',
                     },
                     {
                         id: 2,
@@ -276,7 +324,8 @@ export default {
                         skuid: '655323654824',
                         size: 'L',
                         color: 'Blue',
-                        pcs: '15'
+                        pcs: '15',
+                        amount: '72,000',
                     },
                     {
                         id: 3,
@@ -284,7 +333,8 @@ export default {
                         skuid: '457873654824',
                         size: 'XL',
                         color: 'Black',
-                        pcs: '41'
+                        pcs: '41',
+                        amount: '72,000',
                     },
                     {
                         id: 4,
@@ -292,7 +342,8 @@ export default {
                         skuid: '451223654824',
                         size: 'XXL',
                         color: 'Burgandy',
-                        pcs: '50'
+                        pcs: '50',
+                        amount: '72,000',
                     },
                 ]
             },

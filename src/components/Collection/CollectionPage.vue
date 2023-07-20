@@ -8,7 +8,7 @@
               <h1 class="mt-4">{{ collect.heading }}</h1>
               <p>{{ collect.text }}</p>
               <router-link :to="'/catalogs/collection' + collect.id">
-                <button class="btn btn-primary rounded mb-4">{{ collect.button }}</button>
+                <button class="btn top-brand rounded mb-4">{{ collect.button }}</button>
               </router-link>
             </div>
             <div class="col-4 ">

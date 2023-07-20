@@ -40,7 +40,8 @@
                 <div v-for="(size, index) in product.sizes" :key="index" class="rounded-0 w-25"
                   @click="makeActiveSize(size)">
                   <input type="radio" class="btn-check" name="option" :id="'option' + index" autocomplete="off">
-                  <label class="btn btn-outline-success m-2 rounded-0" :for="'option' + index">{{ size.name }}</label>
+                  <label class="btn btn-outline-danger m-2 rounded-0" style="opacity: 80%;" :for="'option' + index">{{
+                    size.name }}</label>
                 </div>
               </div>
               <div class="row g-0 mt-2 w-100 " style="box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.075);">
@@ -104,34 +105,22 @@
       </div>
     </div>
 
-    <nav class="navbar fixed-bottom navbar-light" style="z-index: 20 !important;">
-      <div class="w-100 d-flex align-items-center position-fixed" style="height: 63px; bottom: 0; background: #f6f6f6;">
-        <div class="d-flex justify-content-around" style="width: 30%;">
-          <div class="items">
-            <routerLink to="/" class="text-dark text-decoration-none">
-              <div class="inner-items">
-                <i class="bi bi-shop-window fs-5"></i>
-              </div>
-            </routerLink>
+    <nav class="navbar navbar-light" style="z-index: 20 !important;">
+      <div class="w-100 d-flex justify-content-around align-items-center position-fixed px-3"
+        style="height: 63px; bottom: 0; background: #f6f6f6;">
+        <routerLink to="/" class="text-dark text-decoration-none mb-1">
+          <div class="inner-items">
+            <i class="bi bi-shop-window fs-2" style="color:#E35D6A"></i>
           </div>
-          <div class="items"  @click="saveProduct(product)">
-            <router-link to="" class="text-dark text-decoration-none">
-              <div class="inner-items">
-                <!-- <button class="btn bg-outline-dark p-0"> -->
-                  <i class="bi bi-heart fs-5"></i>
-                <!-- </button> -->
-              </div>
-            </router-link>
-          </div>
+        </routerLink>
+        <div class="" @click="saveProduct(product)">
+          <i class="bi bi-heart fs-2" style="color:#E35D6A"></i>
         </div>
-        <div class="me-3" style="width: 70%;">
-          <div class="items">
-            <button @click="addToCart" class="btn w-100 d-flex justify-content-center align-items-center text-center"
-              style="background-color: #eca1a6;">
-              <i class="bi bi-cart fs-5"></i>
-              <p class="text-center m-0 ms-2">Add to cart</p>
-            </button>
-          </div>
+        <div class="ms-3 me-3" style="width: 60%;">
+          <button @click="addToCart" class="top-brand btn w-100 d-flex justify-content-center align-items-center">
+            <i class="bi bi-bag-check fs-2"></i>
+            <p class="text-center m-0 ms-2 fs-4">Add to cart</p>
+          </button>
         </div>
 
       </div>
@@ -147,7 +136,7 @@ import FavCatalog from '@/mixins/FavCatalog.js'
 
 export default {
   name: "CatalogDetailPage",
-  mixins:[FavCatalog],
+  mixins: [FavCatalog],
   data() {
     return {
       selectedImage: {},
@@ -179,7 +168,7 @@ export default {
       return this.$store.getters['catalog/getProduct'](productId);
     }
   },
-  methods: {
+  methods: { 
     selectImage(image) {
       this.selectedImage = image;
     },

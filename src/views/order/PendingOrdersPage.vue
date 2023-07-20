@@ -15,21 +15,24 @@
                             <div class="d-flex justify-content-between align-items-center ">
                                 <p class="m-0" style="font-size:14px;font-weight:500;">OID: {{ order.oid }} </p>
 
-                                <div v-if="order.statusone === 'Pending'" class="text-danger px-2 rounded">
-                                    <i class="bi bi-truck fs-5"></i>
+                                <div v-if="order.statusone === 'Pending'" class="text-dark d-flex rounded">
+                                    <i class="bi bi-truck fs-5 px-2"></i>
+                                    <i class="bi bi-clock-history fs-5 px-1"></i>
                                 </div>
 
-                                <div v-if="order.statusone === 'Shipped'" class="text-dark px-2 rounded">
-                                    <i class="bi bi-truck fs-5"></i>
+                                <div v-if="order.statusone === 'Shipped'" class="text-primary d-flex rounded">
+                                    <i class="bi bi-truck fs-5 px-2"></i>
+                                    <i class="bi bi-send fs-5 px-1"></i>
                                 </div>
 
-                                <div v-if="order.statusone === 'Delivered'" class="text-success px-2 rounded">
-                                    <i class="bi bi-truck fs-5"></i>
+                                <div v-if="order.statusone === 'Delivered'" class="text-success d-flex rounded">
+                                    <i class="bi bi-truck fs-5 px-2"></i>
+                                    <i class="bi bi-check-circle fs-5 px-1"></i>
                                 </div>
 
-                                <div v-if="order.statusone === 'Cancelled'" class="text-secondary d-flex rounded">
-                                    <i class="bi bi-truck fs-5 px-1"></i>
-                                    <i class="bi bi-x fs-5 px-1"></i>
+                                <div v-if="order.statusone === 'Cancelled'" class="text-danger d-flex rounded">
+                                    <i class="bi bi-truck fs-5 px-2"></i>
+                                    <i class="bi bi-x-circle fs-5 px-1"></i>
                                 </div>
                             </div>
                             <div class="d-flex justify-content-between align-items-center">
@@ -39,15 +42,17 @@
                                 </div>
                                 <div class="">
 
-                                    <div v-if="order.status === 'Paid'" class="text-success px-2 rounded">
-                                        <i class="bi bi-wallet2 fs-5"></i>
+                                    <div v-if="order.status === 'Paid'" class="text-success d-flex  rounded">
+                                        <i class="bi bi-wallet2 fs-5 px-2"></i>
+                                        <i class="bi bi-check-circle fs-5 px-1"></i>
                                     </div>
-                                    <div v-if="order.status === 'Unpaid'" class="text-danger px-2 rounded">
-                                        <i class="bi bi-wallet2 fs-5"></i>
+                                    <div v-if="order.status === 'Unpaid'" class="text-dark d-flex rounded">
+                                        <i class="bi bi-wallet2 fs-5 px-2"></i>
+                                        <i class="bi bi-clock-history fs-5 px-1"></i>
                                     </div>
                                     <div v-if="order.status === 'Rejected'" class="text-danger d-flex rounded">
-                                        <i class="bi bi-wallet2 fs-5 px-1"></i>
-                                        <i class="bi bi-x fs-5 px-1"></i>
+                                        <i class="bi bi-wallet2 fs-5 px-2"></i>
+                                        <i class="bi bi-x-circle fs-5 px-1"></i>
                                     </div>
 
 

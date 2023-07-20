@@ -3,9 +3,6 @@
         saveProduct(product) {
             this.$store.dispatch('catalog/saveProduct', product)
         },
-        // goBack(){
-        //     window.history.back()
-        // }
     }
 }
 export default FavCatalog

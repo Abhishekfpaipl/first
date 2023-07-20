@@ -7,7 +7,6 @@
                     <div class="d-flex align-items-center w-100  border-bottom p-2" style="padding-top: 0 !important;">
                         <div class="rounded-circle border d-flex flex-column justify-content-center align-items-center me-3"
                             style="height:80px; width:80px; ">
-                            <!-- <div style="line-height: 1rem;">{{ category.id }}</div> -->
                             <img :src="category.img" class="rounded-circle"
                                 style="width: 100%; height: 100%; object-fit: fill;">
                         </div>

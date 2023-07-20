@@ -4,7 +4,6 @@
         <DeshiGirlLogo></DeshiGirlLogo>
         <div class="px-4 pb-5" style="padding-top: 20px;">
             <div class="d-flex flex-column align-items-center text-center">
-                <!-- <i class="bi bi-envelope-check-fill icon" style="font-size:100px; color:#492C2E"></i> -->
                 <p class="fs-4">OTP has been sent to your email</p>
                 <p>We've sent an email to user@gmail.com to verify your email address, please update OTP in a email
                     verification

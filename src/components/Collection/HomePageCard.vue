@@ -46,27 +46,6 @@
                         </div>
 
                     </div>
-                    <div class="card-footer rounded-0 p-0" style="">
-                        <div class="btn-group w-100 overflow-hidden" style="opacity: .85;border-radius: 0px !important;">
-                            <div class="w-50 border-end ">
-                                <input type="checkbox" class="btn-check" name="fav" :id="'fav' + product.id"
-                                    autocomplete="off">
-                                <label class="btn btn-outline-danger rounded-0 border-0 w-100 h-100"
-                                    :for="'fav' + product.id" style="padding:3px  !important">
-                                    <i class="bi bi-heart fs-4" @click="saveProduct(product)"></i>
-                                </label>
-
-                            </div>
-                            <div class="w-50 ">
-                                <input type="checkbox" class="btn-check" name="cart" :id="'cart' + product.id"
-                                    autocomplete="off">
-                                <label class="btn btn-outline-primary rounded-0 border-0 w-100 h-100" :for="'cart' + product.id"
-                                    style="padding:0px  !important">
-                                    <i class="bi bi-cart-plus fs-3"></i>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -96,9 +75,6 @@ export default {
                 }
             )
         },
-        saveProduct(product) {
-            this.$store.dispatch('catalog/saveProduct', product)
-        }
     },
     components: {
         CardSize,

@@ -1,6 +1,7 @@
 export default {
     namespaced: true,
     state: {
+        // oldcategories
         // categories: [
         //     {
         //         id: 1,
@@ -429,8 +430,7 @@ export default {
                 name: 'Zuric two pc dfsdfsdfsdfdsfsdfsd',
                 moq: 12,
                 info: '#23636',
-                fabric: 'Fabic',
-                favourite: false,
+                sku:25,
                 images: [
                     "https://img.ltwebstatic.com/images3_pi/2019/12/16/1576484402687c5cc3592067511e046fb985a5414a_thumbnail_900x.webp",
                     "https://img.ltwebstatic.com/images3_pi/2020/03/16/1584329043f6a2b7ff18eed10fc606d386136fec59_thumbnail_750x.webp",
@@ -479,7 +479,7 @@ export default {
                     },
                     {
                         name: "M",
-                        price: '6500',
+                        price: '500',
                         mesurements: [
                             {
                                 name: "Length",
@@ -501,7 +501,7 @@ export default {
                     },
                     {
                         name: "L",
-                        price: '6500',
+                        price: '300',
                         mesurements: [
                             {
                                 name: "Length",
@@ -523,7 +523,7 @@ export default {
                     },
                     {
                         name: "XL",
-                        price: '6500',
+                        price: '4000',
                         mesurements: [
                             {
                                 name: "Length",
@@ -545,7 +545,7 @@ export default {
                     },
                     {
                         name: "XXL",
-                        price: '6500',
+                        price: '5000',
                         mesurements: [
                             {
                                 name: "Length",
@@ -571,11 +571,10 @@ export default {
             {
                 id: 2,
                 slug: 2,
-
                 name: 'Spun Twill 3 PC',
                 moq: 10,
-                info: '01-08-23636',
-                favourite: false,
+                info: '#23634',
+                sku:23,
                 images: [
                     "https://img.ltwebstatic.com/images3_pi/2019/12/23/15770878616a86e80aeb3e5c5667029c6ad6d4cab9_thumbnail_900x.webp",
                     "https://img.ltwebstatic.com/images2_pi/2019/05/14/15578224524054588556_thumbnail_900x1199.webp",
@@ -693,8 +692,8 @@ export default {
                 slug: 3,
                 name: 'RIB TOP',
                 moq: 10,
-                info: '01-08-23636',
-                favourite: false,
+                info: '#23637',
+                sku:30,
                 images: [
                     "https://img.ltwebstatic.com/images3_pi/2019/11/27/157484286459ed9e2b1037c98c9ff519c695214cab_thumbnail_900x.webp",
                     "https://img.ltwebstatic.com/images3_pi/2019/12/31/1577777275a6a049541520c22575516a85bc719dda_thumbnail_900x.webp",
@@ -834,8 +833,8 @@ export default {
                 slug: 4,
                 name: 'Zuric two pc',
                 moq: 10,
-                info: '01-08-23636',
-                favourite: false,
+                info: '#23639',
+                sku:39,
                 images: [
                     "https://img.ltwebstatic.com/images3_pi/2020/01/15/157908187102b895ac68d9286f66e7132bd7701940_thumbnail_900x.webp",
                     "https://img.ltwebstatic.com/images3_pi/2019/09/29/1569747933696b184c8bfb16b7da53ae86f5aaf296_thumbnail_900x.webp",
@@ -973,8 +972,8 @@ export default {
                 slug: 5,
                 name: 'oversized t-shirt',
                 moq: 10,
-                info: '01-08-23636',
-                favourite: false,
+                info: '#23633',
+                sku:89,
                 images: [
                     "https://img.ltwebstatic.com/images3_pi/2019/10/22/15717339355bd984905d3dad38aad16f10c8aa8a6d_thumbnail_900x.webp",
                     "https://img.ltwebstatic.com/images3_pi/2021/01/13/1610505625cef5573c92b4d1df43eca292954c67e2_thumbnail_900x.webp",
@@ -1110,8 +1109,8 @@ export default {
                 slug: 6,
                 name: '22y28 oversized',
                 moq: 10,
-                info: '01-08-23636',
-                favourite: false,
+                info: '#25636',
+                sku:50,
                 images: [
                     "https://img.ltwebstatic.com/images3_pi/2023/03/17/1679030387b6eeb09f553300f8cd45a6e8f7b1d02d_thumbnail_900x.webp",
                     "https://img.ltwebstatic.com/images3_pi/2022/09/14/166313694495cfd7691ca5422891a3bd80f1a50c91_thumbnail_900x.webp",

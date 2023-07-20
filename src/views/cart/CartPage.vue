@@ -1,12 +1,7 @@
 <template>
   <CartTopnav></CartTopnav>
-  <SimpleStepper step="1" style="margin-top:20px">
+  <SimpleStepper step="1" style="margin-top:10px">
     <CartPage></CartPage>
-    <div class="d-flex justify-content-center align-items center" style="padding-bottom: 100px;">
-      <router-link to="delivery_payment" class="text-decoration-none">
-        <!-- <button class="btn btn-success" >Continue</button> -->
-      </router-link>
-    </div>
   </SimpleStepper>
 </template>
 <script>

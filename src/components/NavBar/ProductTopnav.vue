@@ -1,17 +1,17 @@
 <template>
     <div class="container d-flex justify-content-between align-items-center" ref="topnav"
-        :style="`background-color: rgba(255, 255, 255, ${backgroundOpacity});`">
+        :style="`background: rgb(227,93,106, ${backgroundOpacity});`">
         <div class="d-flex align-items-center gap-3">
-            <i class="bi bi-arrow-left fs-2" @click="goBack"></i>
+            <i class="bi bi-arrow-left fs-2 brand-text" @click="goBack"></i>
             <router-link to="/search" class="text-dark">
-                <i class="bi bi-search fs-2"></i>
+                <i class="bi bi-search fs-2 brand-text"></i>
             </router-link>
         </div>
         <router-link to="/" :class="{ 'hide-on-scroll': hideOnScroll }"
             class="text-decoration-none text-dark d-flex align-items-center">
-            <img :src="logo" style="height: 40px;">
+            <!-- <img :src="logo" style="height: 40px;"> -->
             <p class="text-center m-0 fs-2 fw-bold"
-                style="color:#ECA1A6;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+                style="color:white;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
                 Deshi girl
             </p>
         </router-link>
@@ -20,12 +20,12 @@
 
             <router-link to="/favourite-catalogs" :class="{ 'text-danger': currentRoute === 'SavedProduct' }"
                 style="text-decoration:none;color:black">
-                <i class="bi bi-heart mt-1 fs-2"></i>
+                <i class="bi bi-hearts mt-1 fs-1 brand-text"></i>
             </router-link>
 
             <router-link to="/checkout/cart" :class="{ 'text-danger': currentRoute === 'simplestepper' }"
                 style="text-decoration:none;color:black">
-                <i class="bi bi-bag fs-2"></i>
+                <i class="bi bi-bag-fill fs-1 pe-1 brand-text"></i>
             </router-link>
 
         </div>

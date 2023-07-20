@@ -13,7 +13,7 @@
                                     <img :src="image" class="card-img-top rounded-0" alt="" style="min-height:100px;">
                                 </div>
                             </div>
-                            <div class="d-flex mt-2" id="scroll" style="overflow-x: scroll;">
+                            <div class="d-flex mt-1" id="scroll" style="overflow-x: scroll;">
                                 <button type="button" class="rounded-circle p-0 border me-1"
                                     :data-bs-target="'#productImages' + index" :data-bs-slide-to="imgIndex"
                                     :class="{ active: imgIndex === 0 }" :aria-current="imgIndex === 0 ? true : false"
@@ -39,11 +39,32 @@
 
                     <div class="card-body" style="padding:3px">
                         <div class="d-flex justify-content-between mt-1 ms-1 pb-1">
-                            <p class="m-0 fw-bold" style="font-size:14px;">₹ {{ product.price }}/pc</p>
-                            <p class="m-0 fw-bold" style="font-size:14px;">{{ product.info }}</p>
+                            <p class="m-0 fw-bold" style="font-size:13px;">₹{{ product.price }} / pc</p>
+                            <p class="m-0 fw-bold" style="font-size:13px;">{{ product.info }}</p>
 
                         </div>
 
+                    </div>
+                    <div class="card-footer rounded-0 p-0" style="">
+                        <div class="btn-group w-100 overflow-hidden" style="opacity: .85;border-radius: 0px !important;">
+                            <div class="w-50 border-end ">
+                                <input type="checkbox" class="btn-check" name="fav" :id="'fav' + product.id"
+                                    autocomplete="off">
+                                <label class="btn btn-outline-danger rounded-0 border-0 w-100 h-100"
+                                    :for="'fav' + product.id" style="padding:3px  !important">
+                                    <i class="bi bi-heart fs-4" @click="saveProduct(product)"></i>
+                                </label>
+
+                            </div>
+                            <div class="w-50 ">
+                                <input type="checkbox" class="btn-check" name="cart" :id="'cart' + product.id"
+                                    autocomplete="off">
+                                <label class="btn btn-outline-primary rounded-0 border-0 h-100 w-100"
+                                    :for="'cart' + product.id" style="padding:0px  !important">
+                                    <i class="bi bi-cart-plus fs-3"></i>
+                                </label>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -54,6 +75,7 @@
 import CatelogFilter from '@/components/Catelog/CatelogFilter.vue';
 import CardSize from '@/components/Catelog/CardSize.vue';
 import router from '../../router';
+// import OrderFilter from '@/components/Orders/OrderFilter.vue';
 export default {
     name: "CardCatelog",
     data() {
@@ -86,6 +108,7 @@ export default {
     },
     components: {
         CardSize,
+        // OrderFilter,
         CatelogFilter
     },
 

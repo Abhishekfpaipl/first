@@ -31,7 +31,4 @@ export default {
 .nav-link {
     color: grey
 }
-/* .nav-tabs .nav-link.active {
-    border-bottom: 2px solid red;
-} */
 </style>

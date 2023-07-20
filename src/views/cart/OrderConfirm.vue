@@ -2,9 +2,6 @@
     <SimpleStepper step="4" style="margin-top:20px">
       <ConfirmPage></ConfirmPage>
       <div class="d-flex justify-content-center align-items-center mt-4"  style="padding-bottom: 100px;">
-        <router-link to="/categories" class="text-decoration-none">
-        <button class="btn btn-success">Continue Shopping</button>
-      </router-link>
       </div>  
     </SimpleStepper>
    

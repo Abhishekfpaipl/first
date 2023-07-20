@@ -19,7 +19,7 @@
                             <th scope="row" class="text-center">5 Mix Colors</th>
                             <td v-for="(input, index) in inputs" :key="index" class="text-center">
                                 <input type="number" class="form-control" style="font-size: 12px !important;"
-                                    :placeholder="input.placeholder">
+                                    :value="input.placeholder" readonly>
                             </td>
 
                         </tr>

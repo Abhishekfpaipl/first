@@ -1,7 +1,7 @@
 <template>
     <div>
         <OrdinaryLink active="Completed"></OrdinaryLink>
-        <OrderFilter style="padding-top:80px !important;"></OrderFilter>
+        <CompletedOrderFilter style="padding-top:80px !important;"></CompletedOrderFilter>
         <div class="container py-3" style="padding-bottom:80px">
             <div class="row row-cols-2 row-cols-md-3 row-cols-xl-4 g-3">
                 <div class="col" v-for="(complete, index) in completed" :key="index">
@@ -35,7 +35,7 @@
 </template>
 
 <script>
-import OrderFilter from '@/components/Orders/OrderFilter.vue';
+import CompletedOrderFilter from '@/components/Orders/CompletedOrderFilter.vue';
 import OrdinaryLink from '@/components/Orders/OrdinaryLink.vue';
 
 export default {
@@ -47,7 +47,7 @@ export default {
     },
     components: {
         OrdinaryLink,
-        OrderFilter
+        CompletedOrderFilter
     },
     computed: {
         completed() {

@@ -72,7 +72,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 .icon {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 2rem;
@@ -90,6 +90,6 @@ a {
     font-weight: 700;
     color: #4C2E30;
     background-color: #ECA1A6;
-    border-color: hsl(356, 74%, 70%) !important;
+    border-color: #eb7a81 !important;
 }
 </style>
