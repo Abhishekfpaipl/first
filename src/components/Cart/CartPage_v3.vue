@@ -138,8 +138,8 @@
 </template>
 
 <script>
-import OrderData from '@/components/Cart/OrderData.vue';
-import POrderData from '@/components/Orders/PremiumOrder/POrderData.vue';
+import OrderData from '@/components/Orders/OrderData.vue';
+import POrderData from '@/components/Orders/POrderData.vue';
 export default {
     name: "CartPage",
     data() {

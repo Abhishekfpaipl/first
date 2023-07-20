@@ -8,21 +8,14 @@
                         <i class="bi bi-shop-window fs-2" style="color: #E35D6A;"></i>
                     </div>
                 </router-link>
-                <div style="font-size:12px">
-                    <p class="m-0 text-center fw-bold">2 Catalogs</p>
-                    <div class="d-flex gap-2">
-                        <p class="mb-0 text-center">Sku 37 </p>
-                        <span>|</span>
-                        <p class="mb-0 text-center">Qty 220</p>
-                    </div>
-                </div>
+                <b class="text-center fs-5">₹1089</b>
                 <div class="me-3">
-                    <router-link to="/checkout/billing_address" class="text-decoration-none text-dark">
+                    <router-link to="/checkout/delivery_payment" class="text-decoration-none text-dark">
                         <div class="d-flex align-items-center">
-
-                            <button class="btn top-brand py-2 d-flex">
-                                <p class="text-center m-0 fw-bold">₹ 2,88,000</p>
-                                <i class="bi bi-arrow-right ms-2"></i>
+                            <p class="mb-0 me-2">220 Pcs</p>
+                            <button
+                            class="top-brand btn">
+                                <p class="text-center m-0">Continue (2)</p>
                             </button>
                         </div>
                     </router-link>

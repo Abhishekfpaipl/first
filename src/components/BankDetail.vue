@@ -31,8 +31,7 @@
                     </div>
 
                     <div class="d-flex justify-content-center mt-4 p-2">
-                        <button class="btn   w-100 fs-5"
-                            style="background-color: #ECA1A6;padding: 14px 12px !important;box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;">
+                        <button class="btn top-brand w-100 fs-5">
                             Save
                         </button>
                     </div>

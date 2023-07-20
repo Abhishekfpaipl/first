@@ -9,12 +9,12 @@ const routes = [
         component:() => import("../views/cart/CartPage.vue"),
       },
       {
-        path:'delivery_payment',
-        name: "DeliveryAndPaymentMode",
-        component: () => import("../views/cart/DeliveryAndPaymentMode.vue"),
+        path:'billing_address',
+        name: "BillingAddress",
+        component: () => import("../views/cart/BillingAddress.vue"),
       },
       {
-      path:'address',
+      path:'delivery_address',
         name: "DeliveryAddress",
         component:() => import("../views/cart/DeliveryAddress.vue"),
       },
@@ -25,6 +25,12 @@ const routes = [
       },
     ]
   },
+  {
+    path:'/catalog-edit/:productId',
+    name:'CatalogEditPage',
+    component:()=> import('../views/cart/CatalogEditPage.vue')
+
+  }
 ];
 
 export default routes;

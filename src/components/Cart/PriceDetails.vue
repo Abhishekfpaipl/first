@@ -1,24 +1,26 @@
 <template>
-    <div>
-        <div class="container my-2">
-            <p style="font-weight:600">Price Details</p>
-
-            <div class="d-flex justify-content-between  py-2">
-                <p class="m-0  text-decoration-underline" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottomPrice"
-                    aria-controls="offcanvasBottomPrice">Total Product Price</p>
-                <p class="m-0">+ ₹1232</p>
+    <div class="">
+        <div class="">
+            <p class="bill my-5">Bill Summary</p>
+            <div class="d-flex justify-content-between border p-2 py-3" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasBottomPrice" aria-controls="offcanvasBottomPrice">
+                <div class="">
+                    <p class="m-0" style="font-size: 18px;">Sub Total</p>
+                    <p class="m-0" style="font-size: 10px;">Know More <i class="bi bi-arrow-return-left"></i></p>
+                </div>
+                <p class="m-0" style="font-size: 18px;">₹ 2,60,000</p>
             </div>
-            <div class="d-flex justify-content-between border-bottom pb-2">
-                <p class="m-0 text-success text-decoration-underline" data-bs-toggle="offcanvas"
-                    data-bs-target="#offcanvasBottomDiscount" aria-controls="offcanvasBottomDiscount">Total Discounts</p>
-                <p class="m-0 text-success">- ₹122</p>
+            <div class="d-flex justify-content-between border-bottom p-2 py-3" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasBottomDiscount" aria-controls="offcanvasBottomDiscount">
+                <div class="">
+                    <p class="m-0 " style="font-size: 18px;">Taxes</p>
+                    <p class="m-0"  style="font-size: 10px;">Know More <i class="bi bi-arrow-return-left"></i></p>
+                </div>
+                <p class="m-0 " style="font-size: 18px;">₹ 28,000</p>
             </div>
-            <div class="d-flex justify-content-between pt-2 ">
-                <p class="m-0 ">Order Total</p>
-                <p class="m-0 ">₹1105</p>
-            </div>
-            <div class="p-2" style="background-color: #D3F4EA;">
-                <p class="m-0 text-center">YAY! Your total cart discount is ₹127</p>
+            <div class="d-flex justify-content-between p-2 ">
+                <p class="m-0 " style="font-size: 18px;">Gross Amount</p>
+                <p class="m-0 " style="font-size: 18px;">₹ 2,88,000</p>
             </div>
         </div>
         <!-- Total Price -->
@@ -31,38 +33,47 @@
             <div class="offcanvas-body">
                 <div class="d-flex justify-content-between">
                     <p class="m-0">Product Price</p>
-                    <p class="m-0">1217</p>
+                    <p class="m-0">₹ 2,55,000</p>
                 </div>
                 <div class="d-flex justify-content-between pb-2 border-bottom">
                     <p class="m-0 ">Easy Returns</p>
-                    <p class="m-0 ">15</p>
+                    <p class="m-0 ">₹ 500</p>
                 </div>
                 <div class="d-flex justify-content-between pt-2 " style="font-weight: 600;">
                     <p class="m-0">Total</p>
-                    <p class="m-0">+ ₹1232</p>
+                    <p class="m-0">₹ 2,66,00</p>
                 </div>
             </div>
         </div>
 
-        <!-- Total Discount -->
+        <!--Taxes & GST -->
         <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottomDiscount"
             aria-labelledby="offcanvasBottomLabel" style=" height: auto; max-height: calc(100vh - 200px);">
             <div class="offcanvas-header border-bottom">
-                <h5 class="offcanvas-title" id="offcanvasBottomLabel">Total Discounts</h5>
+                <h5 class="offcanvas-title" id="offcanvasBottomLabel">Total Taxes</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body">
-                <div class="d-flex justify-content-between">
-                    <p class="m-0">Supplier Promotional Discount</p>
-                    <p class="m-0">-48</p>
-                </div>
-                <div class="d-flex justify-content-between pb-2 border-bottom">
-                    <p class="m-0 ">Special Product Discount</p>
-                    <p class="m-0 ">-78</p>
-                </div>
-                <div class="d-flex justify-content-between pt-2 " style="font-weight: 600;">
-                    <p class="m-0">Total</p>
-                    <p class="m-0">- ₹126</p>
+                <div class="border bg-light mb-2 " v-for="(gst,index) in gsts" :key="index">
+                    <div v-if="gst.type === 'interstate'" class="d-flex justify-content-between p-2 ">
+                        <p class="m-0 w-50">CGST {{gst.rate / 2}}%</p>
+                        <p class="text-center w-50 m-0">
+                            ₹ {{ (subtotal * (gst.rate / 2) / 100).toLocaleString('hi-in') }}
+                        </p>
+                    </div>
+                    <div v-if="gst.type === 'interstate'" class="d-flex justify-content-between p-2">
+                        <p class="m-0 w-50">SGST {{gst.rate / 2}}%</p>
+                        <p class="text-center w-50 m-0">₹ {{ (subtotal * (gst.rate / 2) / 100 ).toLocaleString('hi-in')}}</p>
+                    </div>
+                    <div v-if="gst.type === 'intrastate'" class="d-flex justify-content-between p-2">
+                        <p class="m-0 w-50">IGST {{gst.rate}}%</p>
+                        <p class="text-center w-50 m-0">₹ {{ (subtotal * gst.rate / 100).toLocaleString('hi-in') }}</p>
+                    </div>
+                    <div class="d-flex justify-content-between p-2 border-top">
+                        <b>GST</b>
+                        <b class="w-50 ms-5">{{gst.rate}}%</b>
+                        <b>₹ {{ (subtotal * gst.rate / 100).toLocaleString('hi-in') }}</b>
+                    </div>
                 </div>
             </div>
         </div>
@@ -71,8 +82,64 @@
 
 <script>
 export default {
-
+ data(){
+    return{
+        subtotal: 260000,
+        gsts:[
+            {
+                type:'interstate',
+                rate:5,
+            },
+            {
+                type:'interstate',
+                rate:12,
+            },
+            {
+                type:'intrastate',
+                rate:5,
+            },
+            {
+                type:'intrastate',
+                rate:12,
+            }
+        ]
+    }
+ }
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style scoped>
+th {
+    width: 20% !important;
+}
+
+.bill {
+    text-align: center;
+    position: relative;
+    font-weight: 600;
+    color: gray;
+    text-transform: uppercase;
+}
+
+.bill:before {
+    content: "";
+    display: block;
+    width: 30%;
+    height: 2px;
+    background: gray;
+    left: 0;
+    top: 50%;
+    position: absolute;
+}
+
+.bill:after {
+    content: "";
+    display: block;
+    width: 30%;
+    height: 2px;
+    background: gray;
+    right: 0;
+    top: 50%;
+    position: absolute;
+}
+</style>

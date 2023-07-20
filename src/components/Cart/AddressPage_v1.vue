@@ -6,7 +6,6 @@
             Add New Address
         </button>
         <div class="mb-3 p-2">
-
             <!-- Add Address canvas -->
             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
                 <div class="offcanvas-header">
@@ -82,10 +81,6 @@
                         aria-controls="offcanvasRightEdit" style="color:hotpink;">Edit</p>
                 </div>
             </div>
-
-
-
-
             <!-- Edit Address canvas -->
             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRightEdit"
                 aria-labelledby="offcanvasRightEditLabel">
@@ -156,8 +151,6 @@
                     </from>
                 </div>
             </div>
-
-
         </div>
         <div class=" ms-3 mb-3 md-ms-0" style=" border-left: 2px solid;">
             <div class=" px-3 card-body">
